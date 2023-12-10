@@ -82,53 +82,27 @@ const BoardOfDirectors = () => {
             })}
           </div>
 
-          {/* <div className="row d-flex justify-content-evenly">
-            <div className="col-lg-4 col-md-4 mb-4">
-              <div className="text-center">
-                <img
-                  src="/bod/demo.jpg"
-                  alt=""
-                  className="rounded-pill chairman-img"
-                />
-                <h2 className="font-20 fw-bold pt-2 pb-2">Tanveer Ahmed</h2>
-                <p className="about_titledesign position-relative pt-2">
-                  Group Vice Chairman (i)
-                </p>
-              </div>
-            </div>
-            <div className="col-lg-4 col-md-4 mb-4">
-              <div className="text-center">
-                <img
-                  src="/bod/demo.jpg"
-                  alt=""
-                  className="rounded-pill chairman-img"
-                />
-                <h2 className="font-20 fw-bold pt-2 pb-2">Taskeen Ahmed</h2>
-                <p className="about_titledesign position-relative pt-2">
-                  Group Vice Chairman (ii)
-                </p>
-              </div>
-            </div>
-            <div className="col-lg-4 col-md-4 mb-4">
-              <div className="text-center">
-                <img
-                  src="/bod/demo.jpg"
-                  alt=""
-                  className="rounded-pill chairman-img"
-                />
-                <h2 className="font-20 fw-bold pt-2 pb-2">Tashfeen Ahmed</h2>
-                <p className="about_titledesign position-relative pt-2">
-                  Group Vice Chairman (iii)
-                </p>
-              </div>
-            </div>
-          </div> */}
           <div className="" style={{ paddingBottom: "30px" }}>
             <Row className="d-flex justify-content-md-center">
               {bod?.map((curElem, key) => {
                 return (
                   <>
-                    <div className="col-lg-4 col-md-4 mb-4">
+                    <div className="col-lg-3 col-md-3 col-sm-6 mb-4">
+                      <div className="text-center">
+                        <img
+                          src={getStoragePath(curElem.item_image)}
+                          alt=""
+                          className="rounded new-team-member"
+                        />
+                        <h2 className="font-20 fw-bold pt-2 pb-1">
+                          {curElem.item_name}
+                        </h2>
+                        <p className="about_titledesign position-relative pt-2">
+                          {parse(curElem?.item_short_desc || '')}
+                        </p>
+                      </div>
+                    </div>
+                    {/* <div className="col-lg-4 col-md-4 mb-4">
                       <div className="text-center">
                         <img
                           src={getStoragePath(curElem.item_image)}
@@ -142,7 +116,7 @@ const BoardOfDirectors = () => {
                           {curElem.item_short_desc}
                         </p>
                       </div>
-                    </div>
+                    </div> */}
                   </>
                 );
               })}
