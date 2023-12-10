@@ -89,9 +89,9 @@ const ProductCard = ({
   };
 
   return (
-    <Card className={`c-shadow card_hover border shadow rounded-1 ${cssClasses}`}>
+    <Card className={`c-shadow card_hover border rounded-1 ${cssClasses}`}>
       <div className="combo-img-bg position-relative">
-        <Link href={viewLink} className="d-flex justify-content-center bg-danger product_img_bg">
+        <Link href={viewLink} className="d-flex justify-content-center align-items-center product_img_bg">
           <img
             src={imagePath}
             width={224}
@@ -146,7 +146,7 @@ const ProductCard = ({
           </Card.Text>
         )}
 
-        <div className="d-flex justify-content-center products_buttons position-relative">
+        <div className="d-flex justify-content-center  position-relative">
           <Link
             href={`/product/${id}`}
             className="btn btn-success detail_btn rounded-0 text-capitalize px-2 font-14 me-2"

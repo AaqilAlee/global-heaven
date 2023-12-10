@@ -872,8 +872,9 @@ banner css starts
   background: #ffffff;
 }
 .product_img_bg{
-  background: red;
-border-radius: 10px;
+  background: #FEF5EE;
+  height: 220px;
+/* border-radius: 5px; */
 }
 
 .combo-img-bg {
@@ -2703,7 +2704,7 @@ Responsive part end
 }
 
 .c-shadow {
-  /* box-shadow: 0 0.35rem 0.75rem rgba(0, 0, 0, 0.15) !important; */
+  box-shadow: 0 0.35rem 0.75rem rgba(0, 0, 0, 0.15) !important;
   border: 0 !important;
 }
 
