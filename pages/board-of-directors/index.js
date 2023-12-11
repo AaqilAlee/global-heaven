@@ -1,15 +1,17 @@
 import Image from "next/image";
 import Row from "react-bootstrap/Row";
 import Directors from "../../public/bod/Banner.png";
-
+import { useRouter } from "next/router";
 import Head from "next/head";
 import { makeTitle } from "../../utils/helpers";
 import React, { Fragment, useEffect, useState } from "react";
 import axios from "../../utils/axios";
 import { getStoragePath } from "../../utils/helpers";
 import parse from "html-react-parser";
+import Link from "next/link";
 
 const BoardOfDirectors = () => {
+  const router = useRouter();
   const [info, setInfo] = useState([]);
   const [member, setMember] = useState([]);
   const [bod, setBod] = useState([]);
@@ -64,16 +66,18 @@ const BoardOfDirectors = () => {
                 <>
                   <div className="col-lg-4 col-md-4 mb-4">
                     <div className="text-center">
-                      <img
-                        src={getStoragePath(curElem.item_image)}
-                        alt=""
-                        className="rounded leadership-team"
-                      />
+                      <Link href={`/organogram/${curElem.id}`}>
+                        <img
+                          src={getStoragePath(curElem.item_image)}
+                          alt=""
+                          className="rounded leadership-team"
+                        />
+                      </Link>
                       <h2 className="font-20 fw-bold pt-2 pb-1">
                         {curElem.item_name}
                       </h2>
                       <p className="position-relative pt-1">
-                        {curElem.item_short_desc}
+                        {parse(curElem?.item_short_desc || "")}
                       </p>
                     </div>
                   </div>
@@ -98,25 +102,10 @@ const BoardOfDirectors = () => {
                           {curElem.item_name}
                         </h2>
                         <p className="about_titledesign position-relative pt-2">
-                          {parse(curElem?.item_short_desc || '')}
+                          {parse(curElem?.item_short_desc || "")}
                         </p>
                       </div>
                     </div>
-                    {/* <div className="col-lg-4 col-md-4 mb-4">
-                      <div className="text-center">
-                        <img
-                          src={getStoragePath(curElem.item_image)}
-                          alt=""
-                          className="rounded-pill chairman-img"
-                        />
-                        <h2 className="font-20 fw-bold pt-2 pb-2">
-                          {curElem.item_name}
-                        </h2>
-                        <p className="about_titledesign position-relative pt-2">
-                          {curElem.item_short_desc}
-                        </p>
-                      </div>
-                    </div> */}
                   </>
                 );
               })}
