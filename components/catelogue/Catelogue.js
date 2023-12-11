@@ -6,8 +6,6 @@ import { IoEye } from "react-icons/io5";
 import { FaDownload } from "react-icons/fa";
 
 const Catelogue = () => {
-
-
   return (
     <>
       <section className="catalogue_bg">
@@ -18,12 +16,8 @@ const Catelogue = () => {
           <div className="py-5">
             <Row>
               <Col lg={3}>
-                <div className="bg-white px-0 border shadow rounded">
+                <div className="bg-white px-0 border shadow rounded" >
                   <div className="content">
-                    {/* <Link
-                      href="https://unsplash.com/photos/HkTMcmlMOUQ"
-                      target="_blank"
-                    > */}
                     <div className="content-overlay"></div>
                     <img
                       className="content-image"
@@ -31,20 +25,14 @@ const Catelogue = () => {
                       alt=""
                     />
                     <div className="d-flex justify-content-center content-details fadeIn-bottom">
-                      {/* <button
-                        onClick={() => onButtonClick()}
-                        className="content-icon text-white border p-3 me-2"
+                      <Link
+                        className="content-icon text-white border p-3 ms-2"
+                        href="/pdf/application_doc.pdf"
+                        target="_blank"
                       >
-                        <FaDownload className="font-20" />
-                      </button> */}
-                      {/* <div > */}
-                        <Link className="content-icon text-white border p-3 ms-2" href="/pdf/application_doc.pdf" target="_blank">
-                          
-                          <IoEye className="font-24" />
-                        </Link>
-                      {/* </div> */}
+                        <IoEye className="font-24" />
+                      </Link>
                     </div>
-                    {/* </Link> */}
                   </div>
 
                   <div className="">
