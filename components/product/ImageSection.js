@@ -63,6 +63,7 @@ const ImageSection = ({ inventory }) => {
               alt="product-img-two"
               className="single-object"
             />
+           
           </SwiperSlide>
         ))}
       </Swiper>
@@ -81,7 +82,7 @@ const ImageSection = ({ inventory }) => {
             <img
               src={galleryImage}
               alt="product-img-two"
-              className="single-object"
+              className=""
             />
           </SwiperSlide>
         ))}
