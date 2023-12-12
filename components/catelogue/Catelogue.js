@@ -3,8 +3,8 @@ import React, { useState, useEffect } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import axios from "../../utils/axios";
 import { IoEye } from "react-icons/io5";
-import { getStoragePath } from "../../utils/helpers"; 
-import PDFPage from "./Pdf";
+import { getStoragePath } from "../../utils/helpers";
+
 
 
 const Catelogue = () => {
@@ -50,7 +50,10 @@ const Catelogue = () => {
                               target="_blank"
                             >
                               <IoEye className="font-24" />
+
+                              {/* <PDFPage/> */}
                             </Link>
+                              {/* <Pdfviwer/> */}
                           </div>
                         </div>
 
@@ -59,7 +62,6 @@ const Catelogue = () => {
                             {catalogue?.item_short_desc}
                           </p>
                         </div>
-
                       </div>
                     </Col>
                   </>
@@ -68,7 +70,6 @@ const Catelogue = () => {
             </Row>
           </div>
         </Container>
-        <PDFPage/>
       </section>
     </>
   );
