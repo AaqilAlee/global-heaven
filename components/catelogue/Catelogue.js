@@ -4,6 +4,7 @@ import { Col, Container, Row } from "react-bootstrap";
 import axios from "../../utils/axios";
 import { IoEye } from "react-icons/io5";
 import { getStoragePath } from "../../utils/helpers"; 
+import PDFPage from "./Pdf";
 
 
 const Catelogue = () => {
@@ -67,6 +68,7 @@ const Catelogue = () => {
             </Row>
           </div>
         </Container>
+        <PDFPage/>
       </section>
     </>
   );
