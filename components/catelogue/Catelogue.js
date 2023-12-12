@@ -16,18 +16,17 @@ const Catelogue = () => {
   };
   useEffect(() => {
     fetchCatelogue();
-  }, []);
+  }, []); 
 
 
   const onButtonClick = () => {
     fetch("").then((response) => {
       response.blob().then((blob) => {
-        const fileURL = window.URL.createObjectURL(blob);
-        let alink = document.createElement("a");
-        alink.href = fileURL;
-        alink.download = "";
+        // const fileURL = window.URL.createObjectURL(blob);
+        // let alink = document.createElement("a");
         window.open("/pdf/application_doc.pdf");
-        alink.click();
+        // alink.href = fileURL;
+        // alink.click();a
       });
     });
   };
