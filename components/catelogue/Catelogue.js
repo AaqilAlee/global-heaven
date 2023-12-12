@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import axios from "../../utils/axios";
 import { IoEye } from "react-icons/io5";
-import { getStoragePath } from "../../utils/helpers";
+import { getStoragePath } from "../../utils/helpers"; 
 
 
 const Catelogue = () => {
@@ -16,20 +16,8 @@ const Catelogue = () => {
   };
   useEffect(() => {
     fetchCatelogue();
-  }, []); 
+  }, []);
 
-
-  const onButtonClick = () => {
-    fetch("").then((response) => {
-      response.blob().then((blob) => {
-        // const fileURL = window.URL.createObjectURL(blob);
-        // let alink = document.createElement("a");
-        window.open("/pdf/application_doc.pdf");
-        // alink.href = fileURL;
-        // alink.click();a
-      });
-    });
-  };
 
   return (
     <>
@@ -55,7 +43,9 @@ const Catelogue = () => {
                           <div className="d-flex justify-content-center content-details fadeIn-bottom">
                             <Link
                               className="content-icon text-white border p-3 ms-2"
-                              href={getStoragePath(catalogue?.catalogue_brochure)}
+                              href={getStoragePath(
+                                catalogue?.catalogue_brochure
+                              )}
                               target="_blank"
                             >
                               <IoEye className="font-24" />
@@ -64,10 +54,11 @@ const Catelogue = () => {
                         </div>
 
                         <div className="">
-                          <p className="py-3 ps-3">{catalogue?.item_short_desc}</p>
+                          <p className="py-3 ps-3">
+                            {catalogue?.item_short_desc}
+                          </p>
                         </div>
 
-                        <button onClick={()=>onButtonClick()}>AASSADAADAD</button>
                       </div>
                     </Col>
                   </>

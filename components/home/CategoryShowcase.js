@@ -85,7 +85,7 @@ const CategoryShowcase = () => {
                 {categories &&
                   categories.map((category, key) => {
                     return (
-                      <Col key={key} className="my-3 px-0">
+                      <Col lg={2} key={key} className="my-3 px-0">
                         <Link href={`/category/${category.id}`}>
                           <div className="category_one rounded-3 p-3 ">
                             <div className="category d-flex justify-content-start align-items-center">
@@ -94,9 +94,9 @@ const CategoryShowcase = () => {
                                   `category-image/${category.image}`
                                 )}
                                 alt=""
-                                className="category_img pe-3"
+                                className="category_img me-3"
                               />
-                              <div className="text-start text-capitalize fw-bold">
+                              <div className="text-start text-capitalize fw-bold font-14">
                                 {category.name}
                               </div>
                             </div>
