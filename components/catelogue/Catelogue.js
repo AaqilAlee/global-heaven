@@ -1,11 +1,37 @@
 import Link from "next/link";
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Col, Container, Row } from "react-bootstrap";
-
+import axios from "../../utils/axios";
 import { IoEye } from "react-icons/io5";
-import { FaDownload } from "react-icons/fa";
+import { getStoragePath } from "../../utils/helpers";
+
 
 const Catelogue = () => {
+  const [catData, setCatdata] = useState([]);
+
+  const fetchCatelogue = () => {
+    axios.get(`/content-module/29`).then((res) => {
+      setCatdata(res?.data[0]?.content_item);
+    });
+  };
+  useEffect(() => {
+    fetchCatelogue();
+  }, []);
+
+
+  const onButtonClick = () => {
+    fetch("").then((response) => {
+      response.blob().then((blob) => {
+        const fileURL = window.URL.createObjectURL(blob);
+        let alink = document.createElement("a");
+        alink.href = fileURL;
+        alink.download = "";
+        window.open("/pdf/application_doc.pdf");
+        alink.click();
+      });
+    });
+  };
+
   return (
     <>
       <section className="catalogue_bg">
@@ -15,33 +41,39 @@ const Catelogue = () => {
         <Container>
           <div className="py-5">
             <Row>
-              <Col lg={3}>
-                <div className="bg-white px-0 border shadow rounded" >
-                  <div className="content">
-                    <div className="content-overlay"></div>
-                    <img
-                      className="content-image"
-                      src="https://source.unsplash.com/HkTMcmlMOUQ"
-                      alt=""
-                    />
-                    <div className="d-flex justify-content-center content-details fadeIn-bottom">
-                      <Link
-                        className="content-icon text-white border p-3 ms-2"
-                        href="/pdf/application_doc.pdf"
-                        target="_blank"
-                      >
-                        <IoEye className="font-24" />
-                      </Link>
-                    </div>
-                  </div>
+              {catData?.map((catalogue) => {
+                return (
+                  <>
+                    <Col lg={3}>
+                      <div className="bg-white px-0 border shadow rounded">
+                        <div className="content">
+                          <div className="content-overlay"></div>
+                          <img
+                            className="content-image"
+                            src={getStoragePath(catalogue?.item_image)}
+                            alt=""
+                          />
+                          <div className="d-flex justify-content-center content-details fadeIn-bottom">
+                            <Link
+                              className="content-icon text-white border p-3 ms-2"
+                              href={getStoragePath(catalogue?.catalogue_brochure)}
+                              target="_blank"
+                            >
+                              <IoEye className="font-24" />
+                            </Link>
+                          </div>
+                        </div>
 
-                  <div className="">
-                    <p className="py-3 ps-3">adgasdgas</p>
-                  </div>
+                        <div className="">
+                          <p className="py-3 ps-3">{catalogue?.item_short_desc}</p>
+                        </div>
 
-                  <h1></h1>
-                </div>
-              </Col>
+                        <button onClick={()=>onButtonClick()}>AASSADAADAD</button>
+                      </div>
+                    </Col>
+                  </>
+                );
+              })}
             </Row>
           </div>
         </Container>
