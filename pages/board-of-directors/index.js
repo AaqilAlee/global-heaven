@@ -76,9 +76,15 @@ const BoardOfDirectors = () => {
                       <h2 className="font-20 fw-bold pt-2 pb-1">
                         {curElem.item_name}
                       </h2>
+
                       <p className="position-relative pt-1">
                         {parse(curElem?.item_short_desc || "")}
+
+                      
+                      <p className="">
+                        {parse(curElem?.item_deg_desc || "")}
                       </p>
+                      
                     </div>
                   </div>
                 </>
@@ -102,8 +108,15 @@ const BoardOfDirectors = () => {
                           {curElem.item_name}
                         </h2>
                         <p className="about_titledesign position-relative pt-2">
+
                           {parse(curElem?.item_short_desc || "")}
                         </p>
+
+                       
+                      <p className="">
+                        {parse(curElem?.item_deg_desc || "")}
+                      </p>
+
                       </div>
                     </div>
                   </>
@@ -130,8 +143,11 @@ const BoardOfDirectors = () => {
                       <h2 className="font-20 fw-bold pt-2 pb-1">
                         {curElem.item_name}
                       </h2>
-                      <p className="position-relative pt-1">
-                        {parse(curElem.item_short_desc)}
+                      <p className="about_titledesign position-relative pt-2">
+                        {curElem?.item_short_desc || ""}
+                      </p>
+                      <p className="">
+                        {parse(curElem?.item_deg_desc || "")}
                       </p>
                     </div>
                   </div>
@@ -139,7 +155,7 @@ const BoardOfDirectors = () => {
               );
             })}
           </div>
-        </div>
+        </div>  
       </section>
     </Fragment>
   );
