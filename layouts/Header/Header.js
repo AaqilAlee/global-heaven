@@ -8,7 +8,7 @@ import { MdOutlineLogout } from "react-icons/md";
 import { BiChevronDown } from "react-icons/bi";
 import { CiUser } from "react-icons/ci";
 import Image from "next/image";
-import Logo from "../../public/logo/logo2.png";
+import Logo from "../../public/logo/logo3.png";
 import { fetchCategories } from "../../services/CategoryServices";
 import { isLoggedIn, logout } from "../../utils/auth";
 import { useRouter } from "next/router";
