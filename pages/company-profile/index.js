@@ -1,7 +1,7 @@
 import React, {Fragment, useEffect, useState} from "react";
 import Image from "next/image";
 // import CompanyRev from "../../public/b2b.jpg";
-import B2BBanner from "../../public/watch/B2B.png" 
+// import B2BBanner from "../../public/watch/B2B.png" 
 import {Container, Row} from "react-bootstrap";
 import {fetchAboutInfo, fetchMissionVision, fetchValues} from "../../services/CommonServices";
 import {getStoragePath, makeTitle} from "../../utils/helpers";
@@ -46,7 +46,7 @@ const CompanyReview = () => {
             </Head>
             <section>
                 <div className="review-banner">
-                    <Image src={B2BBanner} alt="" className="review-img"/>
+                    {/* <Image src={B2BBanner} alt="" className="review-img"/> */}
                 </div>
                 <div className="container">
                     {aboutInfo?.map((item, index) =>

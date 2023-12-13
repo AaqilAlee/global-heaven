@@ -1,36 +1,74 @@
-import React from 'react'
-import { useRouter } from "next/router";
-// import fetchTeamLead from '../board-of-directors/'
+import React, { useEffect, useState } from "react";
+import { Col, Container, Row } from "react-bootstrap";
+import { getStoragePath } from "../../utils/helpers";
+import Link from "next/link";
 
-const index = () => {
-  const router = useRouter();
-  const data = router.query.id;
-
-  // useEffect(() => {
-  //   if (id) {
-  //     fetchCategory(id).then((response) => {
-  //       if (response?.data) {
-  //         setCategory(response.data);
-  //       }
-  //     });
-  //   }  
-  // }, [id]);
-
+const index = ({ detail }) => {
   return (
     <>
-      <h1>sfgsdfgsdfgsdfgsdfg {data}</h1>
-      <h1>sfgsdfgsdfgsdfgsdfg</h1>
-      <h1>sfgsdfgsdfgsdfgsdfg</h1>
-      <h1>sfgsdfgsdfgsdfgsdfg</h1>
-      <h1>sfgsdfgsdfgsdfgsdfg</h1>
-      <h1>sfgsdfgsdfgsdfgsdfg</h1>
-      <h1>sfgsdfgsdfgsdfgsdfg</h1>
-      <h1>sfgsdfgsdfgsdfgsdfg</h1>
-      <h1>sfgsdfgsdfgsdfgsdfg</h1>
-      <h1>sfgsdfgsdfgsdfgsdfg</h1>
-      <h1>sfgsdfgsdfgsdfgsdfg</h1>
+      <section>
+        <div>
+          <img src="/comment.png" alt="" className="comment_banner" />
+        </div>
+        <Container>
+          <Row>
+            <div className="my-5">
+              <div className="pb-5">
+                <h1 class="title text-center font-40 fw-bold ">{detail?.item_name}</h1>
+                <h1 class="title text-center font-24">{detail?.item_short_desc}</h1>
+              </div>
+              <div class="comment_details">
+                <div>
+                <img
+                  src={getStoragePath(detail?.item_image)}
+                  class="img-class"
+                  alt=""
+                />
+                <p class="align-item pb-3">{detail?.item_long_desc}</p>
+                </div>
+                <div className="pt-5">
+                  <Link href="/board-of-directors" className="back_to_team">Back to Team member</Link>
+                </div>
+              </div>
+            </div>
+          </Row>
+        </Container>
+      </section>
     </>
-  )
+  );
+};
+
+export async function getStaticProps({ params }) {
+  const id = params.id;
+  const response = await fetch(
+    "https://api.mbinternationalbd.com/content-module/18"
+  );
+  const data = await response.json();
+  const items = data?.[0].content_item;
+
+  const item = items.filter((i) => i.id == id);
+
+  return {
+    props: {
+      detail: item[0],
+    },
+  };
 }
 
-export default index
+export async function getStaticPaths() {
+  const response = await fetch(
+    "https://api.mbinternationalbd.com/content-module/18"
+  );
+  const data = await response.json();
+  const items = data?.[0].content_item;
+
+  const paths = items.map((i) => ({
+    params: { id: String(i.id) },
+  }));
+
+
+
+  return { paths, fallback: false };
+}
+
+export default index;

@@ -11,7 +11,7 @@ const Footer = () => {
             <Col lg={3}>
               <div className="logo_side px-3">
                 <div>
-                  <img src="/logo2.png" alt="footer logo" className="footer_logo" />
+                  <img src="/logo/logo3.png" alt="footer logo" className="footer_logo" />
                 </div>
                 <div>
                   <p className="text-capitalize pb-2">company name</p>

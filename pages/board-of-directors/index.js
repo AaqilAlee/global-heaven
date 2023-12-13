@@ -140,11 +140,14 @@ const BoardOfDirectors = () => {
                   <>
                     <div className="col-lg-3 col-md-3 col-sm-6 mb-4">
                       <div className="text-center">
+                        
+                      <Link href={`/comment/gm/${curElem.id}`}>
                         <img
                           src={getStoragePath(curElem.item_image)}
                           alt=""
-                          className="rounded new-team-member"
+                          className="rounded leadership-team"
                         />
+                      </Link>
                         <h2 className="font-20 fw-bold pt-2 pb-1">
                           {curElem.item_name}
                         </h2>
