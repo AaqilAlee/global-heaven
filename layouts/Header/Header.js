@@ -277,6 +277,74 @@ const HeaderOld = () => {
                 </NavDropdown>
 
                 <NavDropdown
+                  className="p-0 rounded-0 about-btn dropdown_menu-7 "
+                  title={
+                    <div className="d-flex align-items-center ">
+                      <span className=" position-relative text-capitalize text-light sticky_text_color text-inter py-2 font-16 d-flex  align-items-center position-relative after_border">
+                        about us
+                      </span>
+                      <BiChevronDown className="ms-1 text-white sticky_text_color" />
+                    </div>
+                  }
+                  id="navbarScrollingDropdown"
+                  onMouseEnter={() => handleMouseEnter()}
+                  // onMouseLeave={() => handleMouseLeave()}
+                  onClick={() => handleClickService()}
+                  show={showItems}
+                >
+                  <NavDropdown.Item
+                    as={Link}
+                    href="/page/inception"
+                    className="cate-drop text-light text-capitalize all-icons text-dark px-4 py-2 d-block"
+                  >
+                    inception
+                  </NavDropdown.Item>
+                  <NavDropdown.Item
+                    as={Link}
+                    href="/page/mission-vision"
+                    className="cate-drop text-light text-capitalize all-icons text-dark px-4 py-2 d-block"
+                  >
+                    mission & vision
+                  </NavDropdown.Item>
+                  
+                  <NavDropdown.Item
+                    as={Link}
+                    href="/page/factories"
+                    className="cate-drop text-light text-capitalize all-icons text-dark px-4 py-2 d-block"
+                  >
+                    factories
+                  </NavDropdown.Item>
+                  <NavDropdown.Item
+                    as={Link}
+                    href="/page/milestones"
+                    className="cate-drop text-light text-capitalize all-icons text-dark px-4 py-2 d-block"
+                  >
+                    milestones
+                  </NavDropdown.Item>
+                  <NavDropdown.Item
+                    as={Link}
+                    href="/page/objective"
+                    className="cate-drop text-light text-capitalize all-icons text-dark px-4 py-2 d-block"
+                  >
+                    Objective
+                  </NavDropdown.Item>
+                  <NavDropdown.Item
+                    as={Link}
+                    href="/page/sustainability-practics"
+                    className="cate-drop text-light text-capitalize all-icons text-dark px-4 py-2 d-block"
+                  >
+                    sustainability practics
+                  </NavDropdown.Item>
+                  <NavDropdown.Item
+                    as={Link}
+                    href="/page/distribution-network"
+                    className="cate-drop text-light text-capitalize all-icons text-dark px-4 py-2 d-block"
+                  >
+                    Distribution network
+                  </NavDropdown.Item>
+                </NavDropdown>
+
+                <NavDropdown
                   className="p-0 rounded-0 business-btn dropdown_menu-7 "
                   title={
                     <div className="d-flex align-items-center ">
