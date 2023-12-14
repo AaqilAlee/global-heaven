@@ -11,6 +11,9 @@ import { IoIosArrowRoundForward } from "react-icons/io";
 import ProductCard from "../../../components/common/ProductCard";
 import { getStoragePath, makeTitle } from "../../../utils/helpers";
 import Head from "next/head";
+import axios from "axios";
+
+import Accordion from "react-bootstrap/Accordion";
 
 const CategoryPage = () => {
   const router = useRouter();
@@ -22,6 +25,7 @@ const CategoryPage = () => {
 
   const [meta, setMeta] = useState({});
   const [page, setPage] = useState("");
+  const [sub_catagory, setSub_catagory] = useState("");
 
   // fetch
   useEffect(() => {
@@ -77,12 +81,24 @@ const CategoryPage = () => {
     }
   }, [page]);
 
+  const fetchSubCat = () => {
+    axios
+      .get(`https://api.mbinternationalbd.com/ecom/categories`)
+      .then((res) => {
+        setSub_catagory(res?.data);
+      });
+  };
+  // console.log(sub_catagory);
+  useEffect(() => {
+    fetchSubCat();
+  }, []);
+
   return (
     <Fragment>
       <Head>
         <title>{makeTitle(category?.name || "Category Products")}</title>
       </Head>
-      <section>
+      <section className="all_product_accordion">
         {/*Category Banner*/}
         {category?.lifestyle_image && (
           <div className="product-banner">
@@ -118,14 +134,35 @@ const CategoryPage = () => {
                     <Link href={`/category/${item.id}`}>
                       <button className="d-flex category-btn">
                         <IoIosArrowRoundForward className="icon-space me-2" />
-                        <span> {item.name}</span>
+                        <span>{item.name}</span>
                       </button>
                     </Link>
                   </li>
                 ))}
               </ul>
-            </div>
+              {categories?.map((item, key) => (
+                <Accordion className="border-0">
+                  <Accordion.Item eventKey="0">
+                    <Accordion.Header>{item.name}</Accordion.Header>
 
+                    {item?.sub_categories?.length ? (
+                      <Accordion.Body>
+                    <ul>
+                     { console.log(item)}
+
+                     {item?.sub_categories && item.sub_categories.map(i=> 
+                      <li>{i?.name}</li>
+                      )}
+                      </ul>
+                    </Accordion.Body>
+                    ) : ""}
+
+
+                    
+                  </Accordion.Item>
+                </Accordion>
+              ))}
+            </div>
             {/*Category Products*/}
             <div className="col-lg-9 col-md-8 col-sm-7">
               <div className="row">
