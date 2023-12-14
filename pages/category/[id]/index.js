@@ -14,6 +14,7 @@ import Head from "next/head";
 import axios from "axios";
 
 import Accordion from "react-bootstrap/Accordion";
+import { filter } from "lodash";
 
 const CategoryPage = () => {
   const router = useRouter();
@@ -22,11 +23,12 @@ const CategoryPage = () => {
   const [category, setCategory] = useState({});
   const [categories, setCategories] = useState([]);
   const [inventories, setInventories] = useState([]);
+  const [filteredInventory, setFilteredinventory] = useState([]);
   console.log(inventories);
 
   const [meta, setMeta] = useState({});
   const [page, setPage] = useState("");
-  const [sub_catagory, setSub_catagory] = useState("");
+
 
   // fetch
   useEffect(() => {
@@ -59,6 +61,7 @@ const CategoryPage = () => {
       if (response?.data) {
         // if paginate: "no"
         setInventories(response.data);
+        setFilteredinventory(response.data);
       }
     });
   };
@@ -88,6 +91,12 @@ const CategoryPage = () => {
   //   });
   //   setmovieData(updatedList);
   // };
+
+  const itemfilter=(id)=>{
+    const items = inventories.filter(i => i.product.sub_category.id === id)
+    setFilteredinventory(items)
+    console.log(inventories)
+  }
 
   return (
     <Fragment>
@@ -135,11 +144,9 @@ const CategoryPage = () => {
                       <Accordion.Body>
                         <ul>
                           {item?.sub_categories &&
-                            item.sub_categories.map((sub_items) => (
-                              <li>
-                                <button onClick={() => filterItem()}>
-                                  {sub_items?.name}
-                                </button>
+                            item.sub_categories.map((sub_items, key) => (
+                              <li key={sub_items.id}>
+                                <button onClick={(e)=>itemfilter(sub_items.id)}>{sub_items?.name}</button>
                               </li>
                             ))}
                         </ul>
@@ -167,7 +174,7 @@ const CategoryPage = () => {
             {/*Category Products*/}
             <div className="col-lg-9 col-md-8 col-sm-7">
               <div className="row">
-                {inventories.map((inventory, key) => {
+                {filteredInventory.map((inventory, key) => {
                   return (
                     <div
                       className="col-lg-4 col-md-6 text-center mb-4"
