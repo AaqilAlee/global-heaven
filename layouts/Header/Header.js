@@ -277,11 +277,11 @@ const HeaderOld = () => {
                 </NavDropdown>
 
                 <NavDropdown
-                  className="p-0 rounded-0 about-btn dropdown_menu-7 "
+                  className="p-0 rounded-0 about-btn dropdown_menu-7 about_btn_width"
                   title={
                     <div className="d-flex align-items-center ">
                       <span className=" position-relative text-capitalize text-light sticky_text_color text-inter py-2 font-16 d-flex  align-items-center position-relative after_border">
-                        about us
+                        organogram
                       </span>
                       <BiChevronDown className="ms-1 text-white sticky_text_color" />
                     </div>
@@ -294,17 +294,26 @@ const HeaderOld = () => {
                 >
                   <NavDropdown.Item
                     as={Link}
+                    href="/c/inception"
+                    className="cate-drop text-light text-capitalize all-icons text-dark px-4 py-2 d-block"
+                  >
+                    corporate
+                  </NavDropdown.Item>
+                  <NavDropdown.Item
+                    as={Link}
                     href="/page/inception"
                     className="cate-drop text-light text-capitalize all-icons text-dark px-4 py-2 d-block"
                   >
-                    inception
+                    Rajshahi And Rangpur Division
                   </NavDropdown.Item>
                   <NavDropdown.Item
                     as={Link}
                     href="/page/mission-vision"
                     className="cate-drop text-light text-capitalize all-icons text-dark px-4 py-2 d-block"
                   >
-                    mission & vision
+                    Khulna And Barisal Division
+
+
                   </NavDropdown.Item>
                   
                   <NavDropdown.Item
@@ -312,39 +321,29 @@ const HeaderOld = () => {
                     href="/page/factories"
                     className="cate-drop text-light text-capitalize all-icons text-dark px-4 py-2 d-block"
                   >
-                    factories
+                    Mymensingh And Dhaka Part-3 Division
                   </NavDropdown.Item>
                   <NavDropdown.Item
                     as={Link}
                     href="/page/milestones"
                     className="cate-drop text-light text-capitalize all-icons text-dark px-4 py-2 d-block"
                   >
-                    milestones
+                    Dhaka Part-1 And Dhaka Part-2 Division
+
+
                   </NavDropdown.Item>
                   <NavDropdown.Item
                     as={Link}
                     href="/page/objective"
                     className="cate-drop text-light text-capitalize all-icons text-dark px-4 py-2 d-block"
                   >
-                    Objective
-                  </NavDropdown.Item>
-                  <NavDropdown.Item
-                    as={Link}
-                    href="/page/sustainability-practics"
-                    className="cate-drop text-light text-capitalize all-icons text-dark px-4 py-2 d-block"
-                  >
-                    sustainability practics
-                  </NavDropdown.Item>
-                  <NavDropdown.Item
-                    as={Link}
-                    href="/page/distribution-network"
-                    className="cate-drop text-light text-capitalize all-icons text-dark px-4 py-2 d-block"
-                  >
-                    Distribution network
-                  </NavDropdown.Item>
+                    Chattogram And Sylhet Division
+
+
+                  </NavDropdown.Item> 
                 </NavDropdown>
 
-                <NavDropdown
+                {/* <NavDropdown
                   className="p-0 rounded-0 business-btn dropdown_menu-7 "
                   title={
                     <div className="d-flex align-items-center ">
@@ -408,7 +407,7 @@ const HeaderOld = () => {
                       </div>
                     </div>
                   </div>
-                </NavDropdown>
+                </NavDropdown> */}
 
                
                 <Nav.Link
