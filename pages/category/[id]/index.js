@@ -22,6 +22,7 @@ const CategoryPage = () => {
   const [category, setCategory] = useState({});
   const [categories, setCategories] = useState([]);
   const [inventories, setInventories] = useState([]);
+  console.log(inventories);
 
   const [meta, setMeta] = useState({});
   const [page, setPage] = useState("");
@@ -81,17 +82,12 @@ const CategoryPage = () => {
     }
   }, [page]);
 
-  const fetchSubCat = () => {
-    axios
-      .get(`https://api.mbinternationalbd.com/ecom/categories`)
-      .then((res) => {
-        setSub_catagory(res?.data);
-      });
-  };
-  // console.log(sub_catagory);
-  useEffect(() => {
-    fetchSubCat();
-  }, []);
+  // const filterItem = (category) => {
+  //   const updatedList = CartApi.filter((curElem) => {
+  //     return curElem.category === category;
+  //   });
+  //   setmovieData(updatedList);
+  // };
 
   return (
     <Fragment>
@@ -128,7 +124,33 @@ const CategoryPage = () => {
           <div className="row">
             {/*Category Sidebar*/}
             <div className="col-lg-3 col-md-4 col-sm-5 mb-3">
-              <ul className="stickyContent list-unstyled text-start ps-5 font-20 lh-lg card-border py-3 ">
+              {categories?.map((item, key) => (
+                <Accordion className="border-0">
+                  <Accordion.Item eventKey="0">
+                    <Link href={`/category/${item.id}`}>
+                      <Accordion.Header>{item.name}</Accordion.Header>
+                    </Link>
+
+                    {item?.sub_categories?.length ? (
+                      <Accordion.Body>
+                        <ul>
+                          {item?.sub_categories &&
+                            item.sub_categories.map((sub_items) => (
+                              <li>
+                                <button onClick={() => filterItem()}>
+                                  {sub_items?.name}
+                                </button>
+                              </li>
+                            ))}
+                        </ul>
+                      </Accordion.Body>
+                    ) : (
+                      ""
+                    )}
+                  </Accordion.Item>
+                </Accordion>
+              ))}
+              {/* <ul className="stickyContent list-unstyled text-start ps-5 font-20 lh-lg card-border py-3 ">
                 {categories?.map((item, key) => (
                   <li key={key}>
                     <Link href={`/category/${item.id}`}>
@@ -139,30 +161,9 @@ const CategoryPage = () => {
                     </Link>
                   </li>
                 ))}
-              </ul>
-              {categories?.map((item, key) => (
-                <Accordion className="border-0">
-                  <Accordion.Item eventKey="0">
-                    <Accordion.Header>{item.name}</Accordion.Header>
-
-                    {item?.sub_categories?.length ? (
-                      <Accordion.Body>
-                    <ul>
-                     { console.log(item)}
-
-                     {item?.sub_categories && item.sub_categories.map(i=> 
-                      <li>{i?.name}</li>
-                      )}
-                      </ul>
-                    </Accordion.Body>
-                    ) : ""}
-
-
-                    
-                  </Accordion.Item>
-                </Accordion>
-              ))}
+              </ul> */}
             </div>
+
             {/*Category Products*/}
             <div className="col-lg-9 col-md-8 col-sm-7">
               <div className="row">
