@@ -294,21 +294,21 @@ const HeaderOld = () => {
                 >
                   <NavDropdown.Item
                     as={Link}
-                    href="/c/inception"
+                    href="/organogram/corporate"
                     className="cate-drop text-light text-capitalize all-icons text-dark px-4 py-2 d-block"
                   >
                     corporate
                   </NavDropdown.Item>
                   <NavDropdown.Item
                     as={Link}
-                    href="/page/inception"
+                    href="/organogram/rajshahi_rangpur"
                     className="cate-drop text-light text-capitalize all-icons text-dark px-4 py-2 d-block"
                   >
                     Rajshahi And Rangpur Division
                   </NavDropdown.Item>
                   <NavDropdown.Item
                     as={Link}
-                    href="/page/mission-vision"
+                    href="/organogram/khulna_barisal"
                     className="cate-drop text-light text-capitalize all-icons text-dark px-4 py-2 d-block"
                   >
                     Khulna And Barisal Division
@@ -318,14 +318,14 @@ const HeaderOld = () => {
                   
                   <NavDropdown.Item
                     as={Link}
-                    href="/page/factories"
+                    href="/organogram/mymensingh_dhaka"
                     className="cate-drop text-light text-capitalize all-icons text-dark px-4 py-2 d-block"
                   >
                     Mymensingh And Dhaka Part-3 Division
                   </NavDropdown.Item>
                   <NavDropdown.Item
                     as={Link}
-                    href="/page/milestones"
+                    href="/organogram/dhaka_dhaka"
                     className="cate-drop text-light text-capitalize all-icons text-dark px-4 py-2 d-block"
                   >
                     Dhaka Part-1 And Dhaka Part-2 Division
@@ -334,7 +334,7 @@ const HeaderOld = () => {
                   </NavDropdown.Item>
                   <NavDropdown.Item
                     as={Link}
-                    href="/page/objective"
+                    href="/organogram/chattogram_sylhet"
                     className="cate-drop text-light text-capitalize all-icons text-dark px-4 py-2 d-block"
                   >
                     Chattogram And Sylhet Division
