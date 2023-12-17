@@ -9,11 +9,19 @@ import Link from "next/link";
 const AboutDetails = ({ tab }) => {
   const [info, setInfo] = useState([]);
   const [raj_rong, setRaj_rong] = useState([]);
+  const raj_rongpur = raj_rong.slice(1)
+
   const [bod, setBod] = useState([]);
   const [khul_bari, setKhul_bari] = useState([]);
+  const khulna_barisal = khul_bari.slice(1);
   const [mymdha, setMymdha] = useState([]);
+  const mym_barisal = mymdha.slice(1);
+
   const [dhadha, setDhadha] = useState([]);
+  const dha_dha = dhadha.slice(1);
+
   const [cha_syl, setChat_Syl] = useState([]);
+  const chatt_syl = cha_syl.slice(1);
   // const [cha_syl, Chat_Syl] = useState([]);
 
   const fetchTeamLead = () => {
@@ -244,7 +252,33 @@ const AboutDetails = ({ tab }) => {
                     Rajshahi and Rangpur Division
                   </p>
                   <div className="row d-flex justify-content-center">
-                    {raj_rong?.map((curElem, key) => {
+                    {/* {raj_rongpur[0]?.map((curElem, key) => {
+                      return (
+                        <> */}
+                          <div className="col-lg-3 col-md-3 col-sm-6 mb-4">
+                            <div className="text-center">
+                              <img
+                                src={getStoragePath(raj_rong[0]?.item_image)}
+                                alt=""
+                                className="rounded new-team-member"
+                              />
+                              <h2 className="font-20 fw-bold pt-2 pb-1">
+                                {raj_rong[0]?.item_name}
+                              </h2>
+                              <p className="about_titledesign position-relative pt-2">
+                                {raj_rong[0]?.item_short_desc || ""}
+                              </p>
+                              <p className="">
+                                {parse(raj_rong[0]?.item_deg_desc || "")}
+                              </p>
+                            </div>
+                          </div>
+                        {/* </>
+                      );
+                    })} */}
+                  </div>
+                  <div className="row d-flex justify-content-center">
+                    {raj_rongpur?.map((curElem, key) => {
                       return (
                         <>
                           <div className="col-lg-3 col-md-3 col-sm-6 mb-4">
@@ -277,7 +311,33 @@ const AboutDetails = ({ tab }) => {
                     Khulna and Barisal Division
                   </p>
                   <div className="row d-flex justify-content-center">
-                    {khul_bari?.map((curElem, key) => {
+                    {/* {khul_bari?.map((curElem, key) => {
+                      return (
+                        <> */}
+                          <div className="col-lg-3 col-md-3 col-sm-6 mb-4">
+                            <div className="text-center">
+                              <img
+                                src={getStoragePath(khul_bari[0]?.item_image)}
+                                alt=""
+                                className="rounded new-team-member"
+                              />
+                              <h2 className="font-20 fw-bold pt-2 pb-1">
+                                {khul_bari[0]?.item_name}
+                              </h2>
+                              <p className="about_titledesign position-relative pt-2">
+                                {khul_bari[0]?.item_short_desc || ""}
+                              </p>
+                              <p className="">
+                                {parse(khul_bari[0]?.item_deg_desc || "")}
+                              </p>
+                            </div>
+                          </div>
+                        {/* </>
+                      );
+                    })} */}
+                  </div>
+                  <div className="row d-flex justify-content-center">
+                    {khulna_barisal?.map((curElem, key) => {
                       return (
                         <>
                           <div className="col-lg-3 col-md-3 col-sm-6 mb-4">
@@ -310,7 +370,33 @@ const AboutDetails = ({ tab }) => {
                     Mymensingh and Dhaka Part-3 Division
                   </p>
                   <div className="row d-flex justify-content-center">
-                    {mymdha?.map((curElem, key) => {
+                    {/* {mymdha?.map((curElem, key) => {
+                      return (
+                        <> */}
+                          <div className="col-lg-3 col-md-3 col-sm-6 mb-4">
+                            <div className="text-center">
+                              <img
+                                src={getStoragePath(mymdha[0]?.item_image)}
+                                alt=""
+                                className="rounded new-team-member"
+                              />
+                              <h2 className="font-20 fw-bold pt-2 pb-1">
+                                {mymdha[0]?.item_name}
+                              </h2>
+                              <p className="about_titledesign position-relative pt-2">
+                                {mymdha[0]?.item_short_desc || ""}
+                              </p>
+                              <p className="">
+                                {parse(mymdha[0]?.item_deg_desc || "")}
+                              </p>
+                            </div>
+                          </div>
+                        {/* </>
+                      );
+                    })} */}
+                  </div>
+                  <div className="row d-flex justify-content-center">
+                    {mym_barisal?.map((curElem, key) => {
                       return (
                         <>
                           <div className="col-lg-3 col-md-3 col-sm-6 mb-4">
@@ -343,7 +429,33 @@ const AboutDetails = ({ tab }) => {
                   Dhaka Part-1 and Dhaka Part-2 Division
                   </p>
                   <div className="row d-flex justify-content-center">
-                    {dhadha?.map((curElem, key) => {
+                    {/* {dhadha?.map((curElem, key) => {
+                      return (
+                        <> */}
+                          <div className="col-lg-3 col-md-3 col-sm-6 mb-4">
+                            <div className="text-center">
+                              <img
+                                src={getStoragePath(dhadha[0]?.item_image)}
+                                alt=""
+                                className="rounded new-team-member"
+                              />
+                              <h2 className="font-20 fw-bold pt-2 pb-1">
+                                {dhadha[0]?.item_name}
+                              </h2>
+                              <p className="about_titledesign position-relative pt-2">
+                                {dhadha[0]?.item_short_desc || ""}
+                              </p>
+                              <p className="">
+                                {parse(dhadha[0]?.item_deg_desc || "")}
+                              </p>
+                            </div>
+                          </div>
+                        {/* </>
+                      );
+                    })} */}
+                  </div>
+                  <div className="row d-flex justify-content-center">
+                    {dha_dha?.map((curElem, key) => {
                       return (
                         <>
                           <div className="col-lg-3 col-md-3 col-sm-6 mb-4">
@@ -376,7 +488,33 @@ const AboutDetails = ({ tab }) => {
                   Chattogram and Sylhet division
                   </p>
                   <div className="row d-flex justify-content-center">
-                    {cha_syl?.map((curElem, key) => {
+                    {/* {cha_syl?.map((curElem, key) => {
+                      return (
+                        <> */}
+                          <div className="col-lg-3 col-md-3 col-sm-6 mb-4">
+                            <div className="text-center">
+                              <img
+                                src={getStoragePath(cha_syl[0]?.item_image)}
+                                alt=""
+                                className="rounded new-team-member"
+                              />
+                              <h2 className="font-20 fw-bold pt-2 pb-1">
+                                {cha_syl[0]?.item_name}
+                              </h2>
+                              <p className="about_titledesign position-relative pt-2">
+                                {cha_syl[0]?.item_short_desc || ""}
+                              </p>
+                              <p className="">
+                                {parse(cha_syl[0]?.item_deg_desc || "")}
+                              </p>
+                            </div>
+                          </div>
+                        {/* </>
+                      );
+                    })} */}
+                  </div>
+                  <div className="row d-flex justify-content-center">
+                    {chatt_syl?.map((curElem, key) => {
                       return (
                         <>
                           <div className="col-lg-3 col-md-3 col-sm-6 mb-4">
