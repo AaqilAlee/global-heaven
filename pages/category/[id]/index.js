@@ -118,7 +118,7 @@ const CategoryPage = () => {
         )}
 
         <div className="container">
-          {/*Category Info*/}
+          {/*Category  Info*/}
           <div className="w-100 mb-5">
             <h1 className="fw-bolder text-center mt-5 font-40 font-lato our-product">
               {category?.name && category.name}
@@ -139,7 +139,7 @@ const CategoryPage = () => {
                     <Link href={`/category/${item.id}`}>
                       <Accordion.Header>{item.name}</Accordion.Header>
                     </Link>
-
+{/* side manu */} 
                     {item?.sub_categories?.length ? (
                       <Accordion.Body>
                         <ul>
@@ -157,18 +157,7 @@ const CategoryPage = () => {
                   </Accordion.Item>
                 </Accordion>
               ))}
-              {/* <ul className="stickyContent list-unstyled text-start ps-5 font-20 lh-lg card-border py-3 ">
-                {categories?.map((item, key) => (
-                  <li key={key}>
-                    <Link href={`/category/${item.id}`}>
-                      <button className="d-flex category-btn">
-                        <IoIosArrowRoundForward className="icon-space me-2" />
-                        <span>{item.name}</span>
-                      </button>
-                    </Link>
-                  </li>
-                ))}
-              </ul> */}
+             
             </div>
 
             {/*Category Products*/}

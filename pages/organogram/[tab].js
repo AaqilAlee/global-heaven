@@ -1,8 +1,89 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
+import { getStoragePath } from "../../utils/helpers";
+import parse from "html-react-parser";
+
+import axios from "../../utils/axios";
 import Link from "next/link";
 
 const AboutDetails = ({ tab }) => {
+  const [info, setInfo] = useState([]);
+  const [raj_rong, setRaj_rong] = useState([]);
+  const [bod, setBod] = useState([]);
+  const [khul_bari, setKhul_bari] = useState([]);
+  const [mymdha, setMymdha] = useState([]);
+  const [dhadha, setDhadha] = useState([]);
+  const [cha_syl, setChat_Syl] = useState([]);
+  // const [cha_syl, Chat_Syl] = useState([]);
+
+  const fetchTeamLead = () => {
+    axios.get(`/content-module/18`).then((res) => {
+      setInfo(res?.data[0]?.content_item);
+    });
+  };
+  useEffect(() => {
+    fetchTeamLead();
+  }, []);
+
+  const fetchBoardofDirectors = () => {
+    axios.get(`/content-module/1`).then((res) => {
+      setBod(res?.data[0]?.content_item);
+    });
+  };
+  useEffect(() => {
+    fetchBoardofDirectors();
+  }, []);
+
+  // Rajshahi and Rangpur Division
+  const fetchMemberPerson = () => {
+    axios.get(`/content-module/30`).then((res) => {
+      setRaj_rong(res?.data[0]?.content_item);
+    });
+  };
+  useEffect(() => {
+    fetchMemberPerson();
+  }, []);
+
+  // khulna and barisal
+  const fetchkhul_bari = () => {
+    axios.get(`/content-module/31`).then((res) => {
+      setKhul_bari(res?.data[0]?.content_item);
+    });
+  };
+  useEffect(() => {
+    fetchkhul_bari();
+  }, []);
+
+  // Mymensingh  and dhaka
+  const fetchMymDha = () => {
+    axios.get(`/content-module/32`).then((res) => {
+      setMymdha(res?.data[0]?.content_item);
+    });
+  };
+  useEffect(() => {
+    fetchMymDha();
+  }, []);
+
+  // Dhaka Part-1 and Dhaka Part-2 Division
+  const fetchDhaDha = () => {
+    axios.get(`/content-module/33`).then((res) => {
+      setDhadha(res?.data[0]?.content_item);
+    });
+  };
+  useEffect(() => {
+    fetchDhaDha();
+  }, []);
+
+  // Chattogram and Sylhet division
+  const fetchChat_Syl = () => {
+    axios.get(`/content-module/34`).then((res) => {
+      setChat_Syl(res?.data[0]?.content_item);
+    });
+  };
+  useEffect(() => {
+    fetchChat_Syl();
+  }, []);
+
   return (
     <>
       <section>
@@ -13,249 +94,313 @@ const AboutDetails = ({ tab }) => {
           <Row>
             <Col sm={3}>
               <div className="side_nav_manu_color py-5 mb-5">
-                <Link href="/page/inception" legacyBehavior>
+                <Link href="/organogram/corporate" legacyBehavior>
                   <div
                     className={`text-capitalize about_us_tab_active ${
-                      tab === "inception" ? " active-l" : ""
+                      tab === "corporate" ? " active-l" : ""
                     }`}
                   >
-                    <a>Inception</a>
+                    <a>corporate</a>
                   </div>
                 </Link>
 
-                <Link href="/page/mission-vision" legacyBehavior className="">
+                <Link
+                  href="/organogram/rajshahi_rangpur"
+                  legacyBehavior
+                  className=""
+                >
                   <div
                     className={`text-capitalize about_us_tab_active ${
-                      tab === "mission-vision" ? " active-l" : ""
+                      tab === "rajshahi_rangpur" ? " active-l" : ""
                     }`}
                   >
-                    <a>Mission & Vision</a>
+                    <a>rajshahi and rangpur division</a>
                   </div>
                 </Link>
-                
-                <Link href="/page/factories" legacyBehavior className="">
+
+                <Link
+                  href="/organogram/khulna_barisal"
+                  legacyBehavior
+                  className=""
+                >
                   <div
                     className={`text-capitalize about_us_tab_active ${
-                      tab === "factories" ? " active-l" : ""
+                      tab === "khulna_barisal" ? " active-l" : ""
                     }`}
                   >
-                    <a>factories</a>
+                    <a>khulna and barisal division</a>
                   </div>
                 </Link>
-                <Link href="/page/milestones" legacyBehavior className="">
+                <Link
+                  href="/organogram/mymensingh_dhaka"
+                  legacyBehavior
+                  className=""
+                >
                   <div
                     className={`text-capitalize about_us_tab_active${
-                      tab === "milestones" ? " active-l" : ""
+                      tab === "mymensingh_dhaka" ? " active-l" : ""
                     }`}
                   >
-                    <a>milestones</a>
-                  </div>
-                </Link>
-                <Link href="/page/objective" legacyBehavior className="">
-                  <div
-                    className={`text-capitalize about_us_tab_active ${
-                      tab === "objective" ? " active-l" : ""
-                    }`}
-                  >
-                    <a>Objective</a>
+                    <a>mymensingh and dhaka</a>
                   </div>
                 </Link>
                 <Link
-                  href="/page/sustainability-practics"
+                  href="/organogram/dhaka_dhaka"
                   legacyBehavior
                   className=""
                 >
                   <div
                     className={`text-capitalize about_us_tab_active ${
-                      tab === "sustainability-practics" ? " active-l" : ""
+                      tab === "dhaka_dhaka" ? " active-l" : ""
                     }`}
                   >
-                    <a>sustainability practics</a>
+                    <a>dhaka and dhaka</a>
                   </div>
                 </Link>
-
                 <Link
-                  href="/page/distribution-network"
+                  href="/organogram/chattogram_sylhet"
                   legacyBehavior
                   className=""
                 >
                   <div
-                    className={`text-capitalize about_us_tab_active py-2 ${
-                      tab === "distribution-network" ? " active-l" : ""
+                    className={`text-capitalize about_us_tab_active ${
+                      tab === "chattogram_sylhet" ? " active-l" : ""
                     }`}
                   >
-                    <a>Distribution network</a>
+                    <a>chattogram and sylhet division</a>
                   </div>
                 </Link>
               </div>
             </Col>
             <Col sm={9} className=" px-3 mb-5">
-              {tab && tab == "inception" && (
+              {tab && tab == "corporate" && (
                 <div>
-                  <p className="text-capitalize display-6 theme_text_color fw-semibold pb-4">
-                    inception
+                  <p className="text-capitalize text-center mb-4 display-6 theme_text_color fw-semibold pb-4">
+                    corporate
                   </p>
-                  <p className="text-justify">
-                    The Global Heavens MB (Pvt) Ltd. has started operation as a
-                    manufacturing venture known as “MB International" in 2016.
-                    At the initial period our main product was Gas Regulator and
-                    our main objective was to ensure best quality with immense
-                    customer satisfaction. Today the company has its wide ranges
-                    of Cast Iron products like: Gas Stove, Gas meter, High
-                    Pressure and Low pressure Gas Regulator, Commercial Stove
-                    Etc.
-                  </p>
+                  <div className="d-flex justify-content-center mb-5">
+                    {info.map((curElem, key) => {
+                      return (
+                        <>
+                          <div className="col-lg-4 col-md-4 mb-4">
+                            <div className="text-center">
+                              <Link href={`/comment/${curElem.id}`}>
+                                <img
+                                  src={getStoragePath(curElem.item_image)}
+                                  alt=""
+                                  className="rounded leadership-team"
+                                />
+                              </Link>
+                              <h2 className="font-20 fw-bold pt-2 pb-1">
+                                {curElem.item_name}
+                              </h2>
+                              <p className="about_titledesign position-relative pt-2">
+                                {curElem?.item_short_desc || ""}
+                              </p>
+                              <p className="">
+                                {parse(curElem?.item_deg_desc || "")}
+                              </p>
+                            </div>
+                          </div>
+                        </>
+                      );
+                    })}
+                  </div>
+                  <div className="" style={{ paddingBottom: "30px" }}>
+                    <Row className="d-flex justify-content-md-center">
+                      {bod?.map((curElem, key) => {
+                        return (
+                          <>
+                            <div className="col-lg-3 col-md-3 col-sm-6 mb-4">
+                              <div className="text-center">
+                                <Link href={`/comment/gm/${curElem.id}`}>
+                                  <img
+                                    src={getStoragePath(curElem.item_image)}
+                                    alt=""
+                                    className="rounded leadership-team"
+                                  />
+                                </Link>
+                                <h2 className="font-20 fw-bold pt-2 pb-1">
+                                  {curElem.item_name}
+                                </h2>
+                                <p className="about_titledesign position-relative pt-2">
+                                  {curElem?.item_short_desc || ""}
+                                </p>
+                                <p className="">
+                                  {parse(curElem?.item_deg_desc || "")}
+                                </p>
+                              </div>
+                            </div>
+                          </>
+                        );
+                      })}
+                    </Row>
+                  </div>
                 </div>
               )}
-              {tab && tab == "mission-vision" && (
+              {tab && tab == "rajshahi_rangpur" && (
                 <div>
-                  <p className="text-capitalize display-6 theme_text_color fw-semibold pb-4">
-                    mission vision
+                  <p className="text-capitalize text-center display-6 theme_text_color fw-semibold pb-4">
+                    Rajshahi and Rangpur Division
                   </p>
-                  <p className="text-justify">
-                    Mission: Our aim is to derive customer satisfaction by
-                    ensuring best quality product with reasonable price. We
-                    generate employment with a favorable working environment for
-                    female executives. Vision: The company wants to be the
-                    largest distributor of Gas Stove, Gas Regulator & Commercial
-                    Stove. It also wish to create a brand value and keep a step
-                    ahead for exporting our product. Values: Tomorrow-minded,
-                    knowledge is power, assume best intentions, sustainability.
-                    Goal & Objective: Global Heavens MB ‘s goal is to become the
-                    market leader with best quality and price within 2025.
-                  </p>
+                  <div className="row d-flex justify-content-center">
+                    {raj_rong?.map((curElem, key) => {
+                      return (
+                        <>
+                          <div className="col-lg-3 col-md-3 col-sm-6 mb-4">
+                            <div className="text-center">
+                              <img
+                                src={getStoragePath(curElem.item_image)}
+                                alt=""
+                                className="rounded new-team-member"
+                              />
+                              <h2 className="font-20 fw-bold pt-2 pb-1">
+                                {curElem.item_name}
+                              </h2>
+                              <p className="about_titledesign position-relative pt-2">
+                                {curElem?.item_short_desc || ""}
+                              </p>
+                              <p className="">
+                                {parse(curElem?.item_deg_desc || "")}
+                              </p>
+                            </div>
+                          </div>
+                        </>
+                      );
+                    })}
+                  </div>
                 </div>
               )}
-             
-              {tab && tab == "factories" && (
+              {tab && tab == "khulna_barisal" && (
                 <div>
-                  <p className="text-capitalize display-6 theme_text_color fw-semibold pb-4">
-                    factories
+                  <p className="text-capitalize text-center mb-4 display-6 theme_text_color fw-semibold pb-4">
+                    Khulna and Barisal Division
                   </p>
-                  <p className="text-justify">
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry. Lorem Ipsum has been the industry's
-                    standard dummy text ever since the 1500s, when an unknown
-                    printer took a galley of type and scrambled it to make a
-                    type specimen book. It has survived not only five centuries,
-                    but also the leap into electronic typesetting, remaining
-                    essentially unchanged. It was popularised in the 1960s with
-                    the release of Letraset sheets containing Lorem Ipsum
-                    passages, and more recently with desktop publishing software
-                    like Aldus PageMaker including versions of Lorem Ipsum.
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry. Lorem Ipsum has been the industry's
-                    standard dummy text ever since the 1500s, when an unknown
-                    printer took a galley of type and scrambled it to make a
-                    type specimen book. It has survived not only five centuries,
-                    but also the leap into electronic typesetting, remaining
-                    essentially unchanged. It was popularised in the 1960s with
-                    the release of Letraset sheets containing Lorem Ipsum
-                    passages, and more recently with desktop publishing software
-                    like Aldus PageMaker including versions of Lorem Ipsum.
-                  </p>
+                  <div className="row d-flex justify-content-center">
+                    {khul_bari?.map((curElem, key) => {
+                      return (
+                        <>
+                          <div className="col-lg-3 col-md-3 col-sm-6 mb-4">
+                            <div className="text-center">
+                              <img
+                                src={getStoragePath(curElem.item_image)}
+                                alt=""
+                                className="rounded new-team-member"
+                              />
+                              <h2 className="font-20 fw-bold pt-2 pb-1">
+                                {curElem.item_name}
+                              </h2>
+                              <p className="about_titledesign position-relative pt-2">
+                                {curElem?.item_short_desc || ""}
+                              </p>
+                              <p className="">
+                                {parse(curElem?.item_deg_desc || "")}
+                              </p>
+                            </div>
+                          </div>
+                        </>
+                      );
+                    })}
+                  </div>
                 </div>
               )}
-              {tab && tab == "milestones" && (
+              {tab && tab == "mymensingh_dhaka" && (
                 <div>
-                  <p className="text-capitalize display-6 theme_text_color fw-semibold pb-4">
-                    milestones
+                  <p className="text-capitalize text-center mb-4 display-6 theme_text_color fw-semibold pb-4">
+                    Mymensingh and Dhaka Part-3 Division
                   </p>
-                  <p className="text-justify">
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry. Lorem Ipsum has been the industry's
-                    standard dummy text ever since the 1500s, when an unknown
-                    printer took a galley of type and scrambled it to make a
-                    type specimen book. It has survived not only five centuries,
-                    but also the leap into electronic typesetting, remaining
-                    essentially unchanged. It was popularised in the 1960s with
-                    the release of Letraset sheets containing Lorem Ipsum
-                    passages, and more recently with desktop publishing software
-                    like Aldus PageMaker including versions of Lorem Ipsum.
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry. Lorem Ipsum has been the industry's
-                    standard dummy text ever since the 1500s, when an unknown
-                    printer took a galley of type and scrambled it to make a
-                    type specimen book. It has survived not only five centuries,
-                    but also the leap into electronic typesetting, remaining
-                    essentially unchanged. It was popularised in the 1960s with
-                    the release of Letraset sheets containing Lorem Ipsum
-                    passages, and more recently with desktop publishing software
-                    like Aldus PageMaker including versions of Lorem Ipsum.
-                  </p>
+                  <div className="row d-flex justify-content-center">
+                    {mymdha?.map((curElem, key) => {
+                      return (
+                        <>
+                          <div className="col-lg-3 col-md-3 col-sm-6 mb-4">
+                            <div className="text-center">
+                              <img
+                                src={getStoragePath(curElem.item_image)}
+                                alt=""
+                                className="rounded new-team-member"
+                              />
+                              <h2 className="font-20 fw-bold pt-2 pb-1">
+                                {curElem.item_name}
+                              </h2>
+                              <p className="about_titledesign position-relative pt-2">
+                                {curElem?.item_short_desc || ""}
+                              </p>
+                              <p className="">
+                                {parse(curElem?.item_deg_desc || "")}
+                              </p>
+                            </div>
+                          </div>
+                        </>
+                      );
+                    })}
+                  </div>
                 </div>
               )}
-              {tab && tab == "objective" && (
+              {tab && tab == "dhaka_dhaka" && (
                 <div>
-                  <p className="text-capitalize display-6 theme_text_color fw-semibold pb-4">
-                    objective
+                  <p className="text-capitalize text-center mb-4 display-6 theme_text_color fw-semibold pb-4">
+                  Dhaka Part-1 and Dhaka Part-2 Division
                   </p>
-                  <p className="text-justify">
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry. Lorem Ipsum has been the industry's
-                    standard dummy text ever since the 1500s, when an unknown
-                    printer took a galley of type and scrambled it to make a
-                    type specimen book. It has survived not only five centuries,
-                    but also the leap into electronic typesetting, remaining
-                    essentially unchanged. It was popularised in the 1960s with
-                    the release of Letraset sheets containing Lorem Ipsum
-                    passages, and more recently with desktop publishing software
-                    like Aldus PageMaker including versions of Lorem Ipsum.
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry. Lorem Ipsum has been the industry's
-                    standard dummy text ever since the 1500s, when an unknown
-                    printer took a galley of type and scrambled it to make a
-                    type specimen book. It has survived not only five centuries,
-                    but also the leap into electronic typesetting, remaining
-                    essentially unchanged. It was popularised in the 1960s with
-                    the release of Letraset sheets containing Lorem Ipsum
-                    passages, and more recently with desktop publishing software
-                    like Aldus PageMaker including versions of Lorem Ipsum.
-                  </p>
+                  <div className="row d-flex justify-content-center">
+                    {dhadha?.map((curElem, key) => {
+                      return (
+                        <>
+                          <div className="col-lg-3 col-md-3 col-sm-6 mb-4">
+                            <div className="text-center">
+                              <img
+                                src={getStoragePath(curElem.item_image)}
+                                alt=""
+                                className="rounded new-team-member"
+                              />
+                              <h2 className="font-20 fw-bold pt-2 pb-1">
+                                {curElem.item_name}
+                              </h2>
+                              <p className="about_titledesign position-relative pt-2">
+                                {curElem?.item_short_desc || ""}
+                              </p>
+                              <p className="">
+                                {parse(curElem?.item_deg_desc || "")}
+                              </p>
+                            </div>
+                          </div>
+                        </>
+                      );
+                    })}
+                  </div>
                 </div>
               )}
-              {tab && tab == "sustainability-practics" && (
+              {tab && tab == "chattogram_sylhet" && (
                 <div>
-                  <p className="text-capitalize display-6 theme_text_color fw-semibold pb-4">
-                    sustainability practics
+                  <p className="text-capitalize text-center mb-4 display-6 theme_text_color fw-semibold pb-4">
+                  Chattogram and Sylhet division
                   </p>
-                  <p className="text-justify">
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry. Lorem Ipsum has been the industry's
-                    standard dummy text ever since the 1500s, when an unknown
-                    printer took a galley of type and scrambled it to make a
-                    type specimen book. It has survived not only five centuries,
-                    but also the leap into electronic typesetting, remaining
-                    essentially unchanged. It was popularised in the 1960s with
-                    the release of Letraset sheets containing Lorem Ipsum
-                    passages, and more recently with desktop publishing software
-                    like Aldus PageMaker including versions of Lorem Ipsum.
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry. Lorem Ipsum has been the industry's
-                    standard dummy text ever since the 1500s, when an unknown
-                    printer took a galley of type and scrambled it to make a
-                    type specimen book. It has survived not only five centuries,
-                    but also the leap into electronic typesetting, remaining
-                    essentially unchanged. It was popularised in the 1960s with
-                    the release of Letraset sheets containing Lorem Ipsum
-                    passages, and more recently with desktop publishing software
-                    like Aldus PageMaker including versions of Lorem Ipsum.
-                  </p>
-                </div>
-              )}
-              {tab && tab == "distribution-network" && (
-                <div>
-                  <p className="text-capitalize display-6 theme_text_color fw-semibold pb-4">
-                    distribution network
-                  </p>
-                  <p className="text-justify">
-                    MB Distribution Network is active all over in Bangladesh. It
-                    has a wide and extensive distribution network with which it
-                    enjoys a close working relationship, and which benefits from
-                    its support and expertise. On our network map you will find
-                    a list of MB distributors point, by country, with the
-                    relevant contact details
-                  </p>
+                  <div className="row d-flex justify-content-center">
+                    {cha_syl?.map((curElem, key) => {
+                      return (
+                        <>
+                          <div className="col-lg-3 col-md-3 col-sm-6 mb-4">
+                            <div className="text-center">
+                              <img
+                                src={getStoragePath(curElem.item_image)}
+                                alt=""
+                                className="rounded new-team-member"
+                              />
+                              <h2 className="font-20 fw-bold pt-2 pb-1">
+                                {curElem.item_name}
+                              </h2>
+                              <p className="about_titledesign position-relative pt-2">
+                                {curElem?.item_short_desc || ""}
+                              </p>
+                              <p className="">
+                                {parse(curElem?.item_deg_desc || "")}
+                              </p>
+                            </div>
+                          </div>
+                        </>
+                      );
+                    })}
+                  </div>
                 </div>
               )}
             </Col>
@@ -278,11 +423,11 @@ export async function getStaticProps({ params }) {
 export async function getStaticPaths() {
   const tabs = [
     { tab: "corporate" },
-    { tab: "rajshahi-and-rangpur-division" },
-    { tab: "khulna-and-barisal-division" },
-    { tab: "mymensingh-and-dhaka-part-3-division" },
-    { tab: "dhaka-part-1-and-dhaka-part-2-division" },
-    { tab: "chattogram-and-sylhet-division" },
+    { tab: "rajshahi_rangpur" },
+    { tab: "khulna_barisal" },
+    { tab: "mymensingh_dhaka" },
+    { tab: "dhaka_dhaka" },
+    { tab: "chattogram_sylhet" },
   ];
 
   const paths = tabs.map((item) => ({
