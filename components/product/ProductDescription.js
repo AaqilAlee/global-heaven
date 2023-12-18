@@ -18,7 +18,7 @@ const ProductDescription = ({ inventory }) => {
     ratting_number: "",
     comments: "",
   });
-console.log(reviewAbility)
+  console.log(reviewAbility);
   const hasInventoryReviewAbilityStatus = (inventoryId) => {
     hasInventoryReviewAbility(inventoryId).then((response) => {
       if (response?.data) {
@@ -26,7 +26,7 @@ console.log(reviewAbility)
       }
     });
   };
-// console.log(reviewAbility?.product)
+  // console.log(reviewAbility?.product)
   useEffect(() => {
     if (inventory?.id) {
       hasInventoryReviewAbilityStatus(inventory.id);
@@ -80,13 +80,16 @@ console.log(reviewAbility)
             <p className="font-16 font-lato border-top pt-2 border-danger text-justify">
               {inventory?.product?.product_short_desc}
             </p>
-						{console.log(inventory?.product?.product_video_path)}
+            {console.log(inventory?.product?.product_video_path)}
             {/* </Tab>}
 				</Tabs> */}
           </Col>
           <Col lg={6} className="p-3">
-            <video width="100%" height="240" controls>
-              <source src={getStoragePath(inventory?.product?.product_video_path)} type="video/mp4" />
+            <video width="100%" height="240" autoPlay muted loop>
+              <source
+                src={getStoragePath(inventory?.product?.product_video_path)}
+                type="video/mp4"
+              />
             </video>
           </Col>
         </Row>
