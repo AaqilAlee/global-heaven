@@ -1,84 +1,101 @@
 import Tab from "react-bootstrap/Tab";
 import Tabs from "react-bootstrap/Tabs";
-import React, {Fragment, useEffect, useState} from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import StarRatings from "react-star-ratings";
-import {hasInventoryReviewAbility, saveReview} from "../../services/ReviewServices";
-import {tostify} from "../../utils/helpers";
-import {toast} from "react-toastify";
+import {
+  hasInventoryReviewAbility,
+  saveReview,
+} from "../../services/ReviewServices";
+import { getStoragePath, tostify } from "../../utils/helpers";
+import { toast } from "react-toastify";
+import { Col, Row } from "react-bootstrap";
 
-const ProductDescription = ({inventory}) => {
-	const [key, setKey] = useState("home");
-	const [reviewAbility, setReviewAbility] = useState(false);
+const ProductDescription = ({ inventory }) => {
+  const [key, setKey] = useState("home");
+  const [reviewAbility, setReviewAbility] = useState(false);
 
-	const [formData, setFormData] = useState({
-		ratting_number: '',
-		comments: ''
-	});
+  const [formData, setFormData] = useState({
+    ratting_number: "",
+    comments: "",
+  });
+console.log(reviewAbility)
+  const hasInventoryReviewAbilityStatus = (inventoryId) => {
+    hasInventoryReviewAbility(inventoryId).then((response) => {
+      if (response?.data) {
+        setReviewAbility(response.data.capability);
+      }
+    });
+  };
+// console.log(reviewAbility?.product)
+  useEffect(() => {
+    if (inventory?.id) {
+      hasInventoryReviewAbilityStatus(inventory.id);
+    }
+  }, [inventory?.id]);
 
-	const hasInventoryReviewAbilityStatus = (inventoryId) => {
-		hasInventoryReviewAbility(inventoryId).then((response) => {
-			if (response?.data) {
-				setReviewAbility(response.data.capability);
-			}
-		});
-	}
+  const handleChange = (event) => {
+    event.preventDefault();
 
-	useEffect(() => {
-		if (inventory?.id) {
-			hasInventoryReviewAbilityStatus(inventory.id);
-		}
-	}, [inventory?.id])
+    setFormData({
+      ...formData,
+      [event.target.name]: event.target.value,
+    });
+  };
 
-	const handleChange = (event) => {
-		event.preventDefault();
+  const handleChangeRating = (value) => {
+    setFormData({
+      ...formData,
+      ratting_number: value,
+    });
+  };
 
-		setFormData({
-			...formData,
-			[event.target.name]: event.target.value
-		});
-	}
+  const handleSubmit = (event) => {
+    event.preventDefault();
 
-	const handleChangeRating = (value) => {
-		setFormData({
-			...formData,
-			ratting_number: value
-		});
-	}
+    if (!formData?.ratting_number /*|| !formData?.comments*/) {
+      tostify(toast, "warning", {
+        message: "Invalid review data!",
+      });
+      return false;
+    }
 
-	const handleSubmit = (event) => {
-		event.preventDefault();
+    saveReview({
+      ratting_number: formData?.ratting_number,
+      // comments: formData?.comments,
+      inventory_id: inventory?.id,
+    }).then((response) => {
+      tostify(toast, "success", response);
+      hasInventoryReviewAbilityStatus(inventory.id);
+    });
+  };
 
-		if (!formData?.ratting_number /*|| !formData?.comments*/) {
-			tostify(toast, 'warning', {
-				message: "Invalid review data!"
-			});
-			return false
-		}
-
-		saveReview({
-			ratting_number: formData?.ratting_number,
-			// comments: formData?.comments,
-			inventory_id: inventory?.id,
-		}).then((response) => {
-			tostify(toast, 'success', response);
-			hasInventoryReviewAbilityStatus(inventory.id);
-		});
-	}
-
-	return inventory?.id && (
-		<Fragment>
-			<Tabs id="controlled" activeKey={key} onSelect={(k) => setKey(k)} className="mb-3 border-0">
-				<Tab eventKey="home" title="Description" className="pb-5 ps-0 border-0 font-lato">
-					<p className="font-16 font-lato border-top pt-2 border-warning text-justify">
-						{inventory?.product?.product_short_desc}
-					</p>
-				</Tab>
-				{/* <Tab eventKey="spacification" title="Spacification" className="pb-5 font-lato">
+  return (
+    inventory?.id && (
+      <Fragment>
+        <Row>
+          <Col lg={6}>
+            <h2 className="font-24 fw-semibold pb-2">Product Description</h2>
+            {/* <Tabs id="controlled" activeKey={key} onSelect={(k) => setKey(k)} className="mb-3 border-0">
+				<Tab eventKey="home" title="Description" className="pb-5 ps-0 border-0 font-lato"> */}
+            <p className="font-16 font-lato border-top pt-2 border-danger text-justify">
+              {inventory?.product?.product_short_desc}
+            </p>
+						{console.log(inventory?.product?.product_video_path)}
+            {/* </Tab>}
+				</Tabs> */}
+          </Col>
+          <Col lg={6} className="p-3">
+            <video width="100%" height="240" controls>
+              <source src={getStoragePath(inventory?.product?.product_video_path)} type="video/mp4" />
+            </video>
+          </Col>
+        </Row>
+        {/* <Tab eventKey="spacification" title="Spacification" className="pb-5 font-lato">
 					<div className="detail-table border-top border-warning pt-3">
 						{inventory?.product?.product_long_desc}
 					</div>
 				</Tab> */}
-				{/* <Tab eventKey="review" title="Customer Review" className="pb-5 font-lato">
+        {/* <Tab eventKey="review" title="Customer Review" className="pb-5 font-lato">
 					<div className="border-top border-warning  pt-3">
 						<div className="row">
 							<div className="col-lg-4">
@@ -150,9 +167,10 @@ const ProductDescription = ({inventory}) => {
 						</div>
 					</div>
 				</Tab> */}
-			</Tabs>
-		</Fragment>
-	);
+        {/* </Tabs> */}
+      </Fragment>
+    )
+  );
 };
 
 export default ProductDescription;

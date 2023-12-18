@@ -13,7 +13,7 @@ const AboutDetails = () => {
     <>
       <section>
         <div>
-          <img src="/mushrooms.png" alt="" className="w-100 about_banner" />
+          <img src="/about_us.jpg" alt="" className="w-100 about_banner" />
         </div>
         {/* <Container> */}
         <Tab.Container id="left-tabs-example" defaultActiveKey="#first">

@@ -5,8 +5,6 @@ import axios from "../../utils/axios";
 import { IoEye } from "react-icons/io5";
 import { getStoragePath } from "../../utils/helpers";
 
-
-
 const Catelogue = () => {
   const [catData, setCatdata] = useState([]);
 
@@ -18,7 +16,6 @@ const Catelogue = () => {
   useEffect(() => {
     fetchCatelogue();
   }, []);
-
 
   return (
     <>
@@ -53,7 +50,6 @@ const Catelogue = () => {
 
                               {/* <PDFPage/> */}
                             </Link>
-                              {/* <Pdfviwer/> */}
                           </div>
                         </div>
 

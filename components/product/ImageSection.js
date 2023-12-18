@@ -1,12 +1,12 @@
-import React, { Fragment, useState } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/navigation";
-import { FreeMode, Navigation, Thumbs } from "swiper";
+import React, { useEffect, useState } from "react";
 import { getStoragePath } from "../../utils/helpers";
+
+import "react-inner-image-zoom/lib/InnerImageZoom/styles.css";
+import InnerImageZoom from "react-inner-image-zoom";
 
 const ImageSection = ({ inventory }) => {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
+  const [zoomimg, setZoomImg] = useState();
 
   let thumbnailImage = "";
   let galleryImages = [];
@@ -34,60 +34,23 @@ const ImageSection = ({ inventory }) => {
   }
 
   return (
-    <Fragment>
-      <Swiper
-        style={{
-          "--swiper-navigation-color": "#fff",
-          "--swiper-pagination-color": "#fff",
-        }}
-        spaceBetween={10}
-        navigation={true}
-        thumbs={{ swiper: thumbsSwiper }}
-        modules={[FreeMode, Navigation, Thumbs]}
-        className="mySwiper2"
-      >
-        {thumbnailImage && (
-          <SwiperSlide>
-            <img
-              src={thumbnailImage}
-              alt="product-img-two"
-              className="single-object"
-            />
-          </SwiperSlide>
-        )}
-
-        {galleryImages.map((galleryImage, key) => (
-          <SwiperSlide key={key}>
-            <img
-              src={galleryImage}
-              alt="product-img-two"
-              className="single-object"
-            />
-           
-          </SwiperSlide>
-        ))}
-      </Swiper>
-
-      <Swiper
-        onSwiper={setThumbsSwiper}
-        spaceBetween={10}
-        slidesPerView={4}
-        freeMode={true}
-        watchSlidesProgress={true}
-        modules={[FreeMode, Navigation, Thumbs]}
-        className="prod-detail-small-slider"
-      >
-        {galleryImages.map((galleryImage, key) => (
-          <SwiperSlide key={key}>
-            <img
-              src={galleryImage}
-              alt="product-img-two"
-              className=""
-            />
-          </SwiperSlide>
-        ))}
-      </Swiper>
-    </Fragment>
+    <>
+      {thumbnailImage && (
+        // <img
+        //   src={thumbnailImage}
+        //   alt="product-img-two"
+        //   className="single-object"
+        // />
+        <div className="p-5 ">
+          <InnerImageZoom
+            className="w-100 h-90"
+            zoomType="hover"
+            src={thumbnailImage}
+            zoomSrc={thumbnailImage}
+          />
+        </div>
+      )}
+    </>
   );
 };
 export default ImageSection;
