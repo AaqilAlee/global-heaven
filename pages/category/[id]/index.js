@@ -29,7 +29,6 @@ const CategoryPage = () => {
   const [meta, setMeta] = useState({});
   const [page, setPage] = useState("");
 
-
   // fetch
   useEffect(() => {
     fetchCategories({
@@ -92,11 +91,11 @@ const CategoryPage = () => {
   //   setmovieData(updatedList);
   // };
 
-  const itemfilter=(id)=>{
-    const items = inventories.filter(i => i.product.sub_category.id === id)
-    setFilteredinventory(items)
-    console.log(inventories)
-  }
+  const itemfilter = (id) => {
+    const items = inventories.filter((i) => i.product.sub_category.id === id);
+    setFilteredinventory(items);
+    console.log(inventories);
+  };
 
   return (
     <Fragment>
@@ -133,31 +132,35 @@ const CategoryPage = () => {
           <div className="row">
             {/*Category Sidebar*/}
             <div className="col-lg-3 col-md-4 col-sm-5 mb-3">
-              {categories?.map((item, key) => (
-                <Accordion className="border-0">
-                  <Accordion.Item eventKey="0">
-                    <Link href={`/category/${item.id}`}>
-                      <Accordion.Header>{item.name}</Accordion.Header>
-                    </Link>
-{/* side manu */} 
-                    {item?.sub_categories?.length ? (
-                      <Accordion.Body>
-                        <ul>
-                          {item?.sub_categories &&
-                            item.sub_categories.map((sub_items, key) => (
-                              <li key={sub_items.id}>
-                                <button onClick={(e)=>itemfilter(sub_items.id)}>{sub_items?.name}</button>
-                              </li>
-                            ))}
-                        </ul>
-                      </Accordion.Body>
-                    ) : (
-                      ""
-                    )}
-                  </Accordion.Item>
-                </Accordion>
-              ))}
-             
+              <div className="accordion_focus catagory_side_nv py-3 rounded-1">
+                {categories?.map((item, key) => (
+                  <Accordion className="border-0 bg-transparent rounded-0 ">
+                    <Accordion.Item eventKey="0" className="bg-transparent rounded-0">
+                      <Link href={`/category/${item.id}`}>
+                        <Accordion.Header>{item.name}</Accordion.Header>
+                      </Link>
+                      {item?.sub_categories?.length ? (
+                        <Accordion.Body>
+                          <ul>
+                            {item?.sub_categories &&
+                              item.sub_categories.map((sub_items, key) => (
+                                <li key={sub_items.id} className="pb-2 font-18">
+                                  <button
+                                    onClick={(e) => itemfilter(sub_items.id)}
+                                  >
+                                    {sub_items?.name}
+                                  </button>
+                                </li>
+                              ))}
+                          </ul>
+                        </Accordion.Body>
+                      ) : (
+                        ""
+                      )}
+                    </Accordion.Item>
+                  </Accordion>
+                ))}
+              </div>
             </div>
 
             {/*Category Products*/}
