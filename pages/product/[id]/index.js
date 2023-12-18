@@ -197,7 +197,7 @@ const SingleInventoryPage = () => {
                   zoomPreload={true}
                   width="100%"
                 /> */}
-                <ImageSection inventory={inventory} className="sec-height"/>
+                <ImageSection inventory={inventory} className="sec-height"/> 
               </div>
             </div>
 
