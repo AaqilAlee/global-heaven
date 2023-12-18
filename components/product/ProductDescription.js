@@ -69,6 +69,19 @@ const ProductDescription = ({ inventory }) => {
     });
   };
 
+	const getVideoPath = (videoPath) => {
+    // Base storage path
+    const baseStoragePath = 'https://cms.mbinternationalbd.com/storage/';
+
+    // Check if the video path already contains '/product-video/'
+    if (videoPath && videoPath.includes('/product-video/')) {
+      return videoPath; // Video path is already complete
+    } else {
+      // Concatenate the missing part to the base storage path
+      return baseStoragePath + 'product-video/' + (videoPath || '');
+    }
+  };
+
   return (
     inventory?.id && (
       <Fragment>
@@ -87,7 +100,8 @@ const ProductDescription = ({ inventory }) => {
           <Col lg={6} className="p-3">
             <video width="100%" height="240" autoPlay muted loop>
               <source
-                src={getStoragePath(inventory?.product?.product_video_path)}
+                src={getVideoPath(inventory?.product?.product_video_path)}
+                // src="/videos/video-4.mp4"
                 type="video/mp4"
               />
             </video>
