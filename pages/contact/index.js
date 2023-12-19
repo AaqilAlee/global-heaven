@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from "react";
+import React, { useEffect, useState } from "react";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
@@ -14,6 +14,7 @@ import Button from "react-bootstrap/Button";
 import { makeTitle, tostify } from "../../utils/helpers";
 import { sendContactForm } from "../../services/CommonServices";
 import Head from "next/head";
+import axios from "axios";
 
 const Contact = () => {
   const [isVerified, setIsVerified] = useState(false);
@@ -56,8 +57,19 @@ const Contact = () => {
     });
   };
 
+  const [contact, setContact] = useState();
+  const fetchContactApi = () => {
+    axios.get(`https://api.mbinternationalbd.com/contacts`).then((res) => {
+      setContact(res?.data[0]?.contact_list);
+    });
+  };
+  console.log(contact);
+  useEffect(() => {
+    fetchContactApi();
+  }, []);
+
   return (
-    <Fragment>
+    <>
       <Head>
         <title>{makeTitle("Contact Us")}</title>
       </Head>
@@ -93,26 +105,35 @@ const Contact = () => {
           <div className="contact-height mt-5">
             <Row>
               <Col lg={6} md={5} className="p-0">
-                <div className="mt-5 d-flex justify-content-center align-items-center" style={{height:"600px"}}>
-                  <div>
-                    <div className="d-flex align-items-center mb-4">
-                      <TiLocationOutline className="font-24 theme-text" />
-                      <p className="font-18 font-jost contact-address ms-2">
-                        23/A Banani, Dhaka
-                      </p>
-                    </div>
-                    <div className="d-flex align-items-center mb-4">
-                      <MdOutlineEmail className="font-24 theme-text" />
-                      <p className="font-18 font-jost contact-address ms-2">
-                        demo@gmail.com
-                      </p>
-                    </div>
-                    <div className="d-flex align-items-center mb-4">
-                      <MdOutlinePhoneForwarded className="font-24 theme-text" />
-                      <p className="font-18 font-jost contact-address ms-2">
-                        +880 0000 000 000
-                      </p>
-                    </div>
+                <div className="mt-5 " style={{ height: "600px" }}>
+                  <div className="row">
+                    {contact?.map((contactlist) => {
+                      return (
+                        <>
+                          <Col lg={6}>
+                            <div className="d-flex align-items-center mb-3">
+                              <TiLocationOutline className="font-24 theme-text" />
+                              <p className="font-16 font-jost contact-address ms-2">
+                                {contactlist?.contact_address || ""}
+                              </p>
+                            </div>
+                            <div className="d-flex align-items-center mb-3">
+                              <MdOutlineEmail className="font-16 theme-text" />
+                              <p className="font-16 font-jost contact-address ms-2">
+                              {contactlist?.contact_email || ""}
+                              </p>
+                            </div>
+                            <div className="d-flex align-items-center mb-3">
+                              <MdOutlinePhoneForwarded className="font-16 theme-text" />
+                              <p className="font-16 font-jost contact-address ms-2">
+                              {contactlist?.contact_phone || ""}
+                                
+                              </p>
+                            </div>
+                          </Col>
+                        </>
+                      );
+                    })}
                   </div>
                 </div>
               </Col>
@@ -204,7 +225,7 @@ const Contact = () => {
           </div>
         </Container>
       </section>
-    </Fragment>
+    </>
   );
 };
 

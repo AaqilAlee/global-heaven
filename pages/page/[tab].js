@@ -1,8 +1,89 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
+import axios from "../../utils/axios";
 import Link from "next/link";
+import parse from "html-react-parser";
 
 const AboutDetails = ({ tab }) => {
+  const [inception, setInception] = useState([]);
+  const [mis_vis, setMis_vis] = useState([]);
+
+  const [factories, setFactories] = useState([]);
+  const [milestone, setMilestone] = useState([]);
+  const [objective, setObjective] = useState([]);
+  const [sustain, setSustain] = useState([]);
+  const [distribution, setDistribution] = useState([]);
+
+  // fetch inception part
+  const fetchInception = () => {
+    axios.get(`/content-module/36`).then((res) => {
+      setInception(res?.data[0]?.content_item);
+    });
+  };
+  useEffect(() => {
+    fetchInception();
+  }, []);
+
+  // fetch factories part
+  const fetchFactories = () => {
+    axios.get(`/content-module/37`).then((res) => {
+      setFactories(res?.data[0]?.content_item);
+    });
+  };
+  useEffect(() => {
+    fetchFactories();
+  }, []);
+
+  //  fetch Milestone part
+  const fetchMilestone = () => {
+    axios.get(`/content-module/38`).then((res) => {
+      setMilestone(res?.data[0]?.content_item);
+    });
+  };
+  useEffect(() => {
+    fetchMilestone();
+  }, []);
+
+  // fetch Objective part
+  const fetchObjective = () => {
+    axios.get(`/content-module/39`).then((res) => {
+      setObjective(res?.data[0]?.content_item);
+    });
+  };
+  useEffect(() => {
+    fetchObjective();
+  }, []);
+
+  // fetch Sustainability part
+  const fetchSustainability = () => {
+    axios.get(`/content-module/40`).then((res) => {
+      setSustain(res?.data[0]?.content_item);
+    });
+  };
+  useEffect(() => {
+    fetchSustainability();
+  }, []);
+
+  // fetch mission vission part
+  const fetchMissionVision = () => {
+    axios.get(`/content-module/21`).then((res) => {
+      setMis_vis(res?.data[0]?.content_item);
+    });
+  };
+  useEffect(() => {
+    fetchMissionVision();
+  }, []);
+
+  // fetch Sustainability part
+  const fetchDistribution = () => {
+    axios.get(`/content-module/41`).then((res) => {
+      setDistribution(res?.data[0]?.content_item);
+    });
+  };
+  useEffect(() => {
+    fetchDistribution();
+  }, []);
+
   return (
     <>
       <section>
@@ -32,7 +113,7 @@ const AboutDetails = ({ tab }) => {
                     <a>Mission & Vision</a>
                   </div>
                 </Link>
-                
+
                 <Link href="/page/factories" legacyBehavior className="">
                   <div
                     className={`text-capitalize about_us_tab_active ${
@@ -93,168 +174,71 @@ const AboutDetails = ({ tab }) => {
               {tab && tab == "inception" && (
                 <div>
                   <p className="text-capitalize display-6 theme_text_color fw-semibold pb-4">
-                    inception
+                    {inception[0]?.item_name}
                   </p>
                   <p className="text-justify">
-                    The Global Heavens MB (Pvt) Ltd. has started operation as a
-                    manufacturing venture known as “MB International" in 2016.
-                    At the initial period our main product was Gas Regulator and
-                    our main objective was to ensure best quality with immense
-                    customer satisfaction. Today the company has its wide ranges
-                    of Cast Iron products like: Gas Stove, Gas meter, High
-                    Pressure and Low pressure Gas Regulator, Commercial Stove
-                    Etc.
+                    {parse(inception[0]?.item_long_desc || "")}
+                    {/* {inception[0]?.item_long_desc} */}
                   </p>
                 </div>
               )}
               {tab && tab == "mission-vision" && (
                 <div>
                   <p className="text-capitalize display-6 theme_text_color fw-semibold pb-4">
-                    mission vision
+                    {mis_vis[0]?.item_name}
                   </p>
                   <p className="text-justify">
-                    Mission: Our aim is to derive customer satisfaction by
-                    ensuring best quality product with reasonable price. We
-                    generate employment with a favorable working environment for
-                    female executives. Vision: The company wants to be the
-                    largest distributor of Gas Stove, Gas Regulator & Commercial
-                    Stove. It also wish to create a brand value and keep a step
-                    ahead for exporting our product. Values: Tomorrow-minded,
-                    knowledge is power, assume best intentions, sustainability.
-                    Goal & Objective: Global Heavens MB ‘s goal is to become the
-                    market leader with best quality and price within 2025.
+                    {parse(mis_vis[0]?.item_long_desc || "")}
                   </p>
                 </div>
               )}
-             
               {tab && tab == "factories" && (
                 <div>
-                  <p className="text-capitalize display-6 theme_text_color fw-semibold pb-4">
-                    factories
+                   <p className="text-capitalize display-6 theme_text_color fw-semibold pb-4">
+                    {factories[0]?.item_name || ""}
                   </p>
                   <p className="text-justify">
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry. Lorem Ipsum has been the industry's
-                    standard dummy text ever since the 1500s, when an unknown
-                    printer took a galley of type and scrambled it to make a
-                    type specimen book. It has survived not only five centuries,
-                    but also the leap into electronic typesetting, remaining
-                    essentially unchanged. It was popularised in the 1960s with
-                    the release of Letraset sheets containing Lorem Ipsum
-                    passages, and more recently with desktop publishing software
-                    like Aldus PageMaker including versions of Lorem Ipsum.
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry. Lorem Ipsum has been the industry's
-                    standard dummy text ever since the 1500s, when an unknown
-                    printer took a galley of type and scrambled it to make a
-                    type specimen book. It has survived not only five centuries,
-                    but also the leap into electronic typesetting, remaining
-                    essentially unchanged. It was popularised in the 1960s with
-                    the release of Letraset sheets containing Lorem Ipsum
-                    passages, and more recently with desktop publishing software
-                    like Aldus PageMaker including versions of Lorem Ipsum.
+                    {parse(factories[0]?.item_long_desc || "")}
                   </p>
                 </div>
               )}
               {tab && tab == "milestones" && (
                 <div>
                   <p className="text-capitalize display-6 theme_text_color fw-semibold pb-4">
-                    milestones
+                    {milestone[0]?.item_name || ""}
                   </p>
                   <p className="text-justify">
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry. Lorem Ipsum has been the industry's
-                    standard dummy text ever since the 1500s, when an unknown
-                    printer took a galley of type and scrambled it to make a
-                    type specimen book. It has survived not only five centuries,
-                    but also the leap into electronic typesetting, remaining
-                    essentially unchanged. It was popularised in the 1960s with
-                    the release of Letraset sheets containing Lorem Ipsum
-                    passages, and more recently with desktop publishing software
-                    like Aldus PageMaker including versions of Lorem Ipsum.
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry. Lorem Ipsum has been the industry's
-                    standard dummy text ever since the 1500s, when an unknown
-                    printer took a galley of type and scrambled it to make a
-                    type specimen book. It has survived not only five centuries,
-                    but also the leap into electronic typesetting, remaining
-                    essentially unchanged. It was popularised in the 1960s with
-                    the release of Letraset sheets containing Lorem Ipsum
-                    passages, and more recently with desktop publishing software
-                    like Aldus PageMaker including versions of Lorem Ipsum.
+                    {parse(milestone[0]?.item_long_desc || "")}
                   </p>
                 </div>
               )}
               {tab && tab == "objective" && (
                 <div>
-                  <p className="text-capitalize display-6 theme_text_color fw-semibold pb-4">
-                    objective
+                 <p className="text-capitalize display-6 theme_text_color fw-semibold pb-4">
+                    {objective[0]?.item_name || ""}
                   </p>
                   <p className="text-justify">
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry. Lorem Ipsum has been the industry's
-                    standard dummy text ever since the 1500s, when an unknown
-                    printer took a galley of type and scrambled it to make a
-                    type specimen book. It has survived not only five centuries,
-                    but also the leap into electronic typesetting, remaining
-                    essentially unchanged. It was popularised in the 1960s with
-                    the release of Letraset sheets containing Lorem Ipsum
-                    passages, and more recently with desktop publishing software
-                    like Aldus PageMaker including versions of Lorem Ipsum.
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry. Lorem Ipsum has been the industry's
-                    standard dummy text ever since the 1500s, when an unknown
-                    printer took a galley of type and scrambled it to make a
-                    type specimen book. It has survived not only five centuries,
-                    but also the leap into electronic typesetting, remaining
-                    essentially unchanged. It was popularised in the 1960s with
-                    the release of Letraset sheets containing Lorem Ipsum
-                    passages, and more recently with desktop publishing software
-                    like Aldus PageMaker including versions of Lorem Ipsum.
+                    {parse(objective[0]?.item_long_desc || "")}
                   </p>
                 </div>
               )}
               {tab && tab == "sustainability-practics" && (
                 <div>
-                  <p className="text-capitalize display-6 theme_text_color fw-semibold pb-4">
-                    sustainability practics
+                   <p className="text-capitalize display-6 theme_text_color fw-semibold pb-4">
+                    {sustain[0]?.item_name || ""}
                   </p>
                   <p className="text-justify">
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry. Lorem Ipsum has been the industry's
-                    standard dummy text ever since the 1500s, when an unknown
-                    printer took a galley of type and scrambled it to make a
-                    type specimen book. It has survived not only five centuries,
-                    but also the leap into electronic typesetting, remaining
-                    essentially unchanged. It was popularised in the 1960s with
-                    the release of Letraset sheets containing Lorem Ipsum
-                    passages, and more recently with desktop publishing software
-                    like Aldus PageMaker including versions of Lorem Ipsum.
-                    Lorem Ipsum is simply dummy text of the printing and
-                    typesetting industry. Lorem Ipsum has been the industry's
-                    standard dummy text ever since the 1500s, when an unknown
-                    printer took a galley of type and scrambled it to make a
-                    type specimen book. It has survived not only five centuries,
-                    but also the leap into electronic typesetting, remaining
-                    essentially unchanged. It was popularised in the 1960s with
-                    the release of Letraset sheets containing Lorem Ipsum
-                    passages, and more recently with desktop publishing software
-                    like Aldus PageMaker including versions of Lorem Ipsum.
+                    {parse(sustain[0]?.item_long_desc || "")}
                   </p>
                 </div>
               )}
               {tab && tab == "distribution-network" && (
                 <div>
                   <p className="text-capitalize display-6 theme_text_color fw-semibold pb-4">
-                    distribution network
+                    {distribution[0]?.item_name || ""}
                   </p>
                   <p className="text-justify">
-                    MB Distribution Network is active all over in Bangladesh. It
-                    has a wide and extensive distribution network with which it
-                    enjoys a close working relationship, and which benefits from
-                    its support and expertise. On our network map you will find
-                    a list of MB distributors point, by country, with the
-                    relevant contact details
+                    {parse(distribution[0]?.item_long_desc || "")}
                   </p>
                 </div>
               )}

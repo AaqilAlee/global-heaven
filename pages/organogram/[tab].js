@@ -9,7 +9,7 @@ import Link from "next/link";
 const AboutDetails = ({ tab }) => {
   const [info, setInfo] = useState([]);
   const [raj_rong, setRaj_rong] = useState([]);
-  const raj_rongpur = raj_rong.slice(1)
+  const raj_rongpur = raj_rong.slice(1);
 
   const [bod, setBod] = useState([]);
   const [khul_bari, setKhul_bari] = useState([]);
@@ -22,7 +22,8 @@ const AboutDetails = ({ tab }) => {
 
   const [cha_syl, setChat_Syl] = useState([]);
   const chatt_syl = cha_syl.slice(1);
-  // const [cha_syl, Chat_Syl] = useState([]);
+  const [cro, setCro] = useState([]);
+
 
   const fetchTeamLead = () => {
     axios.get(`/content-module/18`).then((res) => {
@@ -90,6 +91,15 @@ const AboutDetails = ({ tab }) => {
   };
   useEffect(() => {
     fetchChat_Syl();
+  }, []);
+
+  const fetchCRO = () => {
+    axios.get(`/content-module/35`).then((res) => {
+      setCro(res?.data[0]?.content_item);
+    });
+  };
+  useEffect(() => {
+    fetchCRO();
   }, []);
 
   return (
@@ -178,6 +188,15 @@ const AboutDetails = ({ tab }) => {
                     <a>chattogram and sylhet division</a>
                   </div>
                 </Link>
+                <Link href="/organogram/cro" legacyBehavior className="">
+                  <div
+                    className={`text-capitalize about_us_tab_active ${
+                      tab === "cro" ? " active-l" : ""
+                    }`}
+                  >
+                    <a>CRO</a>
+                  </div>
+                </Link>
               </div>
             </Col>
             <Col sm={9} className=" px-3 mb-5">
@@ -255,25 +274,25 @@ const AboutDetails = ({ tab }) => {
                     {/* {raj_rongpur[0]?.map((curElem, key) => {
                       return (
                         <> */}
-                          <div className="col-lg-3 col-md-3 col-sm-6 mb-4">
-                            <div className="text-center">
-                              <img
-                                src={getStoragePath(raj_rong[0]?.item_image)}
-                                alt=""
-                                className="rounded new-team-member"
-                              />
-                              <h2 className="font-20 fw-bold pt-2 pb-1">
-                                {raj_rong[0]?.item_name}
-                              </h2>
-                              <p className="about_titledesign position-relative pt-2">
-                                {raj_rong[0]?.item_short_desc || ""}
-                              </p>
-                              <p className="">
-                                {parse(raj_rong[0]?.item_deg_desc || "")}
-                              </p>
-                            </div>
-                          </div>
-                        {/* </>
+                    <div className="col-lg-3 col-md-3 col-sm-6 mb-4">
+                      <div className="text-center">
+                        <img
+                          src={getStoragePath(raj_rong[0]?.item_image)}
+                          alt=""
+                          className="rounded new-team-member"
+                        />
+                        <h2 className="font-20 fw-bold pt-2 pb-1">
+                          {raj_rong[0]?.item_name}
+                        </h2>
+                        <p className="about_titledesign position-relative pt-2">
+                          {raj_rong[0]?.item_short_desc || ""}
+                        </p>
+                        <p className="">
+                          {parse(raj_rong[0]?.item_deg_desc || "")}
+                        </p>
+                      </div>
+                    </div>
+                    {/* </>
                       );
                     })} */}
                   </div>
@@ -314,25 +333,25 @@ const AboutDetails = ({ tab }) => {
                     {/* {khul_bari?.map((curElem, key) => {
                       return (
                         <> */}
-                          <div className="col-lg-3 col-md-3 col-sm-6 mb-4">
-                            <div className="text-center">
-                              <img
-                                src={getStoragePath(khul_bari[0]?.item_image)}
-                                alt=""
-                                className="rounded new-team-member"
-                              />
-                              <h2 className="font-20 fw-bold pt-2 pb-1">
-                                {khul_bari[0]?.item_name}
-                              </h2>
-                              <p className="about_titledesign position-relative pt-2">
-                                {khul_bari[0]?.item_short_desc || ""}
-                              </p>
-                              <p className="">
-                                {parse(khul_bari[0]?.item_deg_desc || "")}
-                              </p>
-                            </div>
-                          </div>
-                        {/* </>
+                    <div className="col-lg-3 col-md-3 col-sm-6 mb-4">
+                      <div className="text-center">
+                        <img
+                          src={getStoragePath(khul_bari[0]?.item_image)}
+                          alt=""
+                          className="rounded new-team-member"
+                        />
+                        <h2 className="font-20 fw-bold pt-2 pb-1">
+                          {khul_bari[0]?.item_name}
+                        </h2>
+                        <p className="about_titledesign position-relative pt-2">
+                          {khul_bari[0]?.item_short_desc || ""}
+                        </p>
+                        <p className="">
+                          {parse(khul_bari[0]?.item_deg_desc || "")}
+                        </p>
+                      </div>
+                    </div>
+                    {/* </>
                       );
                     })} */}
                   </div>
@@ -373,25 +392,25 @@ const AboutDetails = ({ tab }) => {
                     {/* {mymdha?.map((curElem, key) => {
                       return (
                         <> */}
-                          <div className="col-lg-3 col-md-3 col-sm-6 mb-4">
-                            <div className="text-center">
-                              <img
-                                src={getStoragePath(mymdha[0]?.item_image)}
-                                alt=""
-                                className="rounded new-team-member"
-                              />
-                              <h2 className="font-20 fw-bold pt-2 pb-1">
-                                {mymdha[0]?.item_name}
-                              </h2>
-                              <p className="about_titledesign position-relative pt-2">
-                                {mymdha[0]?.item_short_desc || ""}
-                              </p>
-                              <p className="">
-                                {parse(mymdha[0]?.item_deg_desc || "")}
-                              </p>
-                            </div>
-                          </div>
-                        {/* </>
+                    <div className="col-lg-3 col-md-3 col-sm-6 mb-4">
+                      <div className="text-center">
+                        <img
+                          src={getStoragePath(mymdha[0]?.item_image)}
+                          alt=""
+                          className="rounded new-team-member"
+                        />
+                        <h2 className="font-20 fw-bold pt-2 pb-1">
+                          {mymdha[0]?.item_name}
+                        </h2>
+                        <p className="about_titledesign position-relative pt-2">
+                          {mymdha[0]?.item_short_desc || ""}
+                        </p>
+                        <p className="">
+                          {parse(mymdha[0]?.item_deg_desc || "")}
+                        </p>
+                      </div>
+                    </div>
+                    {/* </>
                       );
                     })} */}
                   </div>
@@ -426,31 +445,31 @@ const AboutDetails = ({ tab }) => {
               {tab && tab == "dhaka_dhaka" && (
                 <div>
                   <p className="text-capitalize text-center mb-4 display-6 theme_text_color fw-semibold pb-4">
-                  Dhaka Part-1 and Dhaka Part-2 Division
+                    Dhaka Part-1 and Dhaka Part-2 Division
                   </p>
                   <div className="row d-flex justify-content-center">
                     {/* {dhadha?.map((curElem, key) => {
                       return (
                         <> */}
-                          <div className="col-lg-3 col-md-3 col-sm-6 mb-4">
-                            <div className="text-center">
-                              <img
-                                src={getStoragePath(dhadha[0]?.item_image)}
-                                alt=""
-                                className="rounded new-team-member"
-                              />
-                              <h2 className="font-20 fw-bold pt-2 pb-1">
-                                {dhadha[0]?.item_name}
-                              </h2>
-                              <p className="about_titledesign position-relative pt-2">
-                                {dhadha[0]?.item_short_desc || ""}
-                              </p>
-                              <p className="">
-                                {parse(dhadha[0]?.item_deg_desc || "")}
-                              </p>
-                            </div>
-                          </div>
-                        {/* </>
+                    <div className="col-lg-3 col-md-3 col-sm-6 mb-4">
+                      <div className="text-center">
+                        <img
+                          src={getStoragePath(dhadha[0]?.item_image)}
+                          alt=""
+                          className="rounded new-team-member"
+                        />
+                        <h2 className="font-20 fw-bold pt-2 pb-1">
+                          {dhadha[0]?.item_name}
+                        </h2>
+                        <p className="about_titledesign position-relative pt-2">
+                          {dhadha[0]?.item_short_desc || ""}
+                        </p>
+                        <p className="">
+                          {parse(dhadha[0]?.item_deg_desc || "")}
+                        </p>
+                      </div>
+                    </div>
+                    {/* </>
                       );
                     })} */}
                   </div>
@@ -485,31 +504,31 @@ const AboutDetails = ({ tab }) => {
               {tab && tab == "chattogram_sylhet" && (
                 <div>
                   <p className="text-capitalize text-center mb-4 display-6 theme_text_color fw-semibold pb-4">
-                  Chattogram and Sylhet division
+                    Chattogram and Sylhet division
                   </p>
                   <div className="row d-flex justify-content-center">
                     {/* {cha_syl?.map((curElem, key) => {
                       return (
                         <> */}
-                          <div className="col-lg-3 col-md-3 col-sm-6 mb-4">
-                            <div className="text-center">
-                              <img
-                                src={getStoragePath(cha_syl[0]?.item_image)}
-                                alt=""
-                                className="rounded new-team-member"
-                              />
-                              <h2 className="font-20 fw-bold pt-2 pb-1">
-                                {cha_syl[0]?.item_name}
-                              </h2>
-                              <p className="about_titledesign position-relative pt-2">
-                                {cha_syl[0]?.item_short_desc || ""}
-                              </p>
-                              <p className="">
-                                {parse(cha_syl[0]?.item_deg_desc || "")}
-                              </p>
-                            </div>
-                          </div>
-                        {/* </>
+                    <div className="col-lg-3 col-md-3 col-sm-6 mb-4">
+                      <div className="text-center">
+                        <img
+                          src={getStoragePath(cha_syl[0]?.item_image)}
+                          alt=""
+                          className="rounded new-team-member"
+                        />
+                        <h2 className="font-20 fw-bold pt-2 pb-1">
+                          {cha_syl[0]?.item_name}
+                        </h2>
+                        <p className="about_titledesign position-relative pt-2">
+                          {cha_syl[0]?.item_short_desc || ""}
+                        </p>
+                        <p className="">
+                          {parse(cha_syl[0]?.item_deg_desc || "")}
+                        </p>
+                      </div>
+                    </div>
+                    {/* </>
                       );
                     })} */}
                   </div>
@@ -533,6 +552,33 @@ const AboutDetails = ({ tab }) => {
                               <p className="">
                                 {parse(curElem?.item_deg_desc || "")}
                               </p>
+                            </div>
+                          </div>
+                        </>
+                      );
+                    })}
+                  </div>
+                </div>
+              )}
+              {tab && tab == "cro" && (
+                <div>
+                  <p className="text-capitalize text-center mb-4 display-6 theme_text_color fw-semibold pb-4">
+                    CRO
+                  </p>
+                  <div className="row d-flex justify-content-start">
+                    {cro?.map((curElem, key) => {
+                      return (
+                        <>
+                          <div className="col-lg-4 col-md-3 col-sm-6 mb-4">
+                            <div className="text-center box_card d-flex justify-content-center align-items-center">
+                              <div>
+                                <h2 className="font-20 fw-bold pt-2 pb-1">
+                                  {curElem?.item_name}
+                                </h2>
+                                <p className="about_titledesign position-relative pt-2">
+                                  {curElem?.item_short_desc || ""}
+                                </p>
+                              </div>
                             </div>
                           </div>
                         </>
@@ -566,6 +612,7 @@ export async function getStaticPaths() {
     { tab: "mymensingh_dhaka" },
     { tab: "dhaka_dhaka" },
     { tab: "chattogram_sylhet" },
+    { tab: "cro" },
   ];
 
   const paths = tabs.map((item) => ({

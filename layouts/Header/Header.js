@@ -341,6 +341,15 @@ const HeaderOld = () => {
 
 
                   </NavDropdown.Item> 
+                  <NavDropdown.Item
+                    as={Link}
+                    href="/organogram/cro"
+                    className="cate-drop text-light text-capitalize all-icons text-dark px-4 py-2 d-block"
+                  >
+                    CRO
+
+
+                  </NavDropdown.Item> 
                 </NavDropdown>
 
                 {/* <NavDropdown

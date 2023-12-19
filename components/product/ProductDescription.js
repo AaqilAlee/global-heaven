@@ -100,7 +100,7 @@ const ProductDescription = ({ inventory }) => {
           <Col lg={6} className="p-3">
             <video width="100%" height="240" controls>
               <source
-                src={getVideoPath(inventory?.product?.product_video_path)}
+                src={getVideoPath(inventory?.product?.product_video_path || '')}
                 // src="/videos/video-4.mp4"
                 type="video/mp4"
               />
