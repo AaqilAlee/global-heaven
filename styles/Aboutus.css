@@ -136,6 +136,11 @@
 	height: 400px;
 	width: 100%;
 }
+.box_card{
+	box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
+	height: 150px;
+	border-radius: 5px;
+}
 
 
 
