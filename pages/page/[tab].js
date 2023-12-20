@@ -187,9 +187,16 @@ const AboutDetails = ({ tab }) => {
                   <p className="text-capitalize display-6 theme_text_color fw-semibold pb-4">
                     {mis_vis[0]?.item_name}
                   </p>
+                  {mis_vis?.map((curElem)=>{
+                    return(
+                      <>
+                      
                   <p className="text-justify">
-                    {parse(mis_vis[0]?.item_long_desc || "")}
+                    {parse(curElem?.item_long_desc || "")}
                   </p>
+                      </>
+                    )
+                  })}
                 </div>
               )}
               {tab && tab == "factories" && (
