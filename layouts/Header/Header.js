@@ -135,7 +135,7 @@ const HeaderOld = () => {
                     </Link>
                   </li> */}
                   <li className="pe-3">
-                    <Link href="/" className="text-light">
+                    <Link href="/career" className="text-light">
                       Career
                     </Link>
                   </li>

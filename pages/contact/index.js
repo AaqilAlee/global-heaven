@@ -8,7 +8,6 @@ import { toast } from "react-toastify";
 import ContactBanner from "../../public/contact.jpg";
 import { TiLocationOutline } from "react-icons/ti";
 import { MdOutlineEmail, MdOutlinePhoneForwarded } from "react-icons/md";
-import ContactImg from "../../public/contact-img.jpg";
 import FloatingLabel from "react-bootstrap/FloatingLabel";
 import Button from "react-bootstrap/Button";
 import { makeTitle, tostify } from "../../utils/helpers";
@@ -111,24 +110,29 @@ const Contact = () => {
                       return (
                         <>
                           <Col lg={6}>
-                            <div className="d-flex align-items-center mb-3">
-                              <TiLocationOutline className="font-24 theme-text" />
-                              <p className="font-16 font-jost contact-address ms-2">
-                                {contactlist?.contact_address || ""}
-                              </p>
-                            </div>
-                            <div className="d-flex align-items-center mb-3">
-                              <MdOutlineEmail className="font-16 theme-text" />
-                              <p className="font-16 font-jost contact-address ms-2">
-                              {contactlist?.contact_email || ""}
-                              </p>
-                            </div>
-                            <div className="d-flex align-items-center mb-3">
-                              <MdOutlinePhoneForwarded className="font-16 theme-text" />
-                              <p className="font-16 font-jost contact-address ms-2">
-                              {contactlist?.contact_phone || ""}
-                                
-                              </p>
+                            <div className="border rounded-1 shadow p-3 contact_list">
+                              <div>
+                                <div className="d-flex align-items-center mb-2">
+                                  <div>
+                                    <TiLocationOutline className="font-18 theme-text" />
+                                  </div>
+                                  <p className="font-16 font-jost contact-address ms-2">
+                                    {contactlist?.contact_address || ""}
+                                  </p>
+                                </div>
+                                <div className="d-flex align-items-center mb-2">
+                                  <MdOutlineEmail className="font-16 theme-text" />
+                                  <p className="font-16 font-jost contact-address ms-2">
+                                    {contactlist?.contact_email || ""}
+                                  </p>
+                                </div>
+                                <div className="d-flex align-items-center mb-2">
+                                  <MdOutlinePhoneForwarded className="font-16 theme-text" />
+                                  <p className="font-16 font-jost contact-address ms-2">
+                                    {contactlist?.contact_phone || ""}
+                                  </p>
+                                </div>
+                              </div>
                             </div>
                           </Col>
                         </>
