@@ -8,7 +8,6 @@ import { toast } from "react-toastify";
 import ContactBanner from "../../public/contact.jpg";
 import { TiLocationOutline } from "react-icons/ti";
 import { MdOutlineEmail, MdOutlinePhoneForwarded } from "react-icons/md";
-import ContactImg from "../../public/contact-img.jpg";
 import FloatingLabel from "react-bootstrap/FloatingLabel";
 import Button from "react-bootstrap/Button";
 import { makeTitle, tostify } from "../../utils/helpers";
