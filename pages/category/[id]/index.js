@@ -92,7 +92,7 @@ const CategoryPage = () => {
   // };
 
   const itemfilter = (id) => {
-    const items = inventories.filter((i) => i.product.sub_category.id === id);
+    const items = inventories.filter((i) => i.product.sub_category?.id === id);
     setFilteredinventory(items);
     console.log(inventories);
   };
