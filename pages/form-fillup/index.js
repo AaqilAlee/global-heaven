@@ -185,7 +185,7 @@ const index = () => {
                     </div>
                   </Col>
                   <div className="mt-5">
-                  <Link href="/form-fillup" className="text-uppercase px-5 py-3 apply_btn glow-on-hover">
+                  <Link href="/form-fillup" className="text-uppercase form_submit_btn apply_btn glow-on-hover">
                     submit
                   </Link>
                 </div>
