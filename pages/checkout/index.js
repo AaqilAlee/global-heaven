@@ -562,14 +562,14 @@ const CheckoutPage = () => {
                       </p>
                       <p className=" font-20 phone_res ">{cart.subTotal} Tk</p>
                     </div>
-                    <div className="d-flex justify-content-center">
+                    {/* <div className="d-flex justify-content-center">
                       <p className="font-lato text-capitalize font-20 pe-2 phone_res fw-semibold">
                         shipping charge :{" "}
                       </p>
                       <p className=" font-20  phone_res">
                         {totalShippingCharge} Tk ({totalWeight.toFixed(2)} kg)
                       </p>
-                    </div>
+                    </div> */}
 
                     <div className="d-flex justify-content-center">
                       <p className="font-lato fw-semibold text-capitalize font-20 pe-2 phone_res">
@@ -581,7 +581,7 @@ const CheckoutPage = () => {
                     </div>
                   </div>
 
-                  <div className="mt-3">
+                  {/* <div className="mt-3">
                     {paymentMethods &&
                         paymentMethods.length > 0 &&
                         paymentMethods.map((paymentMethod, key) => (
@@ -605,7 +605,7 @@ const CheckoutPage = () => {
                               </label>
                             </div>
                         ))}
-                  </div>
+                  </div> */}
 
                   <p className="mt-3 d-flex flex-column">
                     <span><strong>Delivery:</strong> Inside Dhaka in 24 hours, outside Dhaka in 48 hours</span>
@@ -638,7 +638,8 @@ const CheckoutPage = () => {
                   </div>
 
                   <div className="">
-                    <button
+                    {/* <button
+                    
                         type="button"
                         className="d-flex align-items-center justify-content-center text-capitalize place_order_border cursor-pointer font-16 w-100 place-order mt-4 font-lato fw-bold"
                         onClick={(event) => handlePlaceOrder(event)} disabled={isLoading}
@@ -659,7 +660,7 @@ const CheckoutPage = () => {
                             />
                           </span>
                       )} place order
-                    </button>
+                    </button> */}
                   </div>
                 </div>
 
@@ -699,7 +700,7 @@ const CheckoutPage = () => {
                   </div>
                 </div>
 
-                <div className="">
+                {/* <div className="">
                   <p className="text-capitalize py-3 font-16 fw-bold">
                     Company Information:
                   </p>
@@ -729,9 +730,9 @@ const CheckoutPage = () => {
                       </p>
                     </Col>
                   </div>
-                </div>
+                </div> */}
 
-                <div className="">
+                {/* <div className="">
                   <p className="text-capitalize py-3 font-16 fw-bold">
                     Bank Account Info:
                   </p>
@@ -753,7 +754,7 @@ const CheckoutPage = () => {
                       </p>
                     </Col>
                   </div>
-                </div>
+                </div> */}
               </Col>
             </Row>
           </Container>
