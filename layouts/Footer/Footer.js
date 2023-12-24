@@ -14,13 +14,13 @@ const Footer = () => {
                   <img src="/logo/logo3.png" alt="footer logo" className="footer_logo" />
                 </div>
                 <div>
-                  <p className="text-capitalize pb-2">company name</p>
+                  <p className="text-capitalize pb-2">global heaven</p>
                   <p className="text-capitalize pb-2">mirpur-10, Dhaka-1212</p>
                   <p className="text-capitalize pb-2">dhaka, Bangladesh</p>
                 </div>
               </div>
             </Col>
-            <Col lg={3}>
+            {/* <Col lg={3}>
               <div className="logo_side px-3">
                 <div className="colmn_title">
                   <p className="text-white text-capitalize about_title pb-3">
@@ -41,7 +41,7 @@ const Footer = () => {
                   </ul>
                 </div>
               </div>
-            </Col>
+            </Col> */}
             <Col lg={3}>
               <div className="logo_side px-3">
                 <div className="colmn_title">
@@ -97,15 +97,8 @@ const Footer = () => {
       {/* copy right part */}
       <section className="copyright">
         <Container>
-          <div className="d-flex justify-content-between py-3">
-            <div>
-              <ul className="d-flex">
-                <Link href="/" className="pe-4 footer_link_hover"><li>Trems of Use</li></Link>
-                <Link href="/" className="pe-4 footer_link_hover"><li>Privacy</li></Link>
-                <Link href="/" className="pe-4 footer_link_hover"><li>Sitemap</li></Link>
-                <Link href="/" className="pe-4 footer_link_hover"><li>Contact</li></Link>
-              </ul>
-            </div>
+          <div className="d-flex justify-content-center py-3">
+            
             <div className="">
               <p className="fw-semibold">© 2023 MN | All rights reserved</p>
             </div>

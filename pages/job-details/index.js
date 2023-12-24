@@ -1,6 +1,10 @@
 import Link from "next/link";
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
+import { MdLocationPin } from "react-icons/md";
+import { AiFillFileText } from "react-icons/ai";
+import { FaRegCalendarAlt, FaUserPlus } from "react-icons/fa";
+import { GiTimeTrap, GiTakeMyMoney } from "react-icons/gi";
 
 const index = () => {
   return (
@@ -16,7 +20,7 @@ const index = () => {
         <Container>
           <Row>
             <Col lg={8} className="px-5">
-              <div className="job_description my-3 rounded-2 p-5">
+              <div className="job_description my-4 rounded-2 p-5">
                 <div>
                   <h1 className="job-title pb-2">
                     Design Manager, Technology Recruitment Notice (December
@@ -94,19 +98,78 @@ const index = () => {
                     5+ years of experience in the relevant field
                   </p>
                 </div>
+                <div className="mt-5">
+                  <Link href="/form-fillup" className="text-uppercase apply_btn glow-on-hover">
+                    apply now
+                  </Link>
+                  {/* <button class="" type="button">
+                  apply now
+                </button> */}
+                </div>
               </div>
             </Col>
             <Col lg={4} className="pe-5">
-              <div className="job_summery my-3 rounded-2 p-4">
+              <div className="job_summery my-4 rounded-2 p-4">
                 <div className="job_summery_title my-3 text-capitalize font">
                   job summery
                 </div>
-                <div className="d-flex align-items-center">
+                <div className="d-flex align-items-center my-3">
                   <div className="icon">
-                    <div></div>
+                    <MdLocationPin color="#ed1c24" size={"20px"} />
                   </div>
-                  <div>text</div>
+                  <div>
+                    <p className="ps-3">
+                      Lorem Ipsum is simply dummy text of the printing and
+                      typesetting industry.
+                    </p>
+                  </div>
                 </div>
+                <div className="d-flex align-items-center my-3">
+                  <div className="icon">
+                    <AiFillFileText color="#ed1c24" size={"18px"} />
+                  </div>
+                  <div>
+                    <p className="ps-3">Job Type</p>
+                    <p className="ps-3">Full - Time</p>
+                  </div>
+                </div>
+                <div className="d-flex align-items-center my-3">
+                  <div className="icon">
+                    <FaRegCalendarAlt color="#ed1c24" size={"18px"} />
+                  </div>
+                  <div>
+                    <p className="ps-3">Deadline</p>
+                    <p className="ps-3">2024-01-15</p>
+                  </div>
+                </div>
+                <div className="d-flex align-items-center my-3">
+                  <div className="icon">
+                    <GiTimeTrap color="#ed1c24" size={"18px"} />
+                  </div>
+                  <div>
+                    <p className="ps-3">Working Hours</p>
+                    <p className="ps-3">9:00 AM - 6:00 PM</p>
+                  </div>
+                </div>
+                <div className="d-flex align-items-center my-3">
+                  <div className="icon">
+                    <FaUserPlus color="#ed1c24" size={"18px"} />
+                  </div>
+                  <div>
+                    <p className="ps-3 ">No. of Vacancies </p>
+                    <p className="ps-3 ">01</p>
+                  </div>
+                </div>
+                <div className="d-flex align-items-center my-3">
+                  <div className="icon">
+                    <GiTakeMyMoney color="#ed1c24" size={"18px"} />
+                  </div>
+                  <div>
+                    <p className="ps-3 ">Salary Range </p>
+                    <p className="ps-3">BDT 110,000 - BDT 130,000</p>
+                  </div>
+                </div>
+                
               </div>
             </Col>
           </Row>
