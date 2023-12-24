@@ -45,7 +45,9 @@ a {
   color: inherit;
   text-decoration: none;
 }
-
+.form-box-focus:focus{
+  box-shadow: none!important;
+}
 .font-12 {
   font-size: 12px !important;
 }
@@ -112,14 +114,21 @@ a {
 .font-italic {
   font-style: italic;
 }
-.sec-height {
-  height: 500px !important;
-}
+
 .single_demo_img{
   height:400px ;
   width: 100%;
 }
-
+figure {
+  width: 500px;
+  height: 300px;
+  background-repeat: no-repeat;
+  object-fit: contain;
+}
+.iiz__img {
+  max-width: 100%;
+  height: 300px!Important;
+}
 th,
 tr {
   white-space: nowrap;
@@ -678,17 +687,20 @@ nav .nav-link {
   object-fit: contain;
 }
 
-.item-div {
+/* .item-div {
   box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
     rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
-}
+} */
 
 .checkout-btn {
+  width: 100%;
   border: 1px solid var(--theme-color);
-  color: #666;
+  color: #fff;
   transition: all linear 0.3s;
   padding: 7px 15px;
   border-radius: 5px;
+  background-color: var(--theme-color);
+
 }
 
 .checkout-btn:hover {
@@ -706,9 +718,40 @@ nav .nav-link {
   color: #fff !important;
   background-color: #f38120 !important;
 }
-
+.offcanvas-header .btn-close {
+  position: absolute;
+  left: -15px;
+  /* background-image: url(/public/plus.png)!important; */
+}
+.btn-close {
+  box-sizing: content-box;
+  width: 1em;
+  height: 1em;
+  padding: .25em .25em;
+  color: #000;
+  background: url("/w-plus.png") center/1em auto no-repeat!important;
+ 
+  opacity: 1!important;
+}
+button.btn-close {
+  transform: rotate(45deg)!important;
+  background-color: #666!important;
+  border-radius: 50%;
+  transition: all linear 0.3s;
+}
+button.btn-close:hover {
+  background-color: var(--theme-color)!important;
+}
+.offcanvas-title {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
+}
+.offcanvas-header {
+  height: 60px;
+}
 .canvas-height {
-  height: 75% !important;
+  height: 87% !important;
   overflow: scroll;
 }
 
@@ -720,11 +763,11 @@ nav .nav-link {
   display: none;
 }
 
-.check-button {
+/* .check-button {
   position: absolute;
   left: 50%;
   transform: translate(-50%);
-}
+} */
 
 .card-payment {
   height: 50px;
