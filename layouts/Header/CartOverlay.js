@@ -85,7 +85,8 @@ function CartOverlay() {
       >
         <Offcanvas.Header closeButton className="clo_btn">
           <Offcanvas.Title className="text-capitalize text-white d-flex align-items-center">
-          <BiBasket /><p className="ps-3">Total items: ({cart?.items?.length})</p> 
+            <BiBasket />
+            <p className="ps-3">Total items: ({cart?.items?.length})</p>
           </Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body>
@@ -182,9 +183,7 @@ function CartOverlay() {
                 }}
               >
                 <span>checkout</span>
-                <span className="border-start ps-5">
-                  {cart.subTotal}৳
-                </span>
+                <span className="border-start ps-5">{cart.subTotal} tk</span>
               </Link>
             </div>
           </div>
