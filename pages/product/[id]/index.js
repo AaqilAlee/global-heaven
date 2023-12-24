@@ -286,12 +286,13 @@ const SingleInventoryPage = () => {
                   </div>
                 )}
                 <div className="ms-2">
-                  {/* <button type="button"
-                                            className="btn btn-success buy-btn rounded-0 text-capitalize px-4 font-lato"
-                                            onClick={(event) => handleAddToCart(event, inventory, true)}
-                                    >
-                                        buy now
-                                    </button> */}
+                  <button
+                    type="button"
+                    className="btn btn-success buy-btn rounded-0 text-capitalize px-4 font-lato"
+                    onClick={(event) => handleAddToCart(event, inventory, true)}
+                  >
+                    buy now
+                  </button>
                 </div>
                 <div className="ms-2">
                   <button

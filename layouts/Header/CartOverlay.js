@@ -2,6 +2,7 @@ import { Fragment, useState } from "react";
 import Button from "react-bootstrap/Button";
 import Offcanvas from "react-bootstrap/Offcanvas";
 import { IoMdCart } from "react-icons/io";
+import { BiBasket } from "react-icons/bi";
 import { RxCross1 } from "react-icons/rx";
 import Link from "next/link";
 import { useDispatch, useSelector } from "react-redux";
@@ -83,8 +84,8 @@ function CartOverlay() {
         className=" theme_bg"
       >
         <Offcanvas.Header closeButton className="clo_btn">
-          <Offcanvas.Title className="text-uppercase text-white">
-            items
+          <Offcanvas.Title className="text-capitalize text-white d-flex align-items-center">
+          <BiBasket /><p className="ps-3">Total items: ({cart?.items?.length})</p> 
           </Offcanvas.Title>
         </Offcanvas.Header>
         <Offcanvas.Body>
