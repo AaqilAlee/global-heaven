@@ -144,7 +144,7 @@ const HeaderOld = () => {
                       Contact us
                     </Link>
                   </li>
-                  {/* {reIsLoggedIn ? (
+                  {reIsLoggedIn ? (
                     <Fragment>
                       <li className="pe-3 login-modal">
                         <Link href="/my-account" className="text-light">
@@ -177,7 +177,7 @@ const HeaderOld = () => {
                         </Link>
                       </li>
                     </Fragment>
-                  )} */}
+                  )}
                 </ul>
               </div>
             </div>

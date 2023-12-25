@@ -70,7 +70,7 @@ const Footer = () => {
               <div className="logo_side px-3">
                 <div className="colmn_title">
                   <p className="text-white text-capitalize about_title pb-3">
-                    Legal
+                    Legal terms
                   </p>
                 </div>
                 <div>
@@ -87,6 +87,18 @@ const Footer = () => {
                       <li className="text-capitalize pb-2">FAQ</li>
                     </Link>
                   </ul>
+                </div>
+              </div>
+            </Col>
+            <Col lg={3}>
+              <div className="logo_side px-3">
+                <div className="colmn_title">
+                  <p className="text-white text-capitalize about_title pb-3">
+                    payments
+                  </p>
+                </div>
+                <div>
+                  <img src="/payment3.png" alt="" className="img-fluid footer_img"/>
                 </div>
               </div>
             </Col>

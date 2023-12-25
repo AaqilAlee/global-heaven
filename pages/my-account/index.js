@@ -31,7 +31,13 @@ const MyAccountPage = () => {
             <Head>
                 <title>{makeTitle("All Orders")}</title>
             </Head>
-            <section>
+            <section> <div className="career_banner position-relative">
+          <img
+            src="/profile.jpg"
+            alt="career img"
+            className="career_banner_img"
+          />
+        </div>
                 <Container>
                     <Col className="mt-5">
                         <Tab.Container id="left-tabs-example" activeKey={activeKey}>
