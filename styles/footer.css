@@ -27,3 +27,7 @@
 .footer_link_hover:hover{
   color: #ed1c24;
 }
+.footer_img{
+  height: 150px!important;
+  width: auto;
+}
