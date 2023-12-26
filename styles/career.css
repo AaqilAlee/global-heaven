@@ -4,9 +4,10 @@
   height: 350px;
   object-fit: cover;
 }
+
 .career_banner::after {
   position: absolute;
-  content: " ";
+  content: "";
   top: 0;
   left: 0;
   height: 100%;
