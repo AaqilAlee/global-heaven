@@ -123,7 +123,7 @@ const AboutDetails = ({ tab }) => {
                     <a>factories</a>
                   </div>
                 </Link>
-                <Link href="/page/milestones" legacyBehavior className="">
+                {/* <Link href="/page/milestones" legacyBehavior className="">
                   <div
                     className={`text-capitalize about_us_tab_active${
                       tab === "milestones" ? " active-l" : ""
@@ -131,7 +131,7 @@ const AboutDetails = ({ tab }) => {
                   >
                     <a>milestones</a>
                   </div>
-                </Link>
+                </Link> */}
                 <Link href="/page/objective" legacyBehavior className="">
                   <div
                     className={`text-capitalize about_us_tab_active ${
@@ -141,7 +141,7 @@ const AboutDetails = ({ tab }) => {
                     <a>Objective</a>
                   </div>
                 </Link>
-                <Link
+                {/* <Link
                   href="/page/sustainability-practics"
                   legacyBehavior
                   className=""
@@ -153,7 +153,7 @@ const AboutDetails = ({ tab }) => {
                   >
                     <a>sustainability practics</a>
                   </div>
-                </Link>
+                </Link> */}
 
                 <Link
                   href="/page/distribution-network"
@@ -209,7 +209,7 @@ const AboutDetails = ({ tab }) => {
                   </p>
                 </div>
               )}
-              {tab && tab == "milestones" && (
+              {/* {tab && tab == "milestones" && (
                 <div>
                   <p className="text-capitalize display-6 theme_text_color fw-semibold pb-4">
                     {milestone[0]?.item_name || ""}
@@ -218,7 +218,7 @@ const AboutDetails = ({ tab }) => {
                     {parse(milestone[0]?.item_long_desc || "")}
                   </p>
                 </div>
-              )}
+              )} */}
               {tab && tab == "objective" && (
                 <div>
                  <p className="text-capitalize display-6 theme_text_color fw-semibold pb-4">
@@ -229,7 +229,7 @@ const AboutDetails = ({ tab }) => {
                   </p>
                 </div>
               )}
-              {tab && tab == "sustainability-practics" && (
+              {/* {tab && tab == "sustainability-practics" && (
                 <div>
                    <p className="text-capitalize display-6 theme_text_color fw-semibold pb-4">
                     {sustain[0]?.item_name || ""}
@@ -238,7 +238,7 @@ const AboutDetails = ({ tab }) => {
                     {parse(sustain[0]?.item_long_desc || "")}
                   </p>
                 </div>
-              )}
+              )} */}
               {tab && tab == "distribution-network" && (
                 <div>
                   <p className="text-capitalize display-6 theme_text_color fw-semibold pb-4">
