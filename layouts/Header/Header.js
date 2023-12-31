@@ -246,13 +246,13 @@ const HeaderOld = () => {
                   >
                     factories
                   </NavDropdown.Item>
-                  <NavDropdown.Item
+                  {/* <NavDropdown.Item
                     as={Link}
                     href="/page/milestones"
                     className="cate-drop text-light text-capitalize all-icons text-dark px-4 py-2 d-block"
                   >
                     milestones
-                  </NavDropdown.Item>
+                  </NavDropdown.Item> */}
                   <NavDropdown.Item
                     as={Link}
                     href="/page/objective"
@@ -260,13 +260,13 @@ const HeaderOld = () => {
                   >
                     Objective
                   </NavDropdown.Item>
-                  <NavDropdown.Item
+                  {/* <NavDropdown.Item
                     as={Link}
                     href="/page/sustainability-practics"
                     className="cate-drop text-light text-capitalize all-icons text-dark px-4 py-2 d-block"
                   >
                     sustainability practics
-                  </NavDropdown.Item>
+                  </NavDropdown.Item> */}
                   <NavDropdown.Item
                     as={Link}
                     href="/page/distribution-network"
