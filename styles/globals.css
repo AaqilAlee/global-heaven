@@ -980,7 +980,7 @@ banner css starts
 .card-img-top {
   width: 100% !important;
   height: 160px;
-  object-fit: cover !important;
+  object-fit: contain !important;
 }
 
 .combo-pack .slick-dots {
