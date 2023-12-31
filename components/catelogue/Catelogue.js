@@ -55,7 +55,7 @@ const Catelogue = () => {
 
                         <div className="">
                           <p className="py-3 ps-3">
-                            {catalogue?.item_short_desc}
+                            {catalogue?.item_name}
                           </p>
                         </div>
                       </div>
