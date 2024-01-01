@@ -1,4 +1,4 @@
-const Data = [
+export const Data = [
   {
     logo: "",
     company_name: "GLOBAL HEAVENS MB (PVT.)",
@@ -56,4 +56,4 @@ const Data = [
     animation: "fade-right",
   }, 
 ];
-export default Data
+

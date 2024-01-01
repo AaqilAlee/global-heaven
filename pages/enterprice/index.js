@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
-import EnterData from "./Data";
+import {Data} from "../../data/Data";
 
-const index = () => {
-  const [enterprice, setEnterprice] = useState(EnterData);
+const Pndex = () => {
+  const [enterprice, setEnterprice] = useState(Data);
 
   console.log(enterprice);
   return (
@@ -50,4 +50,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default Pndex;
