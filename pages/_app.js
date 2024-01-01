@@ -13,6 +13,7 @@ import "../styles/Aboutus.css";
 import "../styles/catalogue.css";
 import "../styles/comment.css";
 import "../styles/career.css";
+import "../styles/enterprice.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "tailwindcss/tailwind.css";
 import "slick-carousel/slick/slick.css";
