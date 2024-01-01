@@ -44,8 +44,8 @@ const Data = [
     company_name: "	",
     bank_name: "",
     location: "",
-    account_number: '01885927131',
-    animation: "fade-left",
+    account_number: '01885927131', 
+    animation: "fade-left", 
   },
   {
     logo: "/nogod.png",
