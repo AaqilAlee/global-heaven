@@ -129,7 +129,7 @@ const ComboCategoryPage = () => {
                                             id={combo.id}
                                             title={combo.title}
                                             sku={combo.sku}
-                                            categoryName={combo?.combo_category?.name}
+                                            categoryName={combo?.combo_category?.name} 
                                             subCategoryName={combo?.product?.sub_category?.name}
                                             salePrice={combo.sale_price}
                                             offerPrice={combo.offer_price}
