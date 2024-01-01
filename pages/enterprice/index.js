@@ -13,7 +13,7 @@ const index = () => {
           <img
             src="/enter.png"
             alt="career img"
-            className="career_banner_img"
+            className="career_banner_img "
           />
         </div>
         <Container>
