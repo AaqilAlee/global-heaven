@@ -54,6 +54,6 @@ const Data = [
     location: "",
     account_number: '01885927110',
     animation: "fade-right",
-  },
+  }, 
 ];
 export default Data
