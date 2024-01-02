@@ -27,7 +27,7 @@ const index = ({ detail }) => {
                 <p class="align-item pb-3">{detail?.item_long_desc}</p>
                 </div>
                 <div className="pt-5">
-                  <Link href="/board-of-directors" className="back_to_team">Back to Team member</Link>
+                  <Link href="/organogram/corporate" className="back_to_team">Back to Team member</Link>
                 </div>
               </div>
             </div>
