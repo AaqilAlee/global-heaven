@@ -16,20 +16,20 @@ const index = ({ detail }) => {
             <div className="my-5">
               <div className="pb-5">
                 <h1 class="title text-center font-40 fw-bold ">
-                  {detail?.item_name}
+                  {detail?.item_name || ""}
                 </h1>
                 <h1 class="title text-center font-24">
-                  {detail?.item_short_desc}
+                  {detail?.item_short_desc || ""}
                 </h1>
               </div>
               <div class="comment_details">
                 <div>
                   <img
-                    src={getStoragePath(detail?.item_image)}
+                    src={getStoragePath(detail?.item_image) || ""}
                     class="img-class"
                     alt=""
                   />
-                  <p class="align-item pb-3">{detail?.item_long_desc}</p>
+                  <p class="align-item pb-3">{detail?.item_long_desc || ""}</p>
                 </div>
                 <div className="pt-5">
                   <Link href="/board-of-directors" className="back_to_team">
