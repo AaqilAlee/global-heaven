@@ -214,7 +214,7 @@ const AboutDetails = ({ tab }) => {
                   <div className="d-flex justify-content-center">
                     <video
                       // autoPlay
-                      muted
+                      // muted
                       controls
                       className="d-block w-50 h-80 sliderVideo "
                     >
