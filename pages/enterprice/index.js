@@ -32,9 +32,9 @@ const Pndex = () => {
                         className="enterprice_logo py-3"
                       />
                       <h2 className="font-24 fw-bold">
-                        {curElem.company_name || ""}
+                        {curElem.bank_name || ""}
                       </h2>
-                      <p className="font-18">{curElem.bank_name || ""}</p>
+                      <p className="font-18">{curElem.company_name || ""}</p>
                       <p className="font-18">{curElem.location || ""}</p>
                       <p className="font-18">
                         A/C : {curElem.account_number || ""}
