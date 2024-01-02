@@ -3,5 +3,7 @@
    /*transform: translate(-50%); */
 }
 .enterprice_logo{
-  width: 170px;
+  margin-left: 50%;
+  transform: translate(-50%);
+  width: 130px;
 }
