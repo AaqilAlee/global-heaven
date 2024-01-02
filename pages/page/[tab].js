@@ -211,6 +211,16 @@ const AboutDetails = ({ tab }) => {
                       </div>
                     );
                   })}
+                  <div className="d-flex justify-content-center">
+                    <video
+                      // autoPlay
+                      muted
+                      controls
+                      className="d-block w-50 h-80 sliderVideo "
+                    >
+                      <source src="/factory/factory.mp4" type="video/mp4" />
+                    </video>
+                  </div>
                 </div>
               )}
               {/* {tab && tab == "milestones" && (
