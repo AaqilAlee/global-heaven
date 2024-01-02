@@ -141,7 +141,11 @@
 	height: 150px;
 	border-radius: 5px;
 }
-
+.factory_video{
+	height: 350px;
+	width: 100%;
+	object-fit: contain;
+}
 
 
 

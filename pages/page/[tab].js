@@ -211,12 +211,12 @@ const AboutDetails = ({ tab }) => {
                       </div>
                     );
                   })}
-                  <div className="d-flex justify-content-center">
+                  <div className="d-flex justify-content-center mt-5">
                     <video
                       // autoPlay
                       // muted
                       controls
-                      className="d-block w-50 h-80 sliderVideo "
+                      className="d-block factory_video"
                     >
                       <source src="/factory/factory.mp4" type="video/mp4" />
                     </video>
