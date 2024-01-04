@@ -211,7 +211,90 @@ const AboutDetails = ({ tab }) => {
                       </div>
                     );
                   })}
-                  <div className="d-flex justify-content-center mt-5">
+                  <div>
+                    <Row>
+                      <p className="text-center font-30 fw-bold text-capitalize p-5 theme_text_color">
+                        factory images
+                      </p>
+                      <Col lg={4}>
+                        <div className="factory_img_div rounded-3" >
+                          <img
+                            src="/factorywork/1.jpg"
+                            alt=""
+                            className="factory_img shadow rounded-3"
+                          />
+                        </div>
+                      </Col>
+                      <Col lg={4} className="mb-4">
+                        <div className="factory_img_div rounded-3">
+                          <img
+                            src="/factorywork/2.jpg"
+                            alt=""
+                            className="factory_img shadow rounded-3"
+                          />
+                        </div>
+                      </Col>
+                      <Col lg={4} className="mb-4">
+                        <div className="factory_img_div rounded-3">
+                          <img
+                            src="/factorywork/3.jpg"
+                            alt=""
+                            className="factory_img shadow rounded-3"
+                          />
+                        </div>
+                      </Col>
+                      <Col lg={4} className="mb-4">
+                        <div className="factory_img_div rounded-3">
+                          <img
+                            src="/factorywork/4.jpg"
+                            alt=""
+                            className="factory_img shadow rounded-3"
+                          />
+                        </div>
+                      </Col>
+                      <Col lg={4} className="mb-4">
+                        <div className="factory_img_div rounded-3">
+                          <img
+                            src="/factorywork/5.jpg"
+                            alt=""
+                            className="factory_img shadow rounded-3"
+                          />
+                        </div>
+                      </Col>
+                      <Col lg={4} className="mb-4">
+                        <div className="factory_img_div rounded-3">
+                          <img
+                            src="/factorywork/6.jpg"
+                            alt=""
+                            className="factory_img shadow rounded-3"
+                          />
+                        </div>
+                      </Col>
+                      <Col lg={4}>
+                        <div className="factory_img_div rounded-3">
+                          <img
+                            src="/factorywork/7.jpg"
+                            alt=""
+                            className="factory_img shadow rounded-3"
+                          />
+                        </div>
+                      </Col>
+                      <Col lg={4}>
+                        <div className="factory_img_div rounded-3">
+                          <img
+                            src="/factorywork/8.jpg"
+                            alt=""
+                            className="factory_img shadow rounded-3"
+                          />
+                        </div>
+                      </Col>
+                    </Row>
+                  </div>
+                  <p className="text-center font-30 fw-bold text-capitalize p-5 theme_text_color">
+                    factory video
+                  </p>
+
+                  <div className="d-flex justify-content-center">
                     <video
                       // autoPlay
                       // muted
