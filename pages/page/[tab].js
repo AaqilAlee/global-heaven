@@ -217,7 +217,7 @@ const AboutDetails = ({ tab }) => {
                         factory images
                       </p>
                       <Col lg={4}>
-                        <div>
+                        <div className="factory_img_div rounded-3" >
                           <img
                             src="/factorywork/1.jpg"
                             alt=""
@@ -226,7 +226,7 @@ const AboutDetails = ({ tab }) => {
                         </div>
                       </Col>
                       <Col lg={4} className="mb-4">
-                        <div>
+                        <div className="factory_img_div rounded-3">
                           <img
                             src="/factorywork/2.jpg"
                             alt=""
@@ -235,7 +235,7 @@ const AboutDetails = ({ tab }) => {
                         </div>
                       </Col>
                       <Col lg={4} className="mb-4">
-                        <div>
+                        <div className="factory_img_div rounded-3">
                           <img
                             src="/factorywork/3.jpg"
                             alt=""
@@ -244,7 +244,7 @@ const AboutDetails = ({ tab }) => {
                         </div>
                       </Col>
                       <Col lg={4} className="mb-4">
-                        <div>
+                        <div className="factory_img_div rounded-3">
                           <img
                             src="/factorywork/4.jpg"
                             alt=""
@@ -253,7 +253,7 @@ const AboutDetails = ({ tab }) => {
                         </div>
                       </Col>
                       <Col lg={4} className="mb-4">
-                        <div>
+                        <div className="factory_img_div rounded-3">
                           <img
                             src="/factorywork/5.jpg"
                             alt=""
@@ -262,7 +262,7 @@ const AboutDetails = ({ tab }) => {
                         </div>
                       </Col>
                       <Col lg={4} className="mb-4">
-                        <div>
+                        <div className="factory_img_div rounded-3">
                           <img
                             src="/factorywork/6.jpg"
                             alt=""
@@ -271,7 +271,7 @@ const AboutDetails = ({ tab }) => {
                         </div>
                       </Col>
                       <Col lg={4}>
-                        <div>
+                        <div className="factory_img_div rounded-3">
                           <img
                             src="/factorywork/7.jpg"
                             alt=""
@@ -280,7 +280,7 @@ const AboutDetails = ({ tab }) => {
                         </div>
                       </Col>
                       <Col lg={4}>
-                        <div>
+                        <div className="factory_img_div rounded-3">
                           <img
                             src="/factorywork/8.jpg"
                             alt=""

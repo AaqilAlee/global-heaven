@@ -19,72 +19,71 @@
   background-color: #ffdadb;
   border-radius: 20px;
 }
-.marketing_team::after{
-	position: absolute;
-	content: '';
-	left: 0;
-	bottom: 0;
-	height: 2px;
-	width: 100%;
-	background-color: var(--theme-color);
+.marketing_team::after {
+  position: absolute;
+  content: "";
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 100%;
+  background-color: var(--theme-color);
 }
 
 /* ajhsgfekug */
 
-.titledesign{
-	position: relative;
-	padding-top: 10px;
+.titledesign {
+  position: relative;
+  padding-top: 10px;
 }
-.titledesign::after{
-	position: absolute;
-	content: '';
-	top: 1px;
-	left: 50%;
-	transform: translateX(-50%);
-	width: 50px;
-	height: 5px;
-	background-color: #ffa850;
-	border-radius: 50px;
-}
-
-
-.leaderImg{
-	width: 200px;
-	height: 200px;
-	margin: auto;
-	border-radius: 100%;
-	overflow: hidden;
-	border: 2px solid #ffa850;
-}
-.leaderImg img{
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
+.titledesign::after {
+  position: absolute;
+  content: "";
+  top: 1px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50px;
+  height: 5px;
+  background-color: #ffa850;
+  border-radius: 50px;
 }
 
-.leaderName{
-	font-family: 'Corda';
-	margin-top: 10px;
-	font-size: 20px;
-	font-weight: 600;
+.leaderImg {
+  width: 200px;
+  height: 200px;
+  margin: auto;
+  border-radius: 100%;
+  overflow: hidden;
+  border: 2px solid #ffa850;
 }
-.leader_title{
-	padding: 40px 0;
-	color: #ffa850;
-	text-align: center;
-	font-size: 38px;
-	visibility: hidden;
+.leaderImg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
-@media (max-width: 767px){
-	.leader_title{
-		font-size: 28px;
-	}
+.leaderName {
+  font-family: "Corda";
+  margin-top: 10px;
+  font-size: 20px;
+  font-weight: 600;
+}
+.leader_title {
+  padding: 40px 0;
+  color: #ffa850;
+  text-align: center;
+  font-size: 38px;
+  visibility: hidden;
+}
+
+@media (max-width: 767px) {
+  .leader_title {
+    font-size: 28px;
+  }
 }
 .qualitybg {
-	background-size: cover;
-	height: 400px;
-	position: relative;
+  background-size: cover;
+  height: 400px;
+  position: relative;
 }
 
 /* // .bgimg {
@@ -94,73 +93,69 @@
 // 	background: #000;
 // 	z-index: 99999;
 // } */
-.image{
-	position: relative !important;
+.image {
+  position: relative !important;
 }
-.image{
-	position: absolute !important;
-	top: 8%;
-	left: 50%;
-	transform: translate(-50%);
+.image {
+  position: absolute !important;
+  top: 8%;
+  left: 50%;
+  transform: translate(-50%);
 }
-.qualitybg::after{
-	position: absolute;
-	content: '';
-	top: 0;
-	left: 0;
-	 background-color: rgba(228, 227, 227, 0.5);
-	height: 400px;
-	width: 100%;
-	z-index: 999;
+.qualitybg::after {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  background-color: rgba(228, 227, 227, 0.5);
+  height: 400px;
+  width: 100%;
+  z-index: 999;
 }
 
 .productbg {
-	background-size: cover;
-	height: 400px;
-	position: relative;
+  background-size: cover;
+  height: 400px;
+  position: relative;
 }
 
 .bgimg {
-	width: 100%;
-	height: 400px;
-	object-fit: cover;
-	background: #000;
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  background: #000;
 }
 
-.milestone::after{
-	position: absolute;
-	content: '';
-	top: 0;
-	left: 0;
-	 background-color: rgba(228, 227, 227, 0.6);
-	height: 400px;
-	width: 100%;
+.milestone::after {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  background-color: rgba(228, 227, 227, 0.6);
+  height: 400px;
+  width: 100%;
 }
-.box_card{
-	box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
-	height: 150px;
-	border-radius: 5px;
+.box_card {
+  box-shadow: rgba(17, 17, 26, 0.1) 0px 0px 16px;
+  height: 150px;
+  border-radius: 5px;
 }
-.factory_video{
-	height: 300px;
-	width: 50%;
-	object-fit: contain;
+.factory_video {
+  height: 300px;
+  width: 50%;
+  object-fit: contain;
 }
-.factory_img{
-	height: 160px;
-	width: 100%;
-	object-fit: cover;
+.factory_img_div {
+	overflow: hidden;
+
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
+.factory_img {
+	transform: scale(1);
+  height: 160px;
+  width: 100%;
+  object-fit: cover;
+	transition: all linear 0.3s;
+}
+.factory_img:hover {
+	transform: scale(1.1);
+}
