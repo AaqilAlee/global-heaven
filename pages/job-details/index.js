@@ -19,8 +19,8 @@ const index = () => {
         </div>
         <Container>
           <Row>
-            <Col lg={8} className="px-5">
-              <div className="job_description my-4 rounded-2 p-5">
+            <Col lg={8} className="px-lg-5 px-md-5">
+              <div className="job_description my-4 rounded-2 p-4">
                 <div>
                   <h1 className="job-title pb-2">
                     Design Manager, Technology Recruitment Notice (December
@@ -108,7 +108,7 @@ const index = () => {
                 </div>
               </div>
             </Col>
-            <Col lg={4} className="pe-5">
+            <Col lg={4} className="px-3">
               <div className="job_summery my-4 rounded-2 p-4">
                 <div className="job_summery_title my-3 text-capitalize font">
                   job summery

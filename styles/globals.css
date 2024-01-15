@@ -230,8 +230,9 @@ header css starts
 
 .login-bg {
   padding-top: 100px;
-  background: url(../public/login_bg.jpg) no-repeat center; 
-  background:linear-gradient(0deg, rgba(1, 1, 1, 0.5), rgba(0, 0, 0, 0.5)), url(../public/login_bg.jpg)no-repeat center;
+  background: url(../public/login_bg.jpg) no-repeat center;
+  background: linear-gradient(0deg, rgba(1, 1, 1, 0.5), rgba(0, 0, 0, 0.5)),
+    url(../public/login_bg.jpg) no-repeat center;
 
   background-size: cover;
 }
@@ -604,6 +605,19 @@ nav .nav-link {
 }
 .view_all_btn:hover {
   transform: scale(1.05);
+}
+@media (max-width: 576px) {
+  .pro_sec_width {
+    width: 70%;
+  }
+  .pro_sec_title {
+    font-size: 24px !important;
+  }
+  .view_all_btn{
+    position: absolute;
+    right: 16px;
+    margin-top: -65px;
+  }
 }
 /* .view-all-btn:hover {
   color: #fff !important;

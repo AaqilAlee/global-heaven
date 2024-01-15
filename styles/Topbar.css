@@ -1,3 +1,4 @@
+
 .overbanner {
   position: absolute;
   top: 0%;
@@ -8,6 +9,17 @@
 }
 .overbanner2 {
   position: absolute;
+  top: 3.5%;
+  left: 0;
+  right: 0;
+  /* background-color: #221a177b; */
+  /* animation-name: mamun;
+  animation-duration: 1s;*/
+
+  z-index: 999999;
+}
+.overbanner3 {
+  position: absolute;
   top: 5.5%;
   left: 0;
   right: 0;
@@ -17,8 +29,24 @@
 
   z-index: 999999;
 }
-.theme_bg.offcanvas.offcanvas-end.show{
+.res_overbanner2 {
+  position: absolute;
+  top: 5.5%;
+  left: 0;
+  right: 0;
+  /* background-color: #221a177b; */
+  /* animation-name: mamun;
+  animation-duration: 1s;*/
+
   z-index: 999999;
+}
+.theme_bg.offcanvas.offcanvas-end.show {
+  z-index: 999999;
+}
+.open-button {
+  border-radius: 5px;
+  padding: 9px 5px;
+  background-color: #ed1c24!important;
 }
 
 .sticky2 {
@@ -35,6 +63,29 @@
   z-index: 999999;
 }
 .sticky2 .sticky_text_color {
+  color: #2f2f2f !important;
+  font-weight: 600;
+}
+.sticky3 .sticky_text_color2 {
+  color: #fff !important;
+  font-weight: 600;
+}
+
+/* for responsive manu css */
+.sticky3 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  color: #666 !important;
+  animation-name: animate;
+  animation-duration: 1s;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 6px -1px,
+    rgba(0, 0, 0, 0.06) 0px 2px 4px -1px;
+  z-index: 999999;
+}
+.sticky3 .sticky_text_color {
   color: #2f2f2f !important;
   font-weight: 600;
 }
@@ -80,6 +131,7 @@
 }
 .social_icon {
   color: #e1e1e1;
+  padding-right: 15px;
 }
 .after_border::after {
   position: absolute;
@@ -112,7 +164,14 @@
   row-gap: 20px !important;
   column-gap: 15px !important;
 }
-
+.overbanner3{
+  display: none;
+}
+.round-btn{
+  background-color: var(--theme-color);
+  padding: 10px;
+  border-radius: 5px;
+}
 @keyframes myanimation {
   0% {
     height: 0%;
@@ -120,4 +179,43 @@
   100% {
     height: 100%;
   }
+}
+
+/* responsive part */
+@media (max-width: 991px) {
+  .brand-logo {
+    margin-left: 10px;
+  }
+}
+@media (max-width: 767px){
+  .overbanner2 {
+    display: none;
+  }
+  .overbanner3{
+    display: block;
+  }
+}
+@media (max-width: 576px) {
+  .overbanner2 {
+    display: none;
+  }
+  .main-manu-item {
+    height: 80px !important;
+  }
+  .social_icon {
+    padding-right: 5px!important;
+  }
+  .overbanner3{
+    display: block;
+  }
+  .input.form-control.text-black.bg-white.rounded-0.addon_text_box.addon_text_box2{
+    position: absolute;
+    top: -36px;
+    border: none;
+  }
+  .overbanner3 .dropdown-menu.show {
+    transform: translate3d(0px, 0px, 0px)!important;
+    width: 219px!important;
+    }
+  
 }

@@ -8,9 +8,9 @@ const Footer = () => {
       <section className="footer_bg">
         <Container>
           <Row>
-            <Col lg={3}>
+            <Col lg={3} md={3} sm={6}>
               <div className="logo_side px-3">
-                <div>
+                <div >
                   <img src="/logo/logo3.png" alt="footer logo" className="footer_logo" />
                 </div>
                 <div>
@@ -42,7 +42,7 @@ const Footer = () => {
                 </div>
               </div>
             </Col> */}
-            <Col lg={3}>
+            <Col lg={3} md={3} sm={6}>
               <div className="logo_side px-3">
                 <div className="colmn_title">
                   <p className="text-white text-capitalize about_title pb-3">
@@ -66,7 +66,7 @@ const Footer = () => {
                 </div>
               </div>
             </Col>
-            <Col lg={3}>
+            <Col lg={3} md={3} sm={6}>
               <div className="logo_side px-3">
                 <div className="colmn_title">
                   <p className="text-white text-capitalize about_title pb-3">
@@ -90,7 +90,7 @@ const Footer = () => {
                 </div>
               </div>
             </Col>
-            <Col lg={3}>
+            <Col lg={3} md={3} sm={6}>
               <div className="logo_side px-3">
                 <div className="colmn_title">
                   <p className="text-white text-capitalize about_title pb-3">

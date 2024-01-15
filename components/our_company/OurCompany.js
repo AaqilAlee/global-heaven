@@ -9,12 +9,12 @@ const OurCompany = () => {
       <section className="py-5 our_company my-5">
         <Container>
           <Row>
-            <Col lg={5} className="our_company_bg">
-              <div>
-                <img src="/about.jpg" alt="" className="img-fluid rounded-3" />
+            <Col lg={5} md={5}>
+              <div className="pt-md-5">
+                <img src="/about.jpg" alt="" className="img-fluid rounded-3 about_img" />
               </div>
             </Col>
-            <Col lg={7}>
+            <Col lg={7} md={7}>
               <div
                 className="px-3 d-flex align-items-center"
                 // style={{ height: "400px" }}
