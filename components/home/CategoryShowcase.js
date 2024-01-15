@@ -59,18 +59,18 @@ const CategoryShowcase = () => {
     <Fragment>
       <section className="categories">
         <div className="container p-0">
-          <div className="py-5 px-2">
+          <div className="py-5 px-2 res_css">
             <Row>
-              <Col lg={6}>
+              <Col lg={6} md={6}>
                 <h1 className="font-30 text-capitalize">
                   product <span className="theme_text_color">categories</span>
                 </h1>
-                <p className="text-secondary">
+                <p className="text-secondary pb-md-3 pb-sm-3">
                   Stands for sustainable luxury products
                 </p>
               </Col>
-              <Col lg={6}>
-                <p className="font-16 w-50">
+              <Col lg={6} md={6}>
+                <p className="font-16 w-50 product_des text-md-start text-center">
                   From building your home to adorning it, we are here to serve
                   it all. Pick out from a range of our categories to your
                   requirement.
@@ -85,7 +85,7 @@ const CategoryShowcase = () => {
                 {categories &&
                   categories.map((category, key) => {
                     return (
-                      <Col lg={2} key={key} className="my-3 px-0">
+                      <Col lg={2} md={4} sm={6} key={key} className="my-3 px-0">
                         <Link href={`/category/${category.id}`}>
                           <div className="category_one rounded-3 p-3 ">
                             <div className="category d-flex justify-content-start align-items-center">

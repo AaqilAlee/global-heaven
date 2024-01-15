@@ -67,11 +67,15 @@ const CategoryProductScroll = ({ title, categoryId }) => {
         {/*Title Bar*/}
         <div className="container my-5 px-3">
           <div className="row mt-4 mb-3">
-            <div className="col-lg-6">
-              <h1 className=" font-30 text-capitalize text-dark">{title}</h1>
-              <p>Stands for sustainable luxury products </p>
+            <div className="col-lg-6 col-md-6 col-sm-6">
+              <div className="pro_sec_width">
+                <h1 className=" font-30 text-capitalize text-dark pro_sec_title">
+                  {title}
+                </h1>
+                <p>Stands for sustainable luxury products </p>
+              </div>
             </div>
-            <div className="col-lg-6">
+            <div className="col-lg-6 col-md-6 col-sm-6">
               <div className="d-flex justify-content-end">
                 <Link
                   href={`/category/${categoryId}`}

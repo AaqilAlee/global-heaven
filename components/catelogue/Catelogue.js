@@ -29,7 +29,7 @@ const Catelogue = () => {
               {catData?.map((catalogue) => {
                 return (
                   <>
-                    <Col lg={3}>
+                    <Col lg={3} md={6} sm={6}>
                       <div className="bg-white px-0 border shadow rounded">
                         <div className="content">
                           <div className="content-overlay"></div>

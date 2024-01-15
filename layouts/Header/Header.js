@@ -5,7 +5,7 @@ import Nav from "react-bootstrap/Nav";
 import NavDropdown from "react-bootstrap/NavDropdown";
 import { FaUserCircle, FaLinkedinIn, FaYoutube } from "react-icons/fa";
 import { MdOutlineLogout } from "react-icons/md";
-import { BiChevronDown } from "react-icons/bi";
+import { BiChevronDown, BiAlignLeft } from "react-icons/bi";
 import { CiUser } from "react-icons/ci";
 import Image from "next/image";
 import Logo from "../../public/logo/logo3.png";
@@ -15,6 +15,9 @@ import { useRouter } from "next/router";
 import { CgFacebook } from "react-icons/cg";
 import { VscTwitter } from "react-icons/vsc";
 import CartOverlay from "./CartOverlay";
+import Navbar from "react-bootstrap/Navbar";
+import Overlay from "./Overlay";
+import Search from "./Search";
 
 const HeaderOld = () => {
   const router = useRouter();
@@ -61,6 +64,26 @@ const HeaderOld = () => {
     };
   }, []);
 
+  // 
+  const onScroll3 = useCallback((event) => {
+    const { pageYOffset, scrollY } = window;
+    setScrollY(window.pageYOffset);
+    let scrollPosition = 20;
+    if (scrollY > scrollPosition) {
+      document.getElementById("Top2").classList.add("sticky3");
+    } else {
+      document.getElementById("Top2").classList.remove("sticky3");
+    }
+  }, []);
+
+  useEffect(() => {
+    window.addEventListener("scroll", onScroll3, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", onScroll3, { passive: true });
+    };
+  }, []);
+
+
   const [navShow, setNavShow] = useState(false);
   const [drop, setDrop] = useState("dropdown_items");
   const [showItems, setShowItems] = useState(false);
@@ -104,25 +127,25 @@ const HeaderOld = () => {
               <div className="d-flex align-content-center">
                 <Link
                   href="/"
-                  className="pe-4 py-2 footer_link_hover social_icon"
+                  className="py-2 footer_link_hover social_icon"
                 >
                   <CgFacebook />
                 </Link>
                 <Link
                   href="/"
-                  className="pe-4 py-2 footer_link_hover social_icon"
+                  className="py-2 footer_link_hover social_icon"
                 >
                   <VscTwitter />
                 </Link>
                 <Link
                   href="/"
-                  className="pe-4 py-2 footer_link_hover social_icon"
+                  className="py-2 footer_link_hover social_icon"
                 >
                   <FaYoutube />
                 </Link>
                 <Link
                   href="/"
-                  className="pe-4 py-2 footer_link_hover social_icon"
+                  className="py-2 footer_link_hover social_icon"
                 >
                   <FaLinkedinIn />
                 </Link>
@@ -238,7 +261,7 @@ const HeaderOld = () => {
                   >
                     mission & vision
                   </NavDropdown.Item>
-                  
+
                   <NavDropdown.Item
                     as={Link}
                     href="/page/factories"
@@ -312,10 +335,8 @@ const HeaderOld = () => {
                     className="cate-drop text-light text-capitalize all-icons text-dark px-4 py-2 d-block"
                   >
                     Khulna And Barisal Division
-
-
                   </NavDropdown.Item>
-                  
+
                   <NavDropdown.Item
                     as={Link}
                     href="/organogram/mymensingh_dhaka"
@@ -329,8 +350,6 @@ const HeaderOld = () => {
                     className="cate-drop text-light text-capitalize all-icons text-dark px-4 py-2 d-block"
                   >
                     Dhaka Part-1 And Dhaka Part-2 Division
-
-
                   </NavDropdown.Item>
                   <NavDropdown.Item
                     as={Link}
@@ -338,18 +357,14 @@ const HeaderOld = () => {
                     className="cate-drop text-light text-capitalize all-icons text-dark px-4 py-2 d-block"
                   >
                     Chattogram And Sylhet Division
-
-
-                  </NavDropdown.Item> 
+                  </NavDropdown.Item>
                   <NavDropdown.Item
                     as={Link}
                     href="/organogram/cro"
                     className="cate-drop text-light text-capitalize all-icons text-dark px-4 py-2 d-block"
                   >
                     CRO
-
-
-                  </NavDropdown.Item> 
+                  </NavDropdown.Item>
                 </NavDropdown>
 
                 {/* <NavDropdown
@@ -418,7 +433,6 @@ const HeaderOld = () => {
                   </div>
                 </NavDropdown> */}
 
-               
                 <Nav.Link
                   as={Link}
                   href="/enterprice"
@@ -496,49 +510,31 @@ const HeaderOld = () => {
         </section>
 
         {/* for responsive screen */}
-        {/* <section className="bg-dark btn-hover overlay-div">
-          <Navbar bg="dark" expand="lg">
-            <Container className="px-0" fluid>
-              <div className="col-lg-3 col-md-3 me-0" href="#">
-                <NavDropdown
-                  className="p-0 me-auto rounded-0 w-100"
-                  title={
-                    <span className="text-white font-lato px-4 py-3 d-flex align-items-center categories">
-                      <BiAlignLeft size={"15px"} className="me-2" />
-                      CATEGORIES
-                    </span>
-                  }
-                  id="navbarScrollingDropdown"
-                >
-                  <NavDropdown.Item className="text-capitalize all-icons text-dark px-4 py-2 d-block font-lato">
-                    <Link href={`/combo`} className="cate-drop">
-                      Combo Pack
-                    </Link>
-                  </NavDropdown.Item>
-
-                  {categories.map((category, key) => {
-                    return (
-                      <NavDropdown.Item
-                        key={key}
-                        className="text-capitalize all-icons text-dark px-4 py-2 d-block font-lato"
-                      >
-                        <Link
-                          href={`/category/${category.id}`}
-                          className="cate-drop"
-                        >
-                          {category.name}
-                        </Link>
-                      </NavDropdown.Item>
-                    );
-                  })}
-                </NavDropdown>
+        <section
+          id="Top2"
+          className="overbanner3"
+        >
+          <Container className="px-0">
+            <div className="d-flex justify-content-between align-items-center main-manu-item">
+              <div className="">
+                <Link href="/">
+                  <Image
+                    src={Logo}
+                    alt="Picture of the author"
+                    className="brand-logo"
+                  />
+                </Link>
               </div>
-              <div className="col-lg-9" href="#">
+
+              <div className="d-flex align-items-center">
+                <Search />
+                <CartOverlay className="cart_overlay_div" />
                 <Overlay />
               </div>
-            </Container>
-          </Navbar>
-        </section> */}
+              {/* <Overlay/> */}
+            </div>
+          </Container>
+        </section>
       </header>
     </>
   );

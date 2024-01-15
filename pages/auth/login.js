@@ -69,6 +69,7 @@ const LoginPage = () => {
               data-aos="fade-up"
               data-aos-duration="500"
               lg={4}
+              md={6}
               className="login-form-center shadow px-4 py-5 rounded-1 bg-white"
             >
               <h4 className="font-30 pb-4 ps-3 font-lato fw-semibold text-capitalize">

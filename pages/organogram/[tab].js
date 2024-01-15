@@ -110,7 +110,7 @@ const AboutDetails = ({ tab }) => {
         </div>
         <Container>
           <Row>
-            <Col sm={3}>
+            <Col lg={3} md={4}>
               <div className="side_nav_manu_color py-5 mb-5">
                 <Link href="/organogram/corporate" legacyBehavior>
                   <div
@@ -199,7 +199,7 @@ const AboutDetails = ({ tab }) => {
                 </Link>
               </div>
             </Col>
-            <Col sm={9} className=" px-3 mb-5">
+            <Col lg={9}  md={8} className=" px-3 mb-5">
               {tab && tab == "corporate" && (
                 <div>
                   <p className="text-capitalize text-center mb-4 display-6 theme_text_color fw-semibold pb-4">
@@ -209,13 +209,13 @@ const AboutDetails = ({ tab }) => {
                     {info.map((curElem, key) => {
                       return (
                         <>
-                          <div className="col-lg-4 col-md-4 mb-4">
-                            <div className="text-center">
+                          <div className="col-lg-4 col-md-4  col-sm-6 mb-4">
+                            <div className="text-center me-md-3">
                               <Link href={`/comment/${curElem.id}`}>
                                 <img
                                   src={getStoragePath(curElem.item_image)}
                                   alt=""
-                                  className="rounded leadership-team"
+                                  className="img-fluid rounded leadership-team"
                                 />
                               </Link>
                               <h2 className="font-20 fw-bold pt-2 pb-1">
@@ -238,7 +238,7 @@ const AboutDetails = ({ tab }) => {
                       {bod?.map((curElem, key) => {
                         return (
                           <>
-                            <div className="col-lg-3 col-md-3 col-sm-6 mb-4">
+                            <div className="col-lg-3 col-md-4 col-sm-6 mb-4">
                               <div className="text-center">
                                 <Link href={`/comment/gm/${curElem.id}`}>
                                   <img
@@ -274,7 +274,7 @@ const AboutDetails = ({ tab }) => {
                     {/* {raj_rongpur[0]?.map((curElem, key) => {
                       return (
                         <> */}
-                    <div className="col-lg-3 col-md-3 col-sm-6 mb-4">
+                    <div className="col-lg-3 col-md-5 col-sm-6 mb-4">
                       <div className="text-center">
                         <img
                           src={getStoragePath(raj_rong[0]?.item_image)}
@@ -300,7 +300,7 @@ const AboutDetails = ({ tab }) => {
                     {raj_rongpur?.map((curElem, key) => {
                       return (
                         <>
-                          <div className="col-lg-3 col-md-3 col-sm-6 mb-4">
+                          <div className="col-lg-3 col-md-5 col-sm-6 mb-4">
                             <div className="text-center">
                               <img
                                 src={getStoragePath(curElem.item_image)}
@@ -333,7 +333,7 @@ const AboutDetails = ({ tab }) => {
                     {/* {khul_bari?.map((curElem, key) => {
                       return (
                         <> */}
-                    <div className="col-lg-3 col-md-3 col-sm-6 mb-4">
+                    <div className="col-lg-3 col-md-5 col-sm-6 mb-4">
                       <div className="text-center">
                         <img
                           src={getStoragePath(khul_bari[0]?.item_image)}
@@ -359,7 +359,7 @@ const AboutDetails = ({ tab }) => {
                     {khulna_barisal?.map((curElem, key) => {
                       return (
                         <>
-                          <div className="col-lg-3 col-md-3 col-sm-6 mb-4">
+                          <div className="col-lg-3 col-md-5 col-sm-6 mb-4">
                             <div className="text-center">
                               <img
                                 src={getStoragePath(curElem.item_image)}
@@ -392,7 +392,7 @@ const AboutDetails = ({ tab }) => {
                     {/* {mymdha?.map((curElem, key) => {
                       return (
                         <> */}
-                    <div className="col-lg-3 col-md-3 col-sm-6 mb-4">
+                    <div className="col-lg-3 col-md-5 col-sm-6 mb-4">
                       <div className="text-center">
                         <img
                           src={getStoragePath(mymdha[0]?.item_image)}
@@ -418,7 +418,7 @@ const AboutDetails = ({ tab }) => {
                     {mym_barisal?.map((curElem, key) => {
                       return (
                         <>
-                          <div className="col-lg-3 col-md-3 col-sm-6 mb-4">
+                          <div className="col-lg-3 col-md-5 col-sm-6 mb-4">
                             <div className="text-center">
                               <img
                                 src={getStoragePath(curElem.item_image)}
@@ -451,7 +451,7 @@ const AboutDetails = ({ tab }) => {
                     {/* {dhadha?.map((curElem, key) => {
                       return (
                         <> */}
-                    <div className="col-lg-3 col-md-3 col-sm-6 mb-4">
+                    <div className="col-lg-3 col-md-5 col-sm-6 mb-4">
                       <div className="text-center">
                         <img
                           src={getStoragePath(dhadha[0]?.item_image)}
@@ -477,7 +477,7 @@ const AboutDetails = ({ tab }) => {
                     {dha_dha?.map((curElem, key) => {
                       return (
                         <>
-                          <div className="col-lg-3 col-md-3 col-sm-6 mb-4">
+                          <div className="col-lg-3 col-md-5 col-sm-6 mb-4">
                             <div className="text-center">
                               <img
                                 src={getStoragePath(curElem.item_image)}
@@ -510,7 +510,7 @@ const AboutDetails = ({ tab }) => {
                     {/* {cha_syl?.map((curElem, key) => {
                       return (
                         <> */}
-                    <div className="col-lg-3 col-md-3 col-sm-6 mb-4">
+                    <div className="col-lg-3 col-md-5 col-sm-6 mb-4">
                       <div className="text-center">
                         <img
                           src={getStoragePath(cha_syl[0]?.item_image)}
@@ -536,7 +536,7 @@ const AboutDetails = ({ tab }) => {
                     {chatt_syl?.map((curElem, key) => {
                       return (
                         <>
-                          <div className="col-lg-3 col-md-3 col-sm-6 mb-4">
+                          <div className="col-lg-3 col-md-5 col-sm-6 mb-4">
                             <div className="text-center">
                               <img
                                 src={getStoragePath(curElem.item_image)}
@@ -569,7 +569,7 @@ const AboutDetails = ({ tab }) => {
                     {cro?.map((curElem, key) => {
                       return (
                         <>
-                          <div className="col-lg-4 col-md-3 col-sm-6 mb-4">
+                          <div className="col-lg-4 col-md-6 col-sm-6 mb-4">
                             <div className="text-center box_card d-flex justify-content-center align-items-center">
                               <div>
                                 <h2 className="font-20 fw-bold pt-2 pb-1">

@@ -46,7 +46,7 @@ const HomePage = () => {
   return (
     <Fragment>
       <Head>
-        <title>{makeTitle("Home")}</title>
+        <title>Home | Global heaven</title>
       </Head>
 
       {/* <BannerSection /> */}

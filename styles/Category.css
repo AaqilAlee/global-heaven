@@ -97,3 +97,21 @@
   background-image: url(/plus.png);
   transform: var(--bs-accordion-btn-icon-transform);
 }
+@media (max-width: 991px) {
+  .res_css {
+    text-align: center;
+  }
+  .product_des {
+    margin-left: 50%;
+    transform: translate(-50%);
+  }
+}
+@media (max-width: 576px) {
+  .product_des {
+    padding-top: 15px;
+  }
+  .product_des .w-50 {
+    width: 80% !important;
+  }
+  
+}

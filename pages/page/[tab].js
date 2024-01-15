@@ -92,7 +92,7 @@ const AboutDetails = ({ tab }) => {
         </div>
         <Container>
           <Row>
-            <Col sm={3}>
+            <Col lg={3} md={4}>
               <div className="side_nav_manu_color py-5 mb-5">
                 <Link href="/page/inception" legacyBehavior>
                   <div
@@ -170,7 +170,7 @@ const AboutDetails = ({ tab }) => {
                 </Link>
               </div>
             </Col>
-            <Col sm={9} className=" px-3 mb-5">
+            <Col lg={9} md={8} className=" px-3 mb-5">
               {tab && tab == "inception" && (
                 <div>
                   <p className="text-capitalize display-6 theme_text_color fw-semibold pb-4">
@@ -216,8 +216,8 @@ const AboutDetails = ({ tab }) => {
                       <p className="text-center font-30 fw-bold text-capitalize p-5 theme_text_color">
                         factory images
                       </p>
-                      <Col lg={4}>
-                        <div className="factory_img_div rounded-3" >
+                      <Col lg={4} md={6}>
+                        <div className="factory_img_div rounded-3 mb-4">
                           <img
                             src="/factorywork/1.jpg"
                             alt=""
@@ -225,8 +225,8 @@ const AboutDetails = ({ tab }) => {
                           />
                         </div>
                       </Col>
-                      <Col lg={4} className="mb-4">
-                        <div className="factory_img_div rounded-3">
+                      <Col lg={4} md={6}>
+                        <div className="factory_img_div rounded-3 mb-4">
                           <img
                             src="/factorywork/2.jpg"
                             alt=""
@@ -234,8 +234,8 @@ const AboutDetails = ({ tab }) => {
                           />
                         </div>
                       </Col>
-                      <Col lg={4} className="mb-4">
-                        <div className="factory_img_div rounded-3">
+                      <Col lg={4} md={6}>
+                        <div className="factory_img_div rounded-3 mb-4">
                           <img
                             src="/factorywork/3.jpg"
                             alt=""
@@ -243,8 +243,8 @@ const AboutDetails = ({ tab }) => {
                           />
                         </div>
                       </Col>
-                      <Col lg={4} className="mb-4">
-                        <div className="factory_img_div rounded-3">
+                      <Col lg={4} md={6}>
+                        <div className="factory_img_div rounded-3 mb-4">
                           <img
                             src="/factorywork/4.jpg"
                             alt=""
@@ -252,8 +252,8 @@ const AboutDetails = ({ tab }) => {
                           />
                         </div>
                       </Col>
-                      <Col lg={4} className="mb-4">
-                        <div className="factory_img_div rounded-3">
+                      <Col lg={4} md={6}>
+                        <div className="factory_img_div rounded-3 mb-4">
                           <img
                             src="/factorywork/5.jpg"
                             alt=""
@@ -261,8 +261,8 @@ const AboutDetails = ({ tab }) => {
                           />
                         </div>
                       </Col>
-                      <Col lg={4} className="mb-4">
-                        <div className="factory_img_div rounded-3">
+                      <Col lg={4} md={6}>
+                        <div className="factory_img_div rounded-3 mb-4">
                           <img
                             src="/factorywork/6.jpg"
                             alt=""
@@ -270,8 +270,8 @@ const AboutDetails = ({ tab }) => {
                           />
                         </div>
                       </Col>
-                      <Col lg={4}>
-                        <div className="factory_img_div rounded-3">
+                      <Col lg={4} md={6}>
+                        <div className="factory_img_div rounded-3 mb-4">
                           <img
                             src="/factorywork/7.jpg"
                             alt=""
@@ -279,8 +279,8 @@ const AboutDetails = ({ tab }) => {
                           />
                         </div>
                       </Col>
-                      <Col lg={4}>
-                        <div className="factory_img_div rounded-3">
+                      <Col lg={4} md={6}>
+                        <div className="factory_img_div rounded-3 mb-4">
                           <img
                             src="/factorywork/8.jpg"
                             alt=""

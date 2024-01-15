@@ -65,8 +65,8 @@ function CartOverlay() {
 
   return (
     <Fragment>
-      <Search />
-      <Button onClick={handleShow} className="me-2 off-canvas text-danger">
+      {/* <Search /> */}
+      <Button onClick={handleShow} className="off-canvas text-danger">
         <div className="d-flex off_canvas_icon_div">
           <IoMdCart className="off-canvas-icon" />
           <span
