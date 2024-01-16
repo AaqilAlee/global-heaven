@@ -76,35 +76,13 @@ const Contact = () => {
         <div className="terms-banner-div">
           <Image src={ContactBanner} alt="" className="terms-banner" />
         </div>
-        {/* <Container>
-                    <Row>
-                        
-                        <Col lg={4} md={4} sm={4}>
-                            <div className="d-flex justify-content-center mt-5">
-                                <MdOutlineEmail className="font-40 theme-text"/>
-                            </div>
-                            <div className="text-center ">
-                                <h3 className="font-20 font-poppins text-capitalize pt-3">email</h3>
-                                <p className="font-16 font-jost mb-5 contact-address">demoapi@gmail.com</p>
-                            </div>
-                        </Col>
-                        <Col lg={4} md={4} sm={4}>
-                            <div className="d-flex justify-content-center mt-5">
-                                <MdOutlinePhoneForwarded className="font-40 theme-text"/>
-                            </div>
-                            <div className="text-center ">
-                                <h3 className="font-20 font-poppins text-capitalize pt-3">phone</h3>
-                                <p className="font-16 font-jost mb-5 contact-address">+000 000 000 </p>
-                            </div>
-                        </Col>
-                    </Row>
-                </Container> */}
+        
 
         <Container>
           <div className="contact-height mt-5">
             <Row>
-              <Col lg={6} md={5} className="p-0">
-                <div className="mt-5 " style={{ height: "600px" }}>
+              <Col lg={6} md={6} sm={12} className="p-0">
+                <div className="mt-5 ">
                   <div className="row">
                     {contact?.map((contactlist) => {
                       return (
@@ -141,88 +119,90 @@ const Contact = () => {
                   </div>
                 </div>
               </Col>
-              <Col lg={6} md={7} className="form-height">
-                <h4 className="send-message text-center font-24 font-poppins text-capitalize pt-3">
-                  Send us a message
-                </h4>
-                <div className="d-flex justify-content-center">
-                  <p className="text-center font-14 text-secondary w-80 font-poppins text-capitalize pt-3">
-                    Your email address will not be published. <br />
-                    Required fields are marked *
-                  </p>
-                </div>
-                <div className="px-5">
-                  <Form onSubmit={handleSubmit}>
-                    <Form.Group className="mb-2" controlId="">
-                      <Form.Label>Name *</Form.Label>
-                      <Form.Control
-                        name="name"
-                        type="text"
-                        value={formData.name}
-                        onChange={handleChange}
-                        className="rounded-0 contact-form-focus"
-                      />
-                    </Form.Group>
-                    <Form.Group className="mb-2" controlId="">
-                      <Form.Label>Email *</Form.Label>
-                      <Form.Control
-                        name="email"
-                        type="email"
-                        value={formData.email}
-                        onChange={handleChange}
-                        className="rounded-0 contact-form-focus"
-                      />
-                    </Form.Group>
-                    <Form.Group className="mb-2" controlId="">
-                      <Form.Label>Mobile No. *</Form.Label>
-                      <Form.Control
-                        name="mobile"
-                        type="number"
-                        value={formData.mobile}
-                        onChange={handleChange}
-                        className="rounded-0 contact-form-focus"
-                      />
-                    </Form.Group>
-                    <Form.Group className="mb-2" controlId="">
-                      <Form.Label>Subject</Form.Label>
-                      <Form.Control
-                        name="subject"
-                        type="text"
-                        value={formData.subject}
-                        onChange={handleChange}
-                        className="rounded-0 contact-form-focus"
-                      />
-                    </Form.Group>
-                    <Form.Group className="mb-2" controlId="">
-                      <Form.Label>Message</Form.Label>
-                      <FloatingLabel
-                        controlId="floatingTextarea2"
-                        label="Comments"
-                      >
+              <Col lg={6} md={6} sm={12}>
+                <div className="form-height">
+                  <h4 className="send-message text-center font-24 font-poppins text-capitalize pt-3">
+                    Send us a message
+                  </h4>
+                  <div className="d-flex justify-content-center">
+                    <p className="text-center font-14 text-secondary w-80 font-poppins text-capitalize pt-3">
+                      Your email address will not be published. <br />
+                      Required fields are marked *
+                    </p>
+                  </div>
+                  <div className="px-5">
+                    <Form onSubmit={handleSubmit}>
+                      <Form.Group className="mb-2" controlId="">
+                        <Form.Label>Name *</Form.Label>
                         <Form.Control
-                          name="message"
-                          as="textarea"
-                          placeholder="Leave a comment here"
-                          style={{ height: "100px" }}
-                          value={formData.message}
+                          name="name"
+                          type="text"
+                          value={formData.name}
                           onChange={handleChange}
                           className="rounded-0 contact-form-focus"
                         />
-                      </FloatingLabel>
-                    </Form.Group>
+                      </Form.Group>
+                      <Form.Group className="mb-2" controlId="">
+                        <Form.Label>Email *</Form.Label>
+                        <Form.Control
+                          name="email"
+                          type="email"
+                          value={formData.email}
+                          onChange={handleChange}
+                          className="rounded-0 contact-form-focus"
+                        />
+                      </Form.Group>
+                      <Form.Group className="mb-2" controlId="">
+                        <Form.Label>Mobile No. *</Form.Label>
+                        <Form.Control
+                          name="mobile"
+                          type="number"
+                          value={formData.mobile}
+                          onChange={handleChange}
+                          className="rounded-0 contact-form-focus"
+                        />
+                      </Form.Group>
+                      <Form.Group className="mb-2" controlId="">
+                        <Form.Label>Subject</Form.Label>
+                        <Form.Control
+                          name="subject"
+                          type="text"
+                          value={formData.subject}
+                          onChange={handleChange}
+                          className="rounded-0 contact-form-focus"
+                        />
+                      </Form.Group>
+                      <Form.Group className="mb-2" controlId="">
+                        <Form.Label>Message</Form.Label>
+                        <FloatingLabel
+                          controlId="floatingTextarea2"
+                          label="Comments"
+                        >
+                          <Form.Control
+                            name="message"
+                            as="textarea"
+                            placeholder="Leave a comment here"
+                            style={{ height: "100px" }}
+                            value={formData.message}
+                            onChange={handleChange}
+                            className="rounded-0 contact-form-focus"
+                          />
+                        </FloatingLabel>
+                      </Form.Group>
 
-                    {/* <Form.Group className="mb-2" controlId="">
+                      {/* <Form.Group className="mb-2" controlId="">
                                         <ReCAPTCHA onVerify={setIsVerified}/>
                                     </Form.Group> */}
 
-                    <Button
-                      variant="primary"
-                      type="submit"
-                      className="contact-form-btn font-16 rounded-0 px-5 py-2 mt-2 mb-4"
-                    >
-                      Submit
-                    </Button>
-                  </Form>
+                      <Button
+                        variant="primary"
+                        type="submit"
+                        className="contact-form-btn font-16 rounded-0 px-5 py-2 mt-2 mb-4"
+                      >
+                        Submit
+                      </Button>
+                    </Form>
+                  </div>
                 </div>
               </Col>
             </Row>

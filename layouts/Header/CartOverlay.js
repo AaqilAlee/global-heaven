@@ -68,7 +68,7 @@ function CartOverlay() {
       {/* <Search /> */}
       <Button onClick={handleShow} className="off-canvas text-danger">
         <div className="d-flex off_canvas_icon_div">
-          <IoMdCart className="off-canvas-icon" />
+          <IoMdCart className="off-canvas-icon res_icons font-24" />
           <span
             className="badge text-danger text-white pe-0"
             style={{ marginTop: "-10px", marginLeft: "-10px" }}

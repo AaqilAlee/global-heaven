@@ -97,6 +97,15 @@
   background-image: url(/plus.png);
   transform: var(--bs-accordion-btn-icon-transform);
 }
+
+@media (min-width: 1201px){
+  .combo-pack .slick-prev:before {
+    left: 10px;
+  }
+  .combo-pack .slick-next:before {
+    right: 9px;
+}
+}
 @media (max-width: 991px) {
   .res_css {
     text-align: center;

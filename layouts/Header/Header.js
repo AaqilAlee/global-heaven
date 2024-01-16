@@ -158,26 +158,26 @@ const HeaderOld = () => {
                     </Link>
                   </li> */}
                   <li className="pe-3">
-                    <Link href="/career" className="text-light">
+                    <Link href="/career" className="text-light short_manu">
                       Career
                     </Link>
                   </li>
                   <li className="pe-3">
-                    <Link href="/contact" className="text-light">
+                    <Link href="/contact" className="text-light short_manu">
                       Contact us
                     </Link>
                   </li>
                   {reIsLoggedIn ? (
                     <Fragment>
                       <li className="pe-3 login-modal">
-                        <Link href="/my-account" className="text-light">
+                        <Link href="/my-account" className="text-light short_manu">
                           My Account
                         </Link>
                       </li>
                       <li className="">
                         <Link
                           href="/auth/logout"
-                          className="text-light"
+                          className="text-light short_manu"
                           onClick={(e) => {
                             e.preventDefault();
                             logout();
@@ -190,12 +190,12 @@ const HeaderOld = () => {
                   ) : (
                     <Fragment>
                       <li className="pe-3 login-modal">
-                        <Link href="/auth/login" className="text-light">
+                        <Link href="/auth/login" className="text-light short_manu">
                           Login
                         </Link>
                       </li>
                       <li className="">
-                        <Link href="/auth/register" className="text-light">
+                        <Link href="/auth/register" className="text-light short_manu">
                           Sign Up
                         </Link>
                       </li>
