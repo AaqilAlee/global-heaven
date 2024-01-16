@@ -26,19 +26,19 @@ const index = () => {
                     Business Development Executive
                   </Link>
                 </h1>
-                <div className="d-flex">
+                <div className="d-flex job_spa_detail">
                   <div>
-                    <p className="text-capitalize me-5 font-18 text-secondary">
+                    <p className="text-capitalize me-5 font-18 text-secondary job_spa_text">
                       job type : full time
                     </p>
                   </div>
                   <div>
-                    <p className="text-capitalize me-5 font-18 text-secondary">
+                    <p className="text-capitalize me-5 font-18 text-secondary job_spa_text">
                       vacancies : 05
                     </p>
                   </div>
                   <div>
-                    <p className="text-capitalize font-18 text-secondary">
+                    <p className="text-capitalize font-18 text-secondary job_spa_text">
                       deadline : January 18, 2024
                     </p>
                   </div>
@@ -65,19 +65,19 @@ const index = () => {
                     Business Development Executive
                   </Link>
                 </h1>
-                <div className="d-flex">
+                <div className="d-flex job_spa_detail">
                   <div>
-                    <p className="text-capitalize me-5 font-18 text-secondary">
+                    <p className="text-capitalize me-5 font-18 text-secondary job_spa_text">
                       job type : full time
                     </p>
                   </div>
                   <div>
-                    <p className="text-capitalize me-5 font-18 text-secondary">
+                    <p className="text-capitalize me-5 font-18 text-secondary job_spa_text">
                       vacancies : 05
                     </p>
                   </div>
                   <div>
-                    <p className="text-capitalize font-18 text-secondary">
+                    <p className="text-capitalize font-18 text-secondary job_spa_text">
                       deadline : January 18, 2024
                     </p>
                   </div>
@@ -104,19 +104,19 @@ const index = () => {
                     Business Development Executive
                   </Link>
                 </h1>
-                <div className="d-flex">
+                <div className="d-flex job_spa_detail">
                   <div>
-                    <p className="text-capitalize me-5 font-18 text-secondary">
+                    <p className="text-capitalize me-5 font-18 text-secondary job_spa_text">
                       job type : full time
                     </p>
                   </div>
                   <div>
-                    <p className="text-capitalize me-5 font-18 text-secondary">
+                    <p className="text-capitalize me-5 font-18 text-secondary job_spa_text">
                       vacancies : 05
                     </p>
                   </div>
                   <div>
-                    <p className="text-capitalize font-18 text-secondary">
+                    <p className="text-capitalize font-18 text-secondary job_spa_text">
                       deadline : January 18, 2024
                     </p>
                   </div>

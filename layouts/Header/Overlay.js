@@ -31,7 +31,7 @@ function Overlay() {
     <Fragment>
       <div className="main">
         <button onClick={openSearch} className="open-button me-3">
-          <FaBars className="font-30" size={"25px"} />
+          <FaBars className="font-24 res_icons" size={"25px"} />
         </button>
       </div>
 

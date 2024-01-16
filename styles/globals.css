@@ -2098,18 +2098,18 @@ how to but part css start
   object-fit: cover;
 }
 
-.contact-height {
+/* .contact-height {
   height: 700px;
-}
+} */
 
-.contact-image {
+/* .contact-image {
   height: 700px;
   object-fit: cover;
-}
+} */
 
-.form-height {
+/* .form-height {
   height: 700px;
-}
+} */
 
 .contact-form-focus:focus {
   box-shadow: none !important;

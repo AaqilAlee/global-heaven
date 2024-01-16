@@ -33,6 +33,11 @@
   background-color: var(--theme-color);
 }
 .open_job {
+  height: 50px;
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   transition: all linear 0.3s;
 }
 .open_job:hover {
@@ -40,35 +45,35 @@
     rgba(17, 17, 26, 0.1) 0px 8px 24px, rgba(17, 17, 26, 0.1) 0px 16px 56px;
 }
 
-.link_btn:hover .link_icon{
-  animation: mymove 1s ;
+.link_btn:hover .link_icon {
+  animation: mymove 1s;
 }
 @keyframes mymove {
   0% {
     transform: rotate(0deg);
   }
-  100%{
+  100% {
     transform: rotate(360deg);
   }
 }
 
 /* job details */
-.job_description{
+.job_description {
   border: 3px solid #606060;
 }
-.job_summery{
+.job_summery {
   border: 3px solid #606060;
 }
-.job-title{
+.job-title {
   font-size: 25px;
   font-weight: 700;
 }
-.job_summery_title  {
+.job_summery_title {
   /* color: #fff; */
   font-size: 25px;
   font-weight: 700;
 }
-.apply_btn{
+.apply_btn {
   border: 2px solid #666;
   padding: 7px 15px;
   color: #fff;
@@ -77,38 +82,48 @@
   border-radius: 3px;
   transition: all linear 0.3s;
 }
-.apply_btn:hover{
+.apply_btn:hover {
   color: #fff;
   background-color: var(--theme-color);
 }
-.user_application_form{
+.user_application_form {
   margin-left: 50%;
   transform: translate(-50%);
 }
-.form_submit_btn{
-  padding: 7px 15px!important;
+.form_submit_btn {
+  padding: 7px 15px !important;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+@media (max-width: 576px) {
+  .career_banner_img {
+    height: 230px;
+  }
+  .job_title {
+    font-size: 24px;
+  }
+  .job_detail_title {
+    font-size: 15px !important;
+  }
+  .job_spa_detail {
+    flex-direction: column;
+  }
+  .open_job {
+    height: 40px;
+    width: 40px;
+  }
+  @media (max-width: 380px){
+    .job_title{
+      font-size: 20px;
+    }
+    .job_spa_text{
+      font: 14px!important;
+    }
+  }
+}
 
 /*  */
 
 .glow-on-hover {
-  padding: 10px 40px!important;
+  padding: 10px 40px !important;
   border: none;
   outline: none;
   color: #fff;
@@ -122,11 +137,22 @@
 }
 
 .glow-on-hover:before {
-  content: '';
-  background: linear-gradient(45deg, #ed1c24, #ed1c24, #ed1c24, #ed1c24, #ed1c24, #002bff, #7a00ff, #ff00c8, #ff0000);
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #ed1c24,
+    #ed1c24,
+    #ed1c24,
+    #ed1c24,
+    #ed1c24,
+    #002bff,
+    #7a00ff,
+    #ff00c8,
+    #ff0000
+  );
   position: absolute;
   top: -2px;
-  left:-2px;
+  left: -2px;
   background-size: 400%;
   z-index: -1;
   filter: blur(5px);
@@ -134,12 +160,12 @@
   height: calc(100% + 4px);
   animation: glowing 20s linear infinite;
   opacity: 0;
-  transition: opacity .3s ease-in-out;
+  transition: opacity 0.3s ease-in-out;
   border-radius: 3px;
 }
 
 .glow-on-hover:active {
-  color: #000
+  color: #000;
 }
 
 .glow-on-hover:active:after {
@@ -152,7 +178,7 @@
 
 .glow-on-hover:after {
   z-index: -1;
-  content: '';
+  content: "";
   position: absolute;
   width: 100%;
   height: 100%;
@@ -163,7 +189,13 @@
 }
 
 @keyframes glowing {
-  0% { background-position: 0 0; }
-  50% { background-position: 400% 0; }
-  100% { background-position: 0 0; }
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
 }

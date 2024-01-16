@@ -22,7 +22,7 @@ const Search = () => {
               type="search"
             />
             <div className="round-btn" id="show-search-box">
-              <ImSearch onClick={favorite} className="res_search_icon text-white" size={"25px"}/>
+              <ImSearch onClick={favorite} className="res_search_icon text-white font-24 res_icons" />
             </div>
           </div>
         </form>
