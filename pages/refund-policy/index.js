@@ -3,8 +3,8 @@ import Container from "react-bootstrap/Container"
 import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
 import parse from 'html-react-parser'
-import TermsBanner from "../../public/terms-conditions.png"
-import Image from "next/image"
+// import TermsBanner from "../../public/terms-conditions.png"
+// import Image from "next/image"
 import axios from "../../utils/axios"
 import {makeTitle} from "../../utils/helpers";
 import Head from "next/head";
@@ -30,7 +30,7 @@ const RefundPolicyPage = () => {
             </Head>
             <section>
                 <div className="terms-banner-div">
-                    <Image src={TermsBanner} alt="" className="terms-banner"/>
+                    <img src="/terms-conditions.png" alt="" className="terms-banner"/>
                 </div>
                 <Container>
                     {info?.map((item, index) => (

@@ -10,12 +10,18 @@ const Footer = () => {
           <Row>
             <Col lg={3} md={3} sm={6}>
               <div className="logo_side px-3">
-                <div >
-                  <img src="/logo/logo3.png" alt="footer logo" className="footer_logo" />
+                <div>
+                  <img
+                    src="/logo/logo3.png"
+                    alt="footer logo"
+                    className="footer_logo"
+                  />
                 </div>
                 <div>
                   <p className="text-capitalize pb-2">global heaven</p>
-                  <p className="text-capitalize pb-2">mirpur-10, Dhaka-1212</p>
+                  <p className="text-capitalize pb-2">
+                    1F, Folder Street, 4th floor, Wari, Dhaka-1203
+                  </p>
                   <p className="text-capitalize pb-2">dhaka, Bangladesh</p>
                 </div>
               </div>
@@ -51,16 +57,19 @@ const Footer = () => {
                 </div>
                 <div>
                   <ul>
-                    <Link href="/" className="footer_link_hover">
-                      <li className="text-capitalize  pb-2">
-                        category & product
-                      </li>
+                   
+                
+                    <Link href="/catalogue" className="footer_link_hover">
+                      <li className="text-capitalize pb-2">Catalogue</li>
                     </Link>
-                    <Link href="/" className="footer_link_hover">
-                      <li className="text-capitalize pb-2">brands</li>
+                    <Link href="/enterprice" className="footer_link_hover">
+                      <li className="text-capitalize pb-2">Enterprice</li>
                     </Link>
-                    <Link href="/" className="footer_link_hover">
-                      <li className="text-capitalize pb-2">export</li>
+                    <Link href="/auth/login" className="footer_link_hover">
+                      <li className="text-capitalize pb-2">login </li>
+                    </Link>
+                    <Link href="/contact" className="footer_link_hover">
+                      <li className="text-capitalize pb-2">contact </li>
                     </Link>
                   </ul>
                 </div>
@@ -75,16 +84,16 @@ const Footer = () => {
                 </div>
                 <div>
                   <ul>
-                    <Link href="/" className="footer_link_hover">
-                      <li className="text-capitalize pb-2">privacy</li>
+                    <Link href="/privacy-policy" className="footer_link_hover">
+                      <li className="text-capitalize pb-2">privacy & policy</li>
                     </Link>
-                    <Link href="/" className="footer_link_hover">
+                    <Link href="/terms-and-conditions" className="footer_link_hover">
                       <li className="text-capitalize pb-2">
-                        Terms and Conditions{" "}
+                        Terms and Conditions
                       </li>
                     </Link>
-                    <Link href="/" className="footer_link_hover">
-                      <li className="text-capitalize pb-2">FAQ</li>
+                    <Link href="/refund-policy" className="footer_link_hover">
+                      <li className="text-capitalize pb-2">refund policy</li>
                     </Link>
                   </ul>
                 </div>
@@ -98,7 +107,11 @@ const Footer = () => {
                   </p>
                 </div>
                 <div>
-                  <img src="/payment3.png" alt="" className="img-fluid footer_img"/>
+                  <img
+                    src="/payment3.png"
+                    alt=""
+                    className="img-fluid footer_img"
+                  />
                 </div>
               </div>
             </Col>
@@ -110,7 +123,6 @@ const Footer = () => {
       <section className="copyright">
         <Container>
           <div className="d-flex justify-content-center py-3">
-            
             <div className="">
               <p className="fw-semibold">© 2023 Mamun | All rights reserved</p>
             </div>

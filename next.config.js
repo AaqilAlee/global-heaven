@@ -1,9 +1,14 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  // images: {
+  //   domains: ['https://postimages.org/', 'https://postimg.cc/kBWDW3SY/c607f827'],
+  // },
   images: {
-    domains: ['https://postimages.org/', 'https://postimg.cc/kBWDW3SY/c607f827'],
+    loader: 'akamai',
+    path: '',
   },
+  distDir: "build"
   // "rules": {
   //   "no-mixed-spaces-and-tabs": 0, 
   // }
