@@ -243,7 +243,7 @@ const HeaderOld = () => {
                   }
                   id="navbarScrollingDropdown"
                   onMouseEnter={() => handleMouseEnter()}
-                  // onMouseLeave={() => handleMouseLeave()}
+                  onMouseLeave={() => handleMouseLeave()}
                   onClick={() => handleClickService()}
                   show={showItems}
                 >
@@ -311,7 +311,7 @@ const HeaderOld = () => {
                   }
                   id="navbarScrollingDropdown"
                   onMouseEnter={() => handleMouseEnter()}
-                  // onMouseLeave={() => handleMouseLeave()}
+                  onMouseLeave={() => handleMouseLeave()}
                   onClick={() => handleClickService()}
                   show={showItems}
                 >
@@ -366,72 +366,6 @@ const HeaderOld = () => {
                     CRO
                   </NavDropdown.Item>
                 </NavDropdown>
-
-                {/* <NavDropdown
-                  className="p-0 rounded-0 business-btn dropdown_menu-7 "
-                  title={
-                    <div className="d-flex align-items-center ">
-                      <span className=" position-relative text-capitalize text-light sticky_text_color text-inter py-2 font-16 d-flex  align-items-center position-relative after_border">
-                        business
-                      </span>
-                      <BiChevronDown className="ms-1 text-white sticky_text_color" />
-                    </div>
-                  }
-                  id="navbarScrollingDropdown"
-                  onMouseEnter={() => handleMouseEnter2()}
-                  onMouseLeave={() => handleMouseLeave2()}
-                  onClick={() => handleClickService2()}
-                  show={showItems2}
-                >
-                  <div className="subMenuBox rounded-3">
-                    <div className="menuContent d-flex rounded-3">
-                      <div className="textBox px-4 py-2">
-                        <h4 className="mt-3 mb-4"> organogram </h4>
-                        <img
-                          src="/b2b.jpg"
-                          alt=""
-                          className="dropdown_img img-fluid pb-4"
-                        />
-                        <p className="font-14 text-justify mb-5 font-lato text-capitalize">
-                          It is a long established fact that a reader will be
-                          distracted by the readable content of a page when
-                          looking at its layout.
-                        </p>
-                        <div className="mb-4">
-                          <Link
-                            href="/board-of-directors"
-                            onClick={() => setShowItems(false)}
-                            className="menuBtn mb-4 text-white fw-semibold font-poppins"
-                          >
-                            see More
-                          </Link>
-                        </div>
-                      </div>
-                      <div className="textBox px-4 py-2">
-                        <h4 className="mt-3 mb-4">categories</h4>
-                        <img
-                          src="/b2b.jpg"
-                          alt=""
-                          className="dropdown_img img-fluid pb-4"
-                        />
-                        <p className="font-14 text-justify mb-5 font-lato text-capitalize">
-                          It is a long established fact that a reader will be
-                          distracted by the readable content of a page when
-                          looking at its layout.
-                        </p>
-                        <div className="mb-4">
-                          <Link
-                            href="/"
-                            onClick={() => setShowItems(false)}
-                            className="menuBtn mt-4 text-white fw-semibold font-poppins"
-                          >
-                            see More
-                          </Link>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </NavDropdown> */}
 
                 <Nav.Link
                   as={Link}

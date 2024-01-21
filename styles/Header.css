@@ -108,9 +108,9 @@
 .dropdown-menu.show {
    animation: manuFadeIn 0.7s;
 }
-.cate-drop{
-   text-wrap: wrap!important;
-}
+/* .cate-drop{
+  text-wrap: wrap!important;
+} */
 @keyframes manuFadeIn {
    0% {
       opacity: 0;
