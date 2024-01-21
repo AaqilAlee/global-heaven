@@ -126,7 +126,12 @@
   font-size: 14px;
 }
 .cate-drop:hover {
+  
   color: #fff !important;
+}
+.cate-drop.text-light.text-capitalize.all-icons.text-dark.px-4.py-2.d-block.dropdown-item{
+  word-wrap: break-word !important;
+  white-space: normal;
 }
 .social_icon {
   color: #e1e1e1;
@@ -152,7 +157,7 @@
   background-size: cover !important;
   z-index: 0;
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
 }
 .navBox {
   width: 600px;

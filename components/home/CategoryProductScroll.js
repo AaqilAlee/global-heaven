@@ -94,10 +94,10 @@ const CategoryProductScroll = ({ title, categoryId }) => {
           <div className="row">
             <div className="col-lg-12 col-md-12 slider-primary">
               <Slider {...settings}>
-                {inventories.map((inventory, key) => {
+                {inventories.map((inventory, index) => {
                   return (
-                    <div className="">
-                      <div className="mt-0 mx-2" key={key}>
+                    <div className=""  key={index}>
+                      <div className="mt-0 mx-2">
                         <div className="mb-3">
                           <ProductCard
                             id={inventory.id}
