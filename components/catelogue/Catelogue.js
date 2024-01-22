@@ -26,23 +26,23 @@ const Catelogue = () => {
         <Container>
           <div className="py-5">
             <Row>
-              {catData?.map((catalogue) => {
+              {catData?.map((catalogue, index) => {
                 return (
-                  <>
+                  <div key={index}>
                     <Col lg={3} md={6} sm={6}>
                       <div className="bg-white px-0 border shadow rounded">
                         <div className="content">
                           <div className="content-overlay"></div>
                           <img
                             className="content-image"
-                            src={getStoragePath(catalogue?.item_image)}
+                            src={getStoragePath(catalogue?.item_image || "")}
                             alt=""
                           />
                           <div className="d-flex justify-content-center content-details fadeIn-bottom">
                             <Link
                               className="content-icon text-white border p-3 ms-2"
                               href={getStoragePath(
-                                catalogue?.catalogue_brochure
+                                catalogue?.catalogue_brochure || ""
                               )}
                               target="_blank"
                             >
@@ -55,12 +55,12 @@ const Catelogue = () => {
 
                         <div className="">
                           <p className="py-3 ps-3">
-                            {catalogue?.item_name}
+                            {catalogue?.item_name || ""}
                           </p>
                         </div>
                       </div>
                     </Col>
-                  </>
+                  </div>
                 );
               })}
             </Row>

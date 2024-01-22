@@ -38,7 +38,7 @@ export const getProductList = async ()=> {
             return false;
         }
         }).catch((err)=>{
-            console.log(err);
+            // console.log(err);
             return false;
     });
 }
@@ -63,7 +63,7 @@ export const sendContact = async(postData)=>{
         crossDomain: true
     };
    return axios.post(EndPoint,PostBody,headers).then((res)=>{
-    console.log(res)
+    // console.log(res)
         if(res.status===200){
            return true;
         }
@@ -71,7 +71,7 @@ export const sendContact = async(postData)=>{
            return  false;
         }
     }).catch((err)=>{
-        console.log(err);
+        // console.log(err);
         return false;
     });
 }

@@ -174,14 +174,13 @@ const SingleInventoryPage = () => {
       <Head>
         <title>{makeTitle(inventory?.title || "Product")}</title>
       </Head>
-      {console.log(inventory)}
       <section className="view-single-pro">
         {inventory?.product?.lifestyle_image && (
           <div className="product-banner">
             <img
               src={getStoragePath(
                 `product-image/${inventory?.product?.lifestyle_image}`
-              )}
+              ) }
               alt=""
               className="product-banner"
             />

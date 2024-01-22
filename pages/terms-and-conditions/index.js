@@ -18,10 +18,10 @@ const Conditions = () => {
                 .then((res) => {
                     // console.log(res.data[0].content_item);
                     setInfo(res?.data[0]?.content_item);
-                    console.log(info);
+                    // console.log(info);
                 })
         } catch (err) {
-            console.log(err);
+            // console.log(err);
         }
     }
 

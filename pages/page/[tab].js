@@ -174,11 +174,11 @@ const AboutDetails = ({ tab }) => {
               {tab && tab == "inception" && (
                 <div>
                   <p className="text-capitalize display-6 theme_text_color fw-semibold pb-4">
-                    {inception[0]?.item_name}
+                    {inception[0]?.item_name || ""}
                   </p>
-                  <p className="text-justify">
+                  <div className="text-justify">
                     {parse(inception[0]?.item_long_desc || "")}
-                  </p>
+                  </div>
                 </div>
               )}
               {tab && tab == "mission-vision" && (
@@ -186,28 +186,28 @@ const AboutDetails = ({ tab }) => {
                   <p className="text-capitalize display-6 theme_text_color fw-semibold pb-4">
                     {mis_vis[0]?.item_name}
                   </p>
-                  {mis_vis?.map((curElem) => {
+                  {mis_vis?.map((curElem, index) => {
                     return (
-                      <>
-                        <p className="text-justify">
+                      
+                        <div className="text-justify" key={index}>
                           {parse(curElem?.item_long_desc || "")}
-                        </p>
-                      </>
+                        </div>
+                      
                     );
                   })}
                 </div>
               )}
               {tab && tab == "factories" && (
                 <div>
-                  {factories.map((factory) => {
+                  {factories.map((factory,index ) => {
                     return (
-                      <div className="mb-4">
+                      <div className="mb-4" key={index}>
                         <p className="text-capitalize display-6 theme_text_color fw-semibold pb-3">
                           {factory?.item_name || ""}
                         </p>
-                        <p className="text-justify">
+                        <div className="text-justify">
                           {parse(factory?.item_long_desc || "")}
-                        </p>
+                        </div>
                       </div>
                     );
                   })}
@@ -306,24 +306,15 @@ const AboutDetails = ({ tab }) => {
                   </div>
                 </div>
               )}
-              {/* {tab && tab == "milestones" && (
-                <div>
-                  <p className="text-capitalize display-6 theme_text_color fw-semibold pb-4">
-                    {milestone[0]?.item_name || ""}
-                  </p>
-                  <p className="text-justify">
-                    {parse(milestone[0]?.item_long_desc || "")}
-                  </p>
-                </div>
-              )} */}
+              
               {tab && tab == "objective" && (
                 <div>
                   <p className="text-capitalize display-6 theme_text_color fw-semibold pb-3">
                     {objective[0]?.item_name || ""}
                   </p>
-                  <p className="text-justify">
+                  <div className="text-justify">
                     {parse(objective[0]?.item_long_desc || "")}
-                  </p>
+                  </div>
                 </div>
               )}
               {/* {tab && tab == "sustainability-practics" && (
@@ -341,9 +332,9 @@ const AboutDetails = ({ tab }) => {
                   <p className="text-capitalize display-6 theme_text_color fw-semibold pb-3">
                     {distribution[0]?.item_name || ""}
                   </p>
-                  <p className="text-justify">
+                  <div className="text-justify">
                     {parse(distribution[0]?.item_long_desc || "")}
-                  </p>
+                  </div>
                 </div>
               )}
             </Col>
