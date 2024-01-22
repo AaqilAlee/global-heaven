@@ -183,7 +183,7 @@ const CheckoutPage = () => {
   const handlePaymentMethodId = (id) => {
     try {
       dispatch(UPDATE_PAYMENT_METHOD_ID(id));
-      console.log("Selected");
+      // console.log("Selected");
     } catch (err) {
       tostify(toast, "success", {
         message: err.message,

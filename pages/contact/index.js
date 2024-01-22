@@ -62,7 +62,6 @@ const Contact = () => {
       setContact(res?.data[0]?.contact_list);
     });
   };
-  console.log(contact);
   useEffect(() => {
     fetchContactApi();
   }, []);
@@ -74,7 +73,7 @@ const Contact = () => {
       </Head>
       <section>
         <div className="terms-banner-div">
-          <Image src={ContactBanner} alt="" className="terms-banner" />
+          <img src="/contact.jpg" alt="" className="img-fluid terms-banner" />
         </div>
         
 
@@ -84,10 +83,9 @@ const Contact = () => {
               <Col lg={6} md={6} sm={12} className="p-0">
                 <div className="mt-5 ">
                   <div className="row">
-                    {contact?.map((contactlist) => {
+                    {contact?.map((contactlist ,index) => {
                       return (
-                        <>
-                          <Col lg={6}>
+                          <Col lg={6} key={index}>
                             <div className="border rounded-1 shadow p-3 contact_list">
                               <div>
                                 <div className="d-flex align-items-center mb-2">
@@ -113,7 +111,6 @@ const Contact = () => {
                               </div>
                             </div>
                           </Col>
-                        </>
                       );
                     })}
                   </div>

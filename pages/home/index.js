@@ -1,7 +1,7 @@
 import React, { Fragment, useEffect, useState } from "react";
-import BannerSection from "../../components/home/BannerSection";
+// import BannerSection from "../../components/home/BannerSection";
 // Brands
-import BrandSection from "../../components/home/BrandSection";
+// import BrandSection from "../../components/home/BrandSection";
 import ScrollToTopButton from "../../components/common/ScrollToTopButton";
 import { fetchCategories } from "../../services/CategoryServices";
 import CategoryProductScroll from "../../components/home/CategoryProductScroll";
@@ -9,15 +9,21 @@ import CategoryShowcase from "../../components/home/CategoryShowcase";
 // import FeatureSection from "../../components/home/FeatureSection";
 import { fetchHomeBanners } from "../../services/CommonServices";
 // import AddBanner from "../../components/common/AddBanner";
-import ComboProductScroll from "../../components/home/ComboProductScroll";
-import DeliveryServices from "../../components/Modules/deliveryServices/DeliveryServices";
-import { makeTitle } from "../../utils/helpers";
+// import ComboProductScroll from "../../components/home/ComboProductScroll";
+// import DeliveryServices from "../../components/Modules/deliveryServices/DeliveryServices";
+// import { makeTitle } from "../../utils/helpers";
 import Head from "next/head";
-import UpComingProduct from "../../components/upcomingproduct/UpComingProduct";
-import FeatureProduct from "../../components/home/FeatureProduct";
-import SoftwareProduct from "../../components/home/SoftwareProduct";
+// import UpComingProduct from "../../components/upcomingproduct/UpComingProduct";
+// import FeatureProduct from "../../components/home/FeatureProduct";
+// import SoftwareProduct from "../../components/home/SoftwareProduct";
 import Slider from "../../components/Slider/Slider";
 import OurCompany from "../../components/our_company/OurCompany";
+// import { lazy } from 'react'
+// const ScrollToTopButton = lazy(() => import('../../components/common/ScrollToTopButton'))
+// const CategoryProductScroll = lazy(() => import('../../components/home/CategoryProductScroll'))
+// const CategoryShowcase = lazy(() => import('../../components/home/CategoryShowcase'))
+// const Slider = lazy(() => import('../../components/Slider/Slider'))
+// const OurCompany = lazy(() => import('../../components/our_company/OurCompany'))
 
 const HomePage = () => {
   const [categories, setCategories] = useState([]);

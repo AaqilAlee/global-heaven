@@ -2,10 +2,9 @@ import React, { useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import {Data} from "../../data/Data";
 
-const Pndex = () => {
+const index = () => {
   const [enterprice, setEnterprice] = useState(Data);
 
-  console.log(enterprice);
   return (
     <>
       <section>
@@ -17,12 +16,13 @@ const Pndex = () => {
           />
         </div>
         <Container>
-            {enterprice?.map((curElem) => {
+            {enterprice?.map((curElem, index) => {
               return (
                 <Col
                   lg={6}
                   data-aos={curElem.animation || ""}
                   className="enterprice_part shadow my-3 rounded-3"
+                  key={index}
                 >
                   <div className="d-flex justify-content-center">
                     <div className="py-4 text-center">
@@ -50,4 +50,4 @@ const Pndex = () => {
   );
 };
 
-export default Pndex;
+export default index;

@@ -206,10 +206,9 @@ const AboutDetails = ({ tab }) => {
                     corporate
                   </p>
                   <div className="d-flex justify-content-center mb-5">
-                    {info.map((curElem, key) => {
+                    {info.map((curElem, index) => {
                       return (
-                        <>
-                          <div className="col-lg-4 col-md-4  col-sm-6 mb-4">
+                          <div key={index} className="col-lg-4 col-md-4  col-sm-6 mb-4">
                             <div className="text-center me-md-3">
                               <Link href={`/comment/${curElem.id}`}>
                                 <img
@@ -224,21 +223,20 @@ const AboutDetails = ({ tab }) => {
                               <p className="about_titledesign position-relative pt-2">
                                 {curElem?.item_short_desc || ""}
                               </p>
-                              <p className="">
+                              <div className="">
                                 {parse(curElem?.item_deg_desc || "")}
-                              </p>
+                              </div>
                             </div>
                           </div>
-                        </>
                       );
                     })}
                   </div>
                   <div className="" style={{ paddingBottom: "30px" }}>
                     <Row className="d-flex justify-content-md-center">
-                      {bod?.map((curElem, key) => {
+                      {bod?.map((curElem, index) => {
                         return (
                           <>
-                            <div className="col-lg-3 col-md-4 col-sm-6 mb-4">
+                            <div key={index} className="col-lg-3 col-md-4 col-sm-6 mb-4">
                               <div className="text-center">
                                 <Link href={`/comment/gm/${curElem.id}`}>
                                   <img
@@ -253,9 +251,9 @@ const AboutDetails = ({ tab }) => {
                                 <p className="about_titledesign position-relative pt-2">
                                   {curElem?.item_short_desc || ""}
                                 </p>
-                                <p className="">
+                                <div className="">
                                   {parse(curElem?.item_deg_desc || "")}
-                                </p>
+                                </div>
                               </div>
                             </div>
                           </>
@@ -271,9 +269,7 @@ const AboutDetails = ({ tab }) => {
                     Rajshahi and Rangpur Division
                   </p>
                   <div className="row d-flex justify-content-center">
-                    {/* {raj_rongpur[0]?.map((curElem, key) => {
-                      return (
-                        <> */}
+                    
                     <div className="col-lg-3 col-md-5 col-sm-6 mb-4">
                       <div className="text-center">
                         <img
@@ -287,20 +283,18 @@ const AboutDetails = ({ tab }) => {
                         <p className="about_titledesign position-relative pt-2">
                           {raj_rong[0]?.item_short_desc || ""}
                         </p>
-                        <p className="">
+                        <div className="">
                           {parse(raj_rong[0]?.item_deg_desc || "")}
-                        </p>
+                        </div>
                       </div>
                     </div>
-                    {/* </>
-                      );
-                    })} */}
+                   
                   </div>
                   <div className="row d-flex justify-content-center">
-                    {raj_rongpur?.map((curElem, key) => {
+                    {raj_rongpur?.map((curElem, index) => {
                       return (
                         <>
-                          <div className="col-lg-3 col-md-5 col-sm-6 mb-4">
+                          <div key={index} className="col-lg-3 col-md-5 col-sm-6 mb-4">
                             <div className="text-center">
                               <img
                                 src={getStoragePath(curElem.item_image)}
@@ -313,9 +307,9 @@ const AboutDetails = ({ tab }) => {
                               <p className="about_titledesign position-relative pt-2">
                                 {curElem?.item_short_desc || ""}
                               </p>
-                              <p className="">
+                              <div className="">
                                 {parse(curElem?.item_deg_desc || "")}
-                              </p>
+                              </div>
                             </div>
                           </div>
                         </>
@@ -330,9 +324,7 @@ const AboutDetails = ({ tab }) => {
                     Khulna and Barisal Division
                   </p>
                   <div className="row d-flex justify-content-center">
-                    {/* {khul_bari?.map((curElem, key) => {
-                      return (
-                        <> */}
+                    
                     <div className="col-lg-3 col-md-5 col-sm-6 mb-4">
                       <div className="text-center">
                         <img
@@ -346,20 +338,18 @@ const AboutDetails = ({ tab }) => {
                         <p className="about_titledesign position-relative pt-2">
                           {khul_bari[0]?.item_short_desc || ""}
                         </p>
-                        <p className="">
+                        <div className="">
                           {parse(khul_bari[0]?.item_deg_desc || "")}
-                        </p>
+                        </div>
                       </div>
                     </div>
-                    {/* </>
-                      );
-                    })} */}
+                   
                   </div>
                   <div className="row d-flex justify-content-center">
-                    {khulna_barisal?.map((curElem, key) => {
+                    {khulna_barisal?.map((curElem, index) => {
                       return (
                         <>
-                          <div className="col-lg-3 col-md-5 col-sm-6 mb-4">
+                          <div key={index} className="col-lg-3 col-md-5 col-sm-6 mb-4">
                             <div className="text-center">
                               <img
                                 src={getStoragePath(curElem.item_image)}
@@ -372,9 +362,9 @@ const AboutDetails = ({ tab }) => {
                               <p className="about_titledesign position-relative pt-2">
                                 {curElem?.item_short_desc || ""}
                               </p>
-                              <p className="">
+                              <div className="">
                                 {parse(curElem?.item_deg_desc || "")}
-                              </p>
+                              </div>
                             </div>
                           </div>
                         </>
@@ -389,9 +379,7 @@ const AboutDetails = ({ tab }) => {
                     Mymensingh and Dhaka Part-3 Division
                   </p>
                   <div className="row d-flex justify-content-center">
-                    {/* {mymdha?.map((curElem, key) => {
-                      return (
-                        <> */}
+                    
                     <div className="col-lg-3 col-md-5 col-sm-6 mb-4">
                       <div className="text-center">
                         <img
@@ -405,20 +393,17 @@ const AboutDetails = ({ tab }) => {
                         <p className="about_titledesign position-relative pt-2">
                           {mymdha[0]?.item_short_desc || ""}
                         </p>
-                        <p className="">
+                        <div className="">
                           {parse(mymdha[0]?.item_deg_desc || "")}
-                        </p>
+                        </div>
                       </div>
                     </div>
-                    {/* </>
-                      );
-                    })} */}
                   </div>
                   <div className="row d-flex justify-content-center">
-                    {mym_barisal?.map((curElem, key) => {
+                    {mym_barisal?.map((curElem, index) => {
                       return (
                         <>
-                          <div className="col-lg-3 col-md-5 col-sm-6 mb-4">
+                          <div key={index} className="col-lg-3 col-md-5 col-sm-6 mb-4">
                             <div className="text-center">
                               <img
                                 src={getStoragePath(curElem.item_image)}
@@ -431,9 +416,9 @@ const AboutDetails = ({ tab }) => {
                               <p className="about_titledesign position-relative pt-2">
                                 {curElem?.item_short_desc || ""}
                               </p>
-                              <p className="">
+                              <div className="">
                                 {parse(curElem?.item_deg_desc || "")}
-                              </p>
+                              </div>
                             </div>
                           </div>
                         </>
@@ -448,9 +433,7 @@ const AboutDetails = ({ tab }) => {
                     Dhaka Part-1 and Dhaka Part-2 Division
                   </p>
                   <div className="row d-flex justify-content-center">
-                    {/* {dhadha?.map((curElem, key) => {
-                      return (
-                        <> */}
+                   
                     <div className="col-lg-3 col-md-5 col-sm-6 mb-4">
                       <div className="text-center">
                         <img
@@ -464,20 +447,17 @@ const AboutDetails = ({ tab }) => {
                         <p className="about_titledesign position-relative pt-2">
                           {dhadha[0]?.item_short_desc || ""}
                         </p>
-                        <p className="">
+                        <div className="">
                           {parse(dhadha[0]?.item_deg_desc || "")}
-                        </p>
+                        </div>
                       </div>
                     </div>
-                    {/* </>
-                      );
-                    })} */}
                   </div>
                   <div className="row d-flex justify-content-center">
-                    {dha_dha?.map((curElem, key) => {
+                    {dha_dha?.map((curElem, index) => {
                       return (
                         <>
-                          <div className="col-lg-3 col-md-5 col-sm-6 mb-4">
+                          <div key={index} className="col-lg-3 col-md-5 col-sm-6 mb-4">
                             <div className="text-center">
                               <img
                                 src={getStoragePath(curElem.item_image)}
@@ -490,9 +470,9 @@ const AboutDetails = ({ tab }) => {
                               <p className="about_titledesign position-relative pt-2">
                                 {curElem?.item_short_desc || ""}
                               </p>
-                              <p className="">
+                              <div className="">
                                 {parse(curElem?.item_deg_desc || "")}
-                              </p>
+                              </div>
                             </div>
                           </div>
                         </>
@@ -507,9 +487,7 @@ const AboutDetails = ({ tab }) => {
                     Chattogram and Sylhet division
                   </p>
                   <div className="row d-flex justify-content-center">
-                    {/* {cha_syl?.map((curElem, key) => {
-                      return (
-                        <> */}
+                  
                     <div className="col-lg-3 col-md-5 col-sm-6 mb-4">
                       <div className="text-center">
                         <img
@@ -523,9 +501,9 @@ const AboutDetails = ({ tab }) => {
                         <p className="about_titledesign position-relative pt-2">
                           {cha_syl[0]?.item_short_desc || ""}
                         </p>
-                        <p className="">
+                        <div className="">
                           {parse(cha_syl[0]?.item_deg_desc || "")}
-                        </p>
+                        </div>
                       </div>
                     </div>
                     {/* </>
@@ -533,10 +511,9 @@ const AboutDetails = ({ tab }) => {
                     })} */}
                   </div>
                   <div className="row d-flex justify-content-center">
-                    {chatt_syl?.map((curElem, key) => {
+                    {chatt_syl?.map((curElem, index) => {
                       return (
-                        <>
-                          <div className="col-lg-3 col-md-5 col-sm-6 mb-4">
+                          <div className="col-lg-3 col-md-5 col-sm-6 mb-4" key={index}>
                             <div className="text-center">
                               <img
                                 src={getStoragePath(curElem.item_image)}
@@ -549,12 +526,11 @@ const AboutDetails = ({ tab }) => {
                               <p className="about_titledesign position-relative pt-2">
                                 {curElem?.item_short_desc || ""}
                               </p>
-                              <p className="">
+                              <div className="">
                                 {parse(curElem?.item_deg_desc || "")}
-                              </p>
+                              </div>
                             </div>
                           </div>
-                        </>
                       );
                     })}
                   </div>
@@ -566,14 +542,13 @@ const AboutDetails = ({ tab }) => {
                     CRO
                   </p>
                   <div className="row d-flex justify-content-start">
-                    {cro?.map((curElem, key) => {
+                    {cro?.map((curElem, index) => {
                       return (
-                        <>
-                          <div className="col-lg-4 col-md-6 col-sm-6 mb-4">
+                          <div className="col-lg-4 col-md-6 col-sm-6 mb-4" key={index}>
                             <div className="text-center box_card d-flex justify-content-center align-items-center">
                               <div>
                                 <h2 className="font-20 fw-bold pt-2 pb-1">
-                                  {curElem?.item_name}
+                                  {curElem?.item_name || ""}
                                 </h2>
                                 <p className="about_titledesign position-relative pt-2">
                                   {curElem?.item_short_desc || ""}
@@ -581,7 +556,6 @@ const AboutDetails = ({ tab }) => {
                               </div>
                             </div>
                           </div>
-                        </>
                       );
                     })}
                   </div>

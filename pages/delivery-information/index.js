@@ -21,7 +21,7 @@ const DeliverInformationPage = () => {
                     setInfo(res?.data[0]?.content_item);
                 })
         } catch (err) {
-            console.log(err);
+            // console.log(err);
         }
     }
 

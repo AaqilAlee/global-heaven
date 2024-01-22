@@ -34,7 +34,7 @@ const Invoice = () => {
         }
     };
 
-    console.log(id)
+    // console.log(id)
 
     return (
         <Fragment>

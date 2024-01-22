@@ -24,7 +24,7 @@ const CategoryPage = () => {
   const [categories, setCategories] = useState([]);
   const [inventories, setInventories] = useState([]);
   const [filteredInventory, setFilteredinventory] = useState([]);
-  console.log(inventories);
+ 
 
   const [meta, setMeta] = useState({});
   const [page, setPage] = useState("");
@@ -84,17 +84,11 @@ const CategoryPage = () => {
     }
   }, [page]);
 
-  // const filterItem = (category) => {
-  //   const updatedList = CartApi.filter((curElem) => {
-  //     return curElem.category === category;
-  //   });
-  //   setmovieData(updatedList);
-  // };
+
 
   const itemfilter = (id) => {
     const items = inventories.filter((i) => i.product.sub_category?.id === id);
     setFilteredinventory(items);
-    console.log(inventories);
   };
 
   return (
@@ -122,19 +116,15 @@ const CategoryPage = () => {
             <h1 className="fw-bolder text-center mt-5 font-40 font-lato our-product">
               {category?.name && category.name}
             </h1>
-            {/* <p className="font-lato text-center font-18 mb-5 product-des">
-                        We Are Restocking as Quickly as Possible. Come Back 7/30 to OrderMore of These Flavors
-                        Inspired by the Places You Call
-                        Home!
-                    </p> */}
+            
           </div>
 
           <div className="row">
             {/*Category Sidebar*/}
             <div className="col-lg-3 col-md-4 col-sm-5 mb-3">
               <div className="accordion_focus catagory_side_nv py-3 rounded-1">
-                {categories?.map((item, key) => (
-                  <Accordion className="border-0 bg-transparent rounded-0 ">
+                {categories?.map((item, index) => (
+                  <Accordion className="border-0 bg-transparent rounded-0 " key={index}>
                     <Accordion.Item eventKey="0" className="bg-transparent rounded-0">
                       <Link href={`/category/${item.id}`}>
                         <Accordion.Header>{item.name}</Accordion.Header>
@@ -143,8 +133,8 @@ const CategoryPage = () => {
                         <Accordion.Body>
                           <ul>
                             {item?.sub_categories &&
-                              item.sub_categories.map((sub_items, key) => (
-                                <li key={sub_items.id} className="pb-2 font-18">
+                              item.sub_categories.map((sub_items, index) => (
+                                <li className="pb-2 font-18"  key={index}>
                                   <button
                                     onClick={(e) => itemfilter(sub_items.id)}
                                   >

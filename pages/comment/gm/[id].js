@@ -72,7 +72,7 @@ export async function getStaticPaths() {
   const paths = items.map((i) => ({
     params: { id: String(i.id) },
   }));
-  console.log(paths)
+  // console.log(paths)
 
   return { paths, fallback: false };
 }

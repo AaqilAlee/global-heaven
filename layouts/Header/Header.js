@@ -213,11 +213,12 @@ const HeaderOld = () => {
             <div className="d-flex justify-content-between align-items-center main-manu-item">
               <div className="">
                 <Link href="/">
-                  <Image
+                  <img src="/logo/logo3.png" alt="Picture of the author" className="brand-logo"/>
+                  {/* <Image
                     src={Logo}
                     alt="Picture of the author"
                     className="brand-logo"
-                  />
+                  /> */}
                 </Link>
               </div>
               <Nav className="mx-auto pt-2 font-lato manu-font manu-items ">
@@ -452,8 +453,8 @@ const HeaderOld = () => {
             <div className="d-flex justify-content-between align-items-center main-manu-item">
               <div className="">
                 <Link href="/">
-                  <Image
-                    src={Logo}
+                  <img
+                    src="/logo/logo3.png"
                     alt="Picture of the author"
                     className="brand-logo"
                   />

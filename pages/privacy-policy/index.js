@@ -1,6 +1,6 @@
 import React, {Fragment, useEffect, useState} from "react"
-import PrivacyBanner from "../../public/privacy-policy.jpg"
-import Image from "next/image"
+// import PrivacyBanner from "../../public/privacy-policy.jpg"
+// import Image from "next/image"
 import Container from "react-bootstrap/Container"
 import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
@@ -26,7 +26,7 @@ const PrivacyPolicyPage = () => {
             </Head>
             <section>
                 <div className="terms-banner-div">
-                    <Image src={PrivacyBanner} alt="" className="terms-banner"/>
+                    <img src="/privacy-policy.jpg" alt="" className="terms-banner"/>
                 </div>
                 <Container>
                     {info?.map((item, index) => (

@@ -25,7 +25,7 @@ const ProductDescription = ({ inventory }) => {
       }
     });
   };
-  // console.log(reviewAbility?.product)
+
   useEffect(() => {
     if (inventory?.id) {
       hasInventoryReviewAbilityStatus(inventory.id);
@@ -80,49 +80,64 @@ const ProductDescription = ({ inventory }) => {
       return baseStoragePath + "product-video/" + (videoPath || "");
     }
   };
-
   return (
     inventory?.id && (
       <Fragment>
-        <Row>
-          {inventory?.product?.product_video_path ? (
-            <>
-              <Col lg={6}>
-                <h2 className="font-24 fw-semibold pb-2">
-                  Product Description
-                </h2>
+        <Tabs
+          id="controlled-tab-example"
+          activeKey={key}
+          onSelect={(k) => setKey(k)}
+          className="mb-3 border-0"
+        >
+          <Tab
+            eventKey="home"
+            title="Product Description"
+            className="rounded-0"
+          >
+            <Row>
+              {inventory?.product?.product_video_path ? (
+                <>
+                  <Col lg={6}>
+                    <h2 className="font-24 fw-semibold pb-2">
+                      Product Description
+                    </h2>
 
-                <p className="font-16 font-lato border-top pt-2 border-danger text-justify">
-                  {inventory?.product?.product_short_desc}
-                </p>
-                {console.log(inventory?.product?.product_video_path)}
-              </Col>
-              <Col lg={6} className="p-3">
-                <video width="100%" height="240" controls>
-                  <source
-                    src={getVideoPath(
-                      inventory?.product?.product_video_path || ""
-                    )}
-                    type="video/mp4"
-                  />
-                </video>
-              </Col>
-            </>
-          ) : (
-            <>
-              <Col lg={12}>
-                <h2 className="font-24 fw-semibold pb-2">
+                    <p className="font-16 font-lato border-top pt-2 border-danger text-justify">
+                      {inventory?.product?.product_short_desc}
+                    </p>
+                  </Col>
+                  <Col lg={6} className="p-3">
+                    <video width="100%" height="240" controls>
+                      <source
+                        src={getVideoPath(
+                          inventory?.product?.product_video_path || ""
+                        )}
+                        type="video/mp4"
+                      />
+                    </video>
+                  </Col>
+                </>
+              ) : (
+                <>
+                  <Col lg={12}>
+                    {/* <h2 className="font-24 fw-semibold pb-2">
                   Product Description
-                </h2>
+                </h2> */}
 
-                <p className="font-16 font-lato border-top pt-2 border-danger text-justify">
-                  {inventory?.product?.product_short_desc}
-                </p>
-                {console.log(inventory?.product?.product_video_path)}
-              </Col>
-            </>
-          )}
-        </Row>
+                    <p className="font-16 font-lato border-top pt-2 border-danger text-justify">
+                      {inventory?.product?.product_short_desc}
+                    </p>
+                  </Col>
+                </>
+              )}
+            </Row>
+          </Tab>
+          <Tab eventKey="profile" title="Secification" className="rounded-0">
+            <p className="font-16 font-lato border-top pt-2 border-danger text-justify">
+              {inventory?.product?.product_short_desc || ""}
+            </p>
+          </Tab>
+        </Tabs>
       </Fragment>
     )
   );
