@@ -670,7 +670,7 @@ const CheckoutPage = () => {
                   </Form.Group>
                 </div>
 
-                {/* <div className="">
+                <div className="">
                   <button
                     type="button"
                     className="d-flex align-items-center justify-content-center text-capitalize place_order_border cursor-pointer font-16 w-100 place-order mt-4 font-lato fw-bold"
@@ -695,7 +695,7 @@ const CheckoutPage = () => {
                     )}
                     place order
                   </button>
-                </div> */}
+                </div>
               </div>
 
               <div className="">
