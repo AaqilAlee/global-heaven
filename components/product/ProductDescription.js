@@ -133,9 +133,64 @@ const ProductDescription = ({ inventory }) => {
             </Row>
           </Tab>
           <Tab eventKey="profile" title="Secification" className="rounded-0">
-            <p className="font-16 font-lato border-top pt-2 border-danger text-justify">
-              {inventory?.product?.product_short_desc || ""}
-            </p>
+            <Col lg={6}>
+                <div>
+                  <table class="table table-bordered">
+                    <thead>
+                      <tr>
+                        <th scope="col">Spacifications</th>
+                        <th scope="col">Details</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Name</td>
+                        <td>MB Commercial Burner</td>
+                      </tr>
+                      <tr>
+                        <td>Brand</td>
+                        <td>MB International</td>
+                      </tr>
+                      <tr>
+                        <td>Model</td>
+                        <td>C-29/ C-30</td>
+                      </tr>
+                      <tr>
+                        <td>Panel</td>
+                        <td>Cast Iron Panel</td>
+                      </tr>
+                      <tr>
+                        <td>Material</td>
+                        <td>Stainless Steel Cover</td>
+                      </tr>
+                      <tr>
+                        <td>Flow Rated</td>
+                        <td>Thermal Flow (KW)-6</td>
+                      </tr>
+                      <tr>
+                        <td>Flame type</td>
+                        <td>Tornado Blue flame</td>
+                      </tr>
+                      <tr>
+                        <td>Ignite</td>
+                        <td>Auto Ignition 50,000 times</td>
+                      </tr>
+                      <tr>
+                        <td>Size</td>
+                        <td>560mmX340mmx135mm</td>
+                      </tr>
+                      <tr>
+                        <td>Burner</td>
+                        <td>One 220mm Burner</td>
+                      </tr>
+                      <tr>
+                        <td>Color</td>
+                        <td>Mixed (As given picture).</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+            </Col>
           </Tab>
         </Tabs>
       </Fragment>
