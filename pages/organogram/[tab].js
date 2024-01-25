@@ -106,7 +106,7 @@ const AboutDetails = ({ tab }) => {
     <>
       <section>
         <div className="mb-5">
-          <img src="/bod/Banner.png" alt="" className="w-100 about_banner" />
+          <img src="/Banner.png" alt="" className="w-100 about_banner" />
         </div>
         <Container>
           <Row>

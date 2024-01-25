@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import axios from "../../utils/axios";
 import { IoEye } from "react-icons/io5";
-import { getStoragePath } from "../../utils/helpers";
+import { getStoragePath } from "../../utils/helpers"; import mn from '../../public/catalogue.jpg'
 
 const Catelogue = () => {
   const [catData, setCatdata] = useState([]);
@@ -21,7 +21,7 @@ const Catelogue = () => {
     <>
       <section className="catalogue_bg">
         <div className="catelogue_banner">
-          <img src="./catalogue.jpg" alt="" className="catelogue_img" />
+          <img src="/catalogue.jpg" alt="" className="catelogue_img" />
         </div>
         <Container>
           <div className="py-5">
