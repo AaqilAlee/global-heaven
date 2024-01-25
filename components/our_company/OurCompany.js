@@ -10,7 +10,7 @@ const OurCompany = () => {
         <Container>
           <Row>
             <Col lg={5} md={5}>
-              <div className="pt-md-5">
+              <div className="">
                 <img src="/about.jpg" alt="" className="img-fluid rounded-3 about_img" />
               </div>
             </Col>
